@@ -1,0 +1,155 @@
+{% extends 'dash/base.html' %}
+{% load static %}
+{% block 'title' %}Raw Wish - Settings{% endblock %}
+
+{% block 'css' %}
+<style>
+    .settings-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .settings-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+    .settings-header {
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Toggle Switch */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 28px;
+    }
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: #cbd5e1;
+        transition: .4s;
+        border-radius: 34px;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .3s;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    input:checked + .slider {
+        background-color: #ec4899;
+    }
+    input:checked + .slider:before {
+        transform: translateX(22px);
+    }
+    
+    .setting-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid #f8fafc;
+    }
+    .setting-item:last-child {
+        border-bottom: none;
+    }
+    .setting-info h5 {
+        margin: 0 0 0.25rem 0;
+        font-weight: 600;
+        color: #1e293b;
+    }
+    .setting-info p {
+        margin: 0;
+        color: #64748b;
+        font-size: 0.9rem;
+    }
+</style>
+{% endblock %}
+
+{% block 'body' %}
+<div class="content">
+    <div class="container-fluid pt-4 settings-container">
+        <div class="settings-card interaction-target">
+            <div class="settings-header">
+                <h4 class="fw-bold text-primary mb-0"><i data-feather="settings" class="me-2"></i>Dashboard Settings</h4>
+                <p class="text-muted mt-2 mb-0">Manage your operations experience and UI preferences.</p>
+            </div>
+            
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h5>Sound Effects</h5>
+                    <p>Play subtle audio cues on clicks and updates</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-sound">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h5>Haptic Feedback</h5>
+                    <p>Vibrate device during important actions (mobile only)</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-haptic">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Future settings can go here -->
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block 'script' %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const soundToggle = document.getElementById('toggle-sound');
+        const hapticToggle = document.getElementById('toggle-haptic');
+
+        // Load initial states (default to true if not set)
+        const soundsEnabled = localStorage.getItem('rawwish_sounds_enabled') !== 'false';
+        const hapticsEnabled = localStorage.getItem('rawwish_haptics_enabled') !== 'false';
+
+        soundToggle.checked = soundsEnabled;
+        hapticToggle.checked = hapticsEnabled;
+
+        // Save states on change
+        soundToggle.addEventListener('change', (e) => {
+            localStorage.setItem('rawwish_sounds_enabled', e.target.checked);
+            // Play a test sound if enabled
+            if (e.target.checked && typeof playSuccessSound === 'function') {
+                playSuccessSound();
+            }
+        });
+
+        hapticToggle.addEventListener('change', (e) => {
+            localStorage.setItem('rawwish_haptics_enabled', e.target.checked);
+            // Play a test haptic if enabled
+            if (e.target.checked && navigator.vibrate) {
+                navigator.vibrate([20, 30, 20]);
+            }
+        });
+    });
+</script>
+{% endblock %}

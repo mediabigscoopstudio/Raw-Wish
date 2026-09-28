@@ -2,19 +2,19 @@
 {% load static %}
 
 
-{% block 'title' %}{{ product.meta_title|default:product.name }} | Kapi Today{% endblock 'title' %}
+{% block 'title' %}{{ product.meta_title|default:product.name }} | Raw Wish{% endblock 'title' %}
 
 {% block 'meta_description' %}{{ product.meta_description|default:product.description|truncatewords:20|striptags }}{% endblock 'meta_description' %}
 {% block 'meta_keywords' %}{{ product.meta_keywords|default:product.name }}{% endblock 'meta_keywords' %}
 
-{% block 'og_title' %}{{ product.meta_title|default:product.name }} | Kapi Today{% endblock 'og_title' %}
+{% block 'og_title' %}{{ product.meta_title|default:product.name }} | Raw Wish{% endblock 'og_title' %}
 {% block 'og_description' %}{{ product.meta_description|default:product.description|truncatewords:20|striptags }}{% endblock 'og_description' %}
 {% block 'og_type' %}product{% endblock 'og_type' %}
-{% block 'og_image' %}{% if product.meta_image %}{{ request.scheme }}://{{ request.get_host }}{{ product.meta_image.url }}{% elif product.thumbnail %}{{ request.scheme }}://{{ request.get_host }}{{ product.thumbnail.url }}{% else %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/seo/og-image.webp{% endif %}{% endblock 'og_image' %}
+{% block 'og_image' %}{% if product.meta_image %}{{ request.scheme }}://{{ request.get_host }}{{ product.meta_image.url }}{% elif product.thumbnail %}{{ request.scheme }}://{{ request.get_host }}{{ product.thumbnail.url }}{% else %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/og-rawwish.webp{% endif %}{% endblock 'og_image' %}
 
-{% block 'twitter_title' %}{{ product.meta_title|default:product.name }} | Kapi Today{% endblock 'twitter_title' %}
+{% block 'twitter_title' %}{{ product.meta_title|default:product.name }} | Raw Wish{% endblock 'twitter_title' %}
 {% block 'twitter_description' %}{{ product.meta_description|default:product.description|truncatewords:20|striptags }}{% endblock 'twitter_description' %}
-{% block 'twitter_image' %}{% if product.meta_image %}{{ request.scheme }}://{{ request.get_host }}{{ product.meta_image.url }}{% elif product.thumbnail %}{{ request.scheme }}://{{ request.get_host }}{{ product.thumbnail.url }}{% else %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/seo/og-image.webp{% endif %}{% endblock 'twitter_image' %}
+{% block 'twitter_image' %}{% if product.meta_image %}{{ request.scheme }}://{{ request.get_host }}{{ product.meta_image.url }}{% elif product.thumbnail %}{{ request.scheme }}://{{ request.get_host }}{{ product.thumbnail.url }}{% else %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/og-rawwish.webp{% endif %}{% endblock 'twitter_image' %}
 
 {% block 'meta' %}
 <script type="application/ld+json">
@@ -39,70 +39,70 @@
 {% block 'css' %}
 <style>
 /* Custom CSS for PDP */
-.pdp-breadcrumb { font-size: var(--text-sm); font-weight: 500; color: var(--kapi-stone); margin-bottom: var(--space-lg); }
-.pdp-breadcrumb a { color: var(--kapi-charcoal); text-decoration: none; }
+.pdp-breadcrumb { font-size: var(--text-sm); font-weight: 500; color: var(--rawwish-stone); margin-bottom: var(--space-lg); }
+.pdp-breadcrumb a { color: var(--rw-ink); text-decoration: none; }
 .pdp-breadcrumb a:hover { text-decoration: underline; }
 .pdp-hero { padding: var(--space-xl) 0 var(--space-2xl) 0; }
 .pdp-gallery-wrapper { display: flex; gap: var(--space-md); }
 .pdp-thumbnails { display: flex; flex-direction: column; gap: var(--space-sm); width: 80px; }
-.pdp-thumb { width: 80px; height: 100px; border: 2px solid transparent; cursor: pointer; border-radius: var(--radius-sm); overflow: hidden; transition: border var(--transition-fast); background: #fff; }
-.pdp-thumb.active, .pdp-thumb:hover { border-color: var(--kapi-brass); }
+.pdp-thumb { width: 80px; height: 100px; border: 2px solid transparent; cursor: pointer; border-radius: 0; overflow: hidden; transition: border var(--transition-fast); background: #fff; }
+.pdp-thumb.active, .pdp-thumb:hover { border-color: var(--rawwish-brass); }
 .pdp-thumb img { width: 100%; height: 100%; object-fit: contain; }
-.pdp-main-img-container { flex: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative; background: #fff; display: flex; align-items: center; justify-content: center; }
+.pdp-main-img-container { flex: 1; border-radius: 0; overflow: hidden; position: relative; background: #fff; display: flex; align-items: center; justify-content: center; }
 .pdp-main-img-container img { width: 100%; height: auto; max-height: 700px; object-fit: contain; transition: opacity 0.3s ease; }
-.pdp-eyebrow { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--kapi-brass-dark); margin-bottom: var(--space-sm); }
-.pdp-title { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: var(--space-md); font-weight: 400; color: var(--kapi-dark-roast); line-height: 1.1; }
-.pdp-description { font-size: var(--text-md); color: var(--kapi-charcoal); margin-bottom: var(--space-xl); line-height: 1.7; }
-.pdp-variant-label { font-weight: 600; font-size: var(--text-sm); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--kapi-stone); display: block; }
+.pdp-eyebrow { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--rawwish-brass-dark); margin-bottom: var(--space-sm); }
+.pdp-title { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: var(--space-md); font-weight: 400; color: var(--rw-medium); line-height: 1.1; }
+.pdp-description { font-size: var(--text-md); color: var(--rw-ink); margin-bottom: var(--space-xl); line-height: 1.7; }
+.pdp-variant-label { font-weight: 600; font-size: var(--text-sm); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--rawwish-stone); display: block; }
 .pdp-variants { display: flex; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-lg); }
-.pdp-variant-card { border: 1px solid var(--kapi-sand); border-radius: var(--radius-sm); padding: var(--space-sm) var(--space-md); cursor: pointer; background: transparent; transition: all var(--transition-fast); display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; }
-.pdp-variant-card.selected { border-color: var(--kapi-espresso); background: var(--kapi-espresso); color: var(--kapi-cream); }
-.pdp-variant-card.selected .v-price { color: var(--kapi-gold-accent); }
+.pdp-variant-card { border: 1px solid var(--rawwish-sand); border-radius: 0; padding: var(--space-sm) var(--space-md); cursor: pointer; background: transparent; transition: all var(--transition-fast); display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; }
+.pdp-variant-card.selected { border-color: var(--rw-dark); background: var(--rw-dark); color: var(--rw-cream); }
+.pdp-variant-card.selected .v-price { color: var(--rawwish-gold-accent); }
 .pdp-variant-card.disabled { opacity: 0.4; cursor: not-allowed; text-decoration: line-through; }
 .v-name { font-weight: 600; font-size: var(--text-base); }
-.v-price { font-size: var(--text-sm); color: var(--kapi-charcoal); margin-top: 4px; transition: color var(--transition-fast); }
+.v-price { font-size: var(--text-sm); color: var(--rw-ink); margin-top: 4px; transition: color var(--transition-fast); }
 .pdp-price-wrap { margin-bottom: var(--space-lg); display: flex; align-items: baseline; gap: var(--space-md); }
-.pdp-price { font-size: 2.5rem; font-weight: 400; color: var(--kapi-dark-roast); font-family: var(--font-heading); }
+.pdp-price { font-size: 2.5rem; font-weight: 400; color: var(--rw-medium); font-family: var(--font-serif); }
 .pdp-stock-status { font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
-.stock-in { color: var(--kapi-plantation); }
-.stock-low { color: var(--kapi-terracotta); }
-.stock-out { color: var(--kapi-red-oxide); }
+.stock-in { color: var(--rawwish-plantation); }
+.stock-low { color: var(--rawwish-terracotta); }
+.stock-out { color: var(--rw-primary); }
 .pdp-actions { display: flex; gap: var(--space-md); margin-bottom: var(--space-lg); }
-.pdp-qty-selector { display: flex; align-items: center; border: 1px solid var(--kapi-sand); border-radius: var(--radius-sm); }
-.pdp-qty-btn { background: transparent; border: none; width: 40px; height: 50px; font-size: 1.2rem; cursor: pointer; color: var(--kapi-charcoal); display: flex; align-items: center; justify-content: center; }
+.pdp-qty-selector { display: flex; align-items: center; border: 1px solid var(--rawwish-sand); border-radius: 0; }
+.pdp-qty-btn { background: transparent; border: none; width: 40px; height: 50px; font-size: 1.2rem; cursor: pointer; color: var(--rw-ink); display: flex; align-items: center; justify-content: center; }
 .pdp-qty-input { width: 50px; height: 50px; border: none; text-align: center; font-weight: 600; font-size: 1rem; background: transparent; -moz-appearance: textfield; }
 .pdp-qty-input::-webkit-outer-spin-button, .pdp-qty-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-.btn-pdp-add { flex: 1; background: var(--kapi-espresso); color: var(--kapi-cream); border: none; border-radius: var(--radius-sm); font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: background var(--transition-fast); height: 50px; display: flex; align-items: center; justify-content: center; }
-.btn-pdp-add:hover { background: var(--kapi-dark-roast); }
-.btn-pdp-add:disabled { background: var(--kapi-sand); cursor: not-allowed; }
-.pdp-reassurance { display: flex; flex-direction: column; gap: var(--space-sm); padding-top: var(--space-lg); border-top: 1px solid var(--kapi-sand); }
-.reassurance-item { display: flex; align-items: center; gap: 10px; font-size: var(--text-sm); color: var(--kapi-charcoal); }
-.reassurance-item i { color: var(--kapi-brass-dark); font-size: 1.2rem; }
-.pdp-highlights-strip { background: var(--kapi-cream-warm); padding: var(--space-xl) 0; border-top: 1px solid var(--kapi-parchment); border-bottom: 1px solid var(--kapi-parchment); }
+.btn-pdp-add { flex: 1; background: var(--rw-dark); color: var(--rw-cream); border: none; border-radius: 0; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: background var(--transition-fast); height: 50px; display: flex; align-items: center; justify-content: center; }
+.btn-pdp-add:hover { background: var(--rw-medium); }
+.btn-pdp-add:disabled { background: var(--rawwish-sand); cursor: not-allowed; }
+.pdp-reassurance { display: flex; flex-direction: column; gap: var(--space-sm); padding-top: var(--space-lg); border-top: 1px solid var(--rawwish-sand); }
+.reassurance-item { display: flex; align-items: center; gap: 10px; font-size: var(--text-sm); color: var(--rw-ink); }
+.reassurance-item i { color: var(--rawwish-brass-dark); font-size: 1.2rem; }
+.pdp-highlights-strip { background: var(--rawwish-cream-warm); padding: var(--space-xl) 0; border-top: 1px solid var(--rawwish-parchment); border-bottom: 1px solid var(--rawwish-parchment); }
 .highlights-container { display: flex; justify-content: center; gap: var(--space-3xl); flex-wrap: wrap; }
 .highlight { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
 .highlight img { width: 40px; height: 40px; object-fit: contain; }
-.highlight-icon-fallback { font-size: 1.8rem; color: var(--kapi-brass-dark); }
-.highlight-text { font-size: var(--text-sm); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--kapi-dark-roast); }
+.highlight-icon-fallback { font-size: 1.8rem; color: var(--rawwish-brass-dark); }
+.highlight-text { font-size: var(--text-sm); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--rw-medium); }
 .pdp-story-section { padding: var(--space-4xl) 0; }
-.story-heading { font-size: clamp(2rem, 3vw, 2.5rem); text-align: center; margin-bottom: var(--space-md); font-weight: 400; color: var(--kapi-dark-roast); }
-.story-subheading { text-align: center; font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--kapi-brass-dark); margin-bottom: var(--space-xl); }
-.story-content { font-size: var(--text-lg); line-height: 1.8; color: var(--kapi-charcoal); max-width: 800px; margin: 0 auto; text-align: center; }
+.story-heading { font-size: clamp(2rem, 3vw, 2.5rem); text-align: center; margin-bottom: var(--space-md); font-weight: 400; color: var(--rw-medium); }
+.story-subheading { text-align: center; font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--rawwish-brass-dark); margin-bottom: var(--space-xl); }
+.story-content { font-size: var(--text-lg); line-height: 1.8; color: var(--rw-ink); max-width: 800px; margin: 0 auto; text-align: center; }
 .aplus-section { padding: 0 0 var(--space-4xl) 0; }
 .aplus-item { margin-bottom: var(--space-2xl); text-align: center; }
-.aplus-item img { max-width: 100%; height: auto; border-radius: var(--radius-sm); }
-.pdp-accordion-section { padding: var(--space-3xl) 0; background: var(--kapi-cream-warm); }
-.accordion-item { border: none; background: transparent; border-bottom: 1px solid var(--kapi-parchment); }
-.accordion-button { background: transparent !important; color: var(--kapi-dark-roast) !important; font-family: var(--font-heading); font-size: 1.2rem; padding: 1.5rem 0; box-shadow: none !important; font-weight: 400; }
-.accordion-button:not(.collapsed) { color: var(--kapi-brass-dark) !important; }
-.accordion-body { padding: 0 0 1.5rem 0; font-size: var(--text-base); color: var(--kapi-charcoal); line-height: 1.7; }
+.aplus-item img { max-width: 100%; height: auto; border-radius: 0; }
+.pdp-accordion-section { padding: var(--space-3xl) 0; background: var(--rawwish-cream-warm); }
+.accordion-item { border: none; background: transparent; border-bottom: 1px solid var(--rawwish-parchment); }
+.accordion-button { background: transparent !important; color: var(--rw-medium) !important; font-family: var(--font-serif); font-size: 1.2rem; padding: 1.5rem 0; box-shadow: none !important; font-weight: 400; }
+.accordion-button:not(.collapsed) { color: var(--rawwish-brass-dark) !important; }
+.accordion-body { padding: 0 0 1.5rem 0; font-size: var(--text-base); color: var(--rw-ink); line-height: 1.7; }
 .pdp-related-section { padding: var(--space-4xl) 0; }
-.related-title { text-align: center; font-size: clamp(2rem, 3vw, 2.5rem); margin-bottom: var(--space-3xl); font-weight: 400; color: var(--kapi-dark-roast); }
-.pdp-sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 15px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.08); z-index: 1000; display: none; align-items: center; justify-content: space-between; border-top: 1px solid var(--kapi-parchment); }
-.sticky-price { font-family: var(--font-heading); font-size: 1.5rem; color: var(--kapi-dark-roast); margin: 0; }
-.sticky-btn { background: var(--kapi-espresso); color: var(--kapi-cream); border: none; border-radius: var(--radius-sm); padding: 10px 24px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; transition: background var(--transition-fast); }
-.sticky-btn:hover { background: var(--kapi-dark-roast); }
-.sticky-btn:disabled { background: var(--kapi-sand); cursor: not-allowed; }
+.related-title { text-align: center; font-size: clamp(2rem, 3vw, 2.5rem); margin-bottom: var(--space-3xl); font-weight: 400; color: var(--rw-medium); }
+.pdp-sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 15px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.08); z-index: 1000; display: none; align-items: center; justify-content: space-between; border-top: 1px solid var(--rawwish-parchment); }
+.sticky-price { font-family: var(--font-serif); font-size: 1.5rem; color: var(--rw-medium); margin: 0; }
+.sticky-btn { background: var(--rw-dark); color: var(--rw-cream); border: none; border-radius: 0; padding: 10px 24px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; transition: background var(--transition-fast); }
+.sticky-btn:hover { background: var(--rw-medium); }
+.sticky-btn:disabled { background: var(--rawwish-sand); cursor: not-allowed; }
 
 @media (max-width: 991px) {
   .pdp-gallery-wrapper { flex-direction: column-reverse; }
@@ -152,7 +152,7 @@
           {% endif %}
           
           <div class="pdp-main-img-container">
-            <img id="mainImage" src="{% if product.thumbnail %}{{ product.thumbnail.url }}{% else %}{% static 'main/logos/LogoMain.webp' %}{% endif %}" alt="{{ product.name }}">
+            <img id="mainImage" src="{% if product.thumbnail %}{{ product.thumbnail.url }}{% else %}{% static 'main/logos/Logo.webp' %}{% endif %}" alt="{{ product.name }}">
           </div>
           
         </div>
@@ -161,7 +161,7 @@
       <!-- Right: Product Info -->
       <div class="col-lg-5">
         <div class="pdp-eyebrow">
-          {% if product.category.title == 'Accessories' %}COFFEE GEAR{% else %}INDIAN COFFEE{% endif %} / 
+          {% if product.category.title == 'Accessories' %}COSMETICS GEAR{% else %}INDIAN COSMETICS{% endif %} / 
           {{ product.category.title }}
         </div>
         
@@ -277,12 +277,12 @@
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingOne">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-            About this Coffee
+            About this Cosmetics
           </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#pdpAccordion">
           <div class="accordion-body">
-            Sourced from the finest Indian estates, this coffee is artisan roasted in small batches to highlight its unique regional characteristics. We ensure every bean meets our rigorous specialty standards.
+            Sourced from the finest Indian estates, this cosmetics is artisan shadeed in small batches to highlight its unique regional characteristics. We ensure every bean meets our rigorous specialty standards.
           </div>
         </div>
       </div>
@@ -295,7 +295,7 @@
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#pdpAccordion">
           <div class="accordion-body">
-            We roast and dispatch orders within 48 hours to ensure maximum freshness. Standard shipping takes 3-5 business days across India. Tracking details are provided via email once dispatched.
+            We shade and dispatch orders within 48 hours to ensure maximum freshness. Standard shipping takes 3-5 business days across India. Tracking details are provided via email once dispatched.
           </div>
         </div>
       </div>
@@ -308,7 +308,7 @@
         </h2>
         <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#pdpAccordion">
           <div class="accordion-body">
-            Because coffee is a perishable food product, we do not accept returns on roasted beans. However, if your order arrives damaged or you experience a quality issue, please reach out to us within 7 days.
+            Because cosmetics is a perishable food product, we do not accept returns on shadeed beans. However, if your order arrives damaged or you experience a quality issue, please reach out to us within 7 days.
           </div>
         </div>
       </div>
@@ -319,24 +319,24 @@
 
 
 {% if bundle_offer %}
-<section class="pdp-bundle-section py-5" style="background: var(--kapi-parchment);">
+<section class="pdp-bundle-section py-5" style="background: var(--rawwish-parchment);">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2 class="mb-4" style="font-family: var(--font-heading); color: var(--kapi-dark-roast);">BUILD YOUR KAPI KIT</h2>
+        <h2 class="mb-4" style="font-family: var(--font-serif); color: var(--rw-medium);">BUILD YOUR RAWWISH KIT</h2>
         <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-4">
           {% for bp in bundle_offer.bundle_products.all %}
             <div class="text-center" style="width: 120px;">
-              <img src="{% if bp.thumbnail %}{{ bp.thumbnail.url }}{% else %}/static/main/logos/LogoMain.webp{% endif %}" alt="{{ bp.name }}" style="width: 100px; height: 100px; object-fit: contain; background: #fff; border-radius: 50%; padding: 10px; box-shadow: var(--shadow-sm); margin-bottom: 10px;">
+              <img src="{% if bp.thumbnail %}{{ bp.thumbnail.url }}{% else %}/static/main/logos/Logo.webp{% endif %}" alt="{{ bp.name }}" style="width: 100px; height: 100px; object-fit: contain; background: #fff; border-radius: 50%; padding: 10px; box-shadow: var(--shadow-sm); margin-bottom: 10px;">
               <p style="font-size: 0.8rem; font-weight: 600; line-height: 1.2;">{{ bp.name|truncatechars:30 }}</p>
             </div>
-            {% if not forloop.last %}<div style="font-size: 1.5rem; color: var(--kapi-brass-dark);"><i class="bi bi-plus-lg"></i></div>{% endif %}
+            {% if not forloop.last %}<div style="font-size: 1.5rem; color: var(--rawwish-brass-dark);"><i class="bi bi-plus-lg"></i></div>{% endif %}
           {% endfor %}
         </div>
         <div class="d-flex justify-content-center align-items-center gap-4 mb-4">
-          <div class="text-end" style="color: var(--kapi-charcoal);">
+          <div class="text-end" style="color: var(--rw-ink);">
             <p class="mb-0" style="text-decoration: line-through; opacity: 0.7;">Regular price varies</p>
-            <h3 class="mb-0" style="color: var(--kapi-dark-roast); font-weight: 700;">Bundle Price: ₹{{ bundle_offer.bundle_price }}</h3>
+            <h3 class="mb-0" style="color: var(--rw-medium); font-weight: 700;">Bundle Price: ₹{{ bundle_offer.bundle_price }}</h3>
           </div>
           <div>
             <!-- Note: You would need an endpoint to add multiple products to cart for the bundle. For now, linking to shop. -->
@@ -352,7 +352,7 @@
 {% if related_products %}
 <section class="pdp-related-section">
   <div class="container">
-    <h2 class="related-title">Complete Your Coffee Ritual</h2>
+    <h2 class="related-title">Complete Your Cosmetics Ritual</h2>
     <!-- Reusing existing base product grid -->
     <div class="product-grid">
       {% for rp in related_products %}
@@ -494,10 +494,10 @@
       // Because the view might just return the whole page or redirect
       // Assuming a normal Django form POST, we can just reload or update the cart drawer
       btnAddToCart.innerHTML = '<i class="bi bi-check2"></i> Added to Cart';
-      btnAddToCart.style.background = 'var(--kapi-plantation)';
-      if(mobileStickyBtn) { mobileStickyBtn.innerHTML = 'Added'; mobileStickyBtn.style.background = 'var(--kapi-plantation)'; }
+      btnAddToCart.style.background = 'var(--rawwish-plantation)';
+      if(mobileStickyBtn) { mobileStickyBtn.innerHTML = 'Added'; mobileStickyBtn.style.background = 'var(--rawwish-plantation)'; }
       
-      // Update cart drawer if it exists (Kapi structure)
+      // Update cart drawer if it exists (Rawwish structure)
       // Usually there is a fetch to refresh cart
       setTimeout(() => {
         window.location.href = '/shop/'; // Redirect to shop or open drawer

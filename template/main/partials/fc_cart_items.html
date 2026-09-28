@@ -2,7 +2,7 @@
 {% if cart_items %}
     {% for item in cart_items %}
     <div class="fc-cart-item">
-        <img src="{% if item.product.thumbnail %}{{ item.product.thumbnail.url }}{% else %}{% static 'main/logos/LogoMain.webp' %}{% endif %}" class="fc-cart-img" alt="{{ item.product.name }}">
+        <img src="{% if item.product.thumbnail %}{{ item.product.thumbnail.url }}{% else %}{% static 'main/logos/Logo.webp' %}{% endif %}" class="fc-cart-img" alt="{{ item.product.name }}">
         <div class="fc-cart-details">
             <div class="fc-cart-title">{{ item.product.name }}</div>
             <div class="fc-cart-meta">{% if item.variant %}{{ item.variant.name }}{% else %}250g{% endif %}</div>
@@ -34,7 +34,7 @@
         {% for rec in recommended %}
         <div style="background:#fff; border:1px solid #eee; border-radius:10px; overflow:hidden; position:relative; display:flex; flex-direction:column;">
             <div style="aspect-ratio: 1; width: 100%; background: #f9f9f9;">
-                <img src="{% if rec.thumbnail %}{{ rec.thumbnail.url }}{% else %}{% static 'main/logos/LogoMain.webp' %}{% endif %}" style="width:100%; height:100%; object-fit:cover;" alt="{{ rec.name }}">
+                <img src="{% if rec.thumbnail %}{{ rec.thumbnail.url }}{% else %}{% static 'main/logos/Logo.webp' %}{% endif %}" style="width:100%; height:100%; object-fit:cover;" alt="{{ rec.name }}">
             </div>
             <div style="padding: 10px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                 <div style="font-weight:600; font-size:0.85rem; color:#3A2A1D; line-height: 1.2; margin-bottom: 5px;">{{ rec.name|truncatechars:35 }}</div>

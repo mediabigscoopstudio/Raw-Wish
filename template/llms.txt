@@ -1,0 +1,9 @@
+Title: Rawwish
+Description: Rawwish is a premium cosmetics and beauty essentials brand focusing on clean ingredients, pure formulation, and high-performance beauty without compromise. We feature products infused with Coffee Extract, Raw Shea Butter, Aloe Vera, and Turmeric.
+URLs:
+- https://www.rawwish.shop/
+- https://www.rawwish.shop/about/
+- https://www.rawwish.shop/ingredients/
+- https://www.rawwish.shop/shop/
+
+Products are categorized into beauty essentials, lip care, body care, and face serums.

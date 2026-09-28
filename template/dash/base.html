@@ -54,6 +54,12 @@
                                         <h6 class="text-overflow m-0">Welcome !</h6>
                                     </div>
 
+                                    
+                                    <!-- item-->
+                                    <a href="{% url 'settings_view' %}" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-cog fs-16 align-middle"></i>
+                                        <span>Settings</span>
+                                    </a>
                                     <!-- item-->
                                     <a href="/logout_view" class="dropdown-item notify-item">
                                         <i class="mdi mdi-location-exit fs-16 align-middle"></i>
@@ -71,92 +77,99 @@
                     <!--- Sidemenu -->
 <div id="sidebar-menu">
 
-    <div class="logo-box">
+        <div class="logo-box">
         <a href="/" class="logo logo-light">
             <span class="logo-sm">
-                <img src="/static/dash/assets/Logos/LogoDark.webp" alt="" height="70">
+                <img src="/static/dash/assets/Logos/LogoDark.webp" alt="" height="45">
             </span>
             <span class="logo-lg">
-                <img src="/static/dash/assets/Logos/LogoDark.webp" alt="" height="70">
+                <img src="/static/dash/assets/Logos/LogoDark.webp" alt="" height="45">
             </span>
         </a>
         <a href="/" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="/static/dash/assets/Logos/LogoMain.webp" alt="" height="70">
+                <img src="/static/dash/assets/Logos/LogoMain.webp" alt="" height="45">
             </span>
             <span class="logo-lg">
-                <img src="/static/dash/assets/Logos/LogoMain.webp" alt="" height="70">
+                <img src="/static/dash/assets/Logos/LogoMain.webp" alt="" height="45">
             </span>
         </a>
     </div>
 
     <ul id="side-menu">
 
-        <li class="menu-title">Orders</li>
-
+        <li class="menu-title">Command Center</li>
         <li>
-            <a href="/" class="tp-link">
-                <i data-feather="shopping-cart"></i>
-                <span> Orders </span>
+            <a href="{% url 'index' %}" class="tp-link">
+                <i data-feather="activity"></i>
+                <span> Dashboard </span>
             </a>
         </li>
-
         <li>
-            <a href="/intelligence" class="tp-link">
-                <svg width="20" height="20" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <linearGradient id="geminiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#c8882a;stop-opacity:1" />
-            <stop offset="50%" style="stop-color:#f5c842;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#c8882a;stop-opacity:1" />
-        </linearGradient>
-    </defs>
-    <path d="M14 2C14 2 16.5 10 24 14C16.5 18 14 26 14 26C14 26 11.5 18 4 14C11.5 10 14 2 14 2Z" fill="url(#geminiGrad)"/>
-</svg>
+            <a href="{% url 'intelligence' %}" class="tp-link">
+                <i data-feather="pie-chart"></i>
                 <span> Intelligence </span>
             </a>
         </li>
 
-        <li class="menu-title">Inventory</li>
-
+        <li class="menu-title">Commerce</li>
         <li>
-            <a href="/category" class="tp-link">
-                <i data-feather="grid"></i>
-                <span> Category </span>
+            <a href="{% url 'orders_kanban' %}" class="tp-link">
+                <i data-feather="shopping-cart"></i>
+                <span> Orders </span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'customers' %}" class="tp-link">
+                <i data-feather="users"></i>
+                <span> Customers </span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'support_kanban' %}" class="tp-link">
+                <i data-feather="headphones"></i>
+                <span> Support </span>
             </a>
         </li>
 
+        <li class="menu-title">Catalogue</li>
         <li>
-            <a href="/sub_category_list" class="tp-link">
+            <a href="{% url 'category' %}" class="tp-link">
+                <i data-feather="grid"></i>
+                <span> Categories </span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'sub_category_list' %}" class="tp-link">
                 <i data-feather="layers"></i>
                 <span> Sub Categories </span>
             </a>
         </li>
-
         <li>
-            <a href="/products" class="tp-link">
+            <a href="{% url 'product' %}" class="tp-link">
                 <i data-feather="package"></i>
                 <span> Products </span>
             </a>
         </li>
 
+        <li class="menu-title">Marketing</li>
         <li>
-            <a href="/product_manager" class="tp-link">
-                <i data-feather="clipboard"></i>
-                <span> Product Manager </span>
+            <a href="{% url 'offers' %}" class="tp-link">
+                <i data-feather="tag"></i>
+                <span> Offers </span>
             </a>
         </li>
 
-                <li class="menu-title">Content</li>
+        <li class="menu-title">Content</li>
         <li>
             <a href="{% url 'article_category_list' %}" class="tp-link">
                 <i data-feather="folder"></i>
-                <span> Article Categories </span>
+                <span> Categories </span>
             </a>
         </li>
         <li>
             <a href="{% url 'author_list' %}" class="tp-link">
-                <i data-feather="users"></i>
+                <i data-feather="user"></i>
                 <span> Authors </span>
             </a>
         </li>
@@ -167,34 +180,9 @@
             </a>
         </li>
 
-<li class="menu-title">Marketing</li>
-
-        <li>
-            <a href="/offers" class="tp-link">
-                <i data-feather="tag"></i>
-                <span> Offers </span>
-            </a>
-        </li>
-
-        <li>
-            <a href="/customers" class="tp-link">
-                <i data-feather="users"></i>
-                <span> Customers </span>
-            </a>
-        </li>
-
-        <li>
-            <a href="{% url 'support_kanban' %}" class="tp-link">
-                <i data-feather="headphones"></i>
-                <span> Support </span>
-            </a>
-        </li>
-
     </ul>
-
 </div>
-
-                    <div class="clearfix"></div>
+<div class="clearfix"></div>
 
                 </div>
             </div>

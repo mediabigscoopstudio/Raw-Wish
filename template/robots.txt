@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /my-orders/
+Disallow: /api/
+Disallow: /checkout/
 
-Sitemap: https://www.kapitoday.shop/sitemap.xml
+Sitemap: https://www.rawwish.shop/sitemap.xml

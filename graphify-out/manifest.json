@@ -77,37 +77,37 @@
     "ast_hash": "00e92d902f1fe799ea2d72a85840d216",
     "semantic_hash": "00e92d902f1fe799ea2d72a85840d216"
   },
-  "kapitoday/__init__.py": {
+  "rawwish/__init__.py": {
     "mtime": 1790185315.703386,
     "seen": 1790187179.387402,
     "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
-  "kapitoday/asgi.py": {
+  "rawwish/asgi.py": {
     "mtime": 1790185315.704684,
     "seen": 1790187179.387403,
     "ast_hash": "de7d2f44e0358743d1d54eeef95e837c",
     "semantic_hash": "de7d2f44e0358743d1d54eeef95e837c"
   },
-  "kapitoday/hosts.py": {
+  "rawwish/hosts.py": {
     "mtime": 1790185315.7047946,
     "seen": 1790187179.387404,
     "ast_hash": "d562c1d3a213e56e2a844410ff984ce2",
     "semantic_hash": "d562c1d3a213e56e2a844410ff984ce2"
   },
-  "kapitoday/settings.py": {
+  "rawwish/settings.py": {
     "mtime": 1790185315.7049298,
     "seen": 1790187179.3874052,
     "ast_hash": "f6136da565b5aeed13a63d530e4738dc",
     "semantic_hash": "f6136da565b5aeed13a63d530e4738dc"
   },
-  "kapitoday/urls.py": {
+  "rawwish/urls.py": {
     "mtime": 1790185315.7050467,
     "seen": 1790187179.3874052,
     "ast_hash": "13c0cf52c375ac36300eb41daef91044",
     "semantic_hash": "13c0cf52c375ac36300eb41daef91044"
   },
-  "kapitoday/wsgi.py": {
+  "rawwish/wsgi.py": {
     "mtime": 1790185315.7051466,
     "seen": 1790187179.387406,
     "ast_hash": "5b9919d986c4c4a5adef7cf03121c2b9",

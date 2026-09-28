@@ -57,6 +57,22 @@ class SubCategory(models.Model):
         return f"{self.category.title} > {self.title}"
 
 
+
+class ProductAttribute(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    
+    def __str__(self):
+        return self.name
+
+class ProductAttributeValue(models.Model):
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='attributes')
+    attribute = models.ForeignKey(ProductAttribute, on_delete=models.CASCADE)
+    value = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return f"{self.product.name} - {self.attribute.name}: {self.value}"
+
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='product_category')
     sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name='product_sub_category', null=True, blank=True)
@@ -83,6 +99,19 @@ class Product(models.Model):
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_images')
     image = models.ImageField(upload_to='product_images/')
+    IMAGE_TYPES = [
+        ('Primary', 'Primary'),
+        ('Gallery', 'Gallery'),
+        ('Lifestyle', 'Lifestyle'),
+        ('Shade Swatch', 'Shade Swatch'),
+        ('Ingredients', 'Ingredients'),
+        ('How To Use', 'How To Use'),
+        ('Texture', 'Texture'),
+        ('Packaging', 'Packaging')
+    ]
+    image_type = models.CharField(max_length=50, choices=IMAGE_TYPES, default='Gallery')
+    display_order = models.PositiveIntegerField(default=0)
+
     alt_text = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
@@ -96,6 +125,14 @@ class Variant(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     gst = models.DecimalField(max_digits=5, decimal_places=2)
     image = models.ImageField(upload_to='variant_images/', null=True, blank=True)
+    # Cosmetics Variant enhancements
+    shade_name = models.CharField(max_length=255, blank=True, null=True)
+    shade_code = models.CharField(max_length=50, blank=True, null=True)
+    shade_family = models.CharField(max_length=100, blank=True, null=True)
+    shade_hex = models.CharField(max_length=7, blank=True, null=True)
+    volume = models.CharField(max_length=50, blank=True, null=True)
+    pack_size = models.CharField(max_length=50, blank=True, null=True)
+
     status = models.CharField(max_length=255,default="Disabled")
 
     # ── Shipping Dimensions (required for Shiprocket) ──
@@ -379,7 +416,7 @@ class OrderItem(models.Model):
 # CONTENT MANAGEMENT SYSTEM
 # Reference: Corporate Impact — github.com/mediabigscoopstudio/Corporate-Impact
 #
-# NOTE: Kapi Today already contains a 'Category' model used for
+# NOTE: Raw Wish already contains a 'Category' model used for
 # e-commerce products.  The content-management category is named
 # 'ArticleCategory' here to avoid any collision with that model.
 # Field names and behaviour are otherwise a faithful port of the
@@ -680,7 +717,7 @@ class SupportQuery(models.Model):
     def save(self, *args, **kwargs):
         if not self.support_id:
             seq = SequenceCounter.get_next_value('support_queries')
-            self.support_id = f"#{seq:04d}KTCS"
+            self.support_id = f"#{seq:04d}RWCS"
         super().save(*args, **kwargs)
 
 
@@ -701,3 +738,23 @@ class SupportMessage(models.Model):
 
     def __str__(self):
         return f"Message on {self.support_query.support_id} by {self.sender_type}"
+
+class Wishlist(models.Model):
+    customer = models.ForeignKey(Customers, on_delete=models.CASCADE, null=True, blank=True, related_name='wishlists')
+    session_key = models.CharField(max_length=255, null=True, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"Wishlist for {self.customer if self.customer else self.session_key}"
+
+class WishlistItem(models.Model):
+    wishlist = models.ForeignKey(Wishlist, on_delete=models.CASCADE, related_name='wishlist_items')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    variant = models.ForeignKey(Variant, on_delete=models.SET_NULL, null=True, blank=True)
+    added_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        unique_together = ('wishlist', 'product', 'variant')
+
+    def __str__(self):
+        return f"{self.product.name} in Wishlist"

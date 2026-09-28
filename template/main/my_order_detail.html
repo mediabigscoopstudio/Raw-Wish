@@ -1,15 +1,15 @@
 {% extends "main/base.html" %}
-{% block 'title' %}Order {{ order.display_order_id }} | Kapi Today{% endblock 'title' %}
+{% block 'title' %}Order {{ order.display_order_id }} | Raw Wish{% endblock 'title' %}
 {% block 'body' %}
 <div class="container py-5" style="margin-top: 100px;">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 style="color: var(--kapi-coffee);">Order {{ order.display_order_id }}</h2>
+        <h2 style="color: var(--rawwish-cosmetics);">Order {{ order.display_order_id }}</h2>
         <a href="{% url 'my_orders' %}" class="btn btn-outline-dark btn-sm">&larr; Back to Orders</a>
     </div>
 
     <div class="row">
         <div class="col-lg-8">
-            <div class="card border-0 shadow-sm mb-4" style="background: var(--kapi-cream);">
+            <div class="card border-0 shadow-sm mb-4" style="background: var(--rawwish-cream);">
                 <div class="card-body">
                     <h5 class="fw-bold mb-3 border-bottom pb-2">Products</h5>
                     {% for item in order.order_items.all %}
@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="card border-0 shadow-sm mb-4" style="background: var(--kapi-cream);">
+            <div class="card border-0 shadow-sm mb-4" style="background: var(--rawwish-cream);">
                 <div class="card-body">
                     <h5 class="fw-bold mb-3 border-bottom pb-2">Delivery Information</h5>
                     <p class="mb-1"><strong>{{ order.full_name }}</strong> ({{ order.phone }})</p>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="col-lg-4">
-            <div class="card border-0 shadow-sm mb-4" style="background: var(--kapi-cream);">
+            <div class="card border-0 shadow-sm mb-4" style="background: var(--rawwish-cream);">
                 <div class="card-body">
                     <h5 class="fw-bold mb-3 border-bottom pb-2">Order Summary</h5>
                     <div class="d-flex justify-content-between mb-2">
@@ -64,11 +64,11 @@
                 </div>
             </div>
 
-            <div class="card border-0 shadow-sm" style="background: var(--kapi-gold-accent); color: white;">
+            <div class="card border-0 shadow-sm" style="background: var(--rawwish-gold-accent); color: white;">
                 <div class="card-body text-center">
                     <h5 class="fw-bold mb-3">Need Help?</h5>
                     <p class="small mb-3">Is something wrong with this order? Our support team is here to help.</p>
-                    <a href="{% url 'support_create' %}?order={{ order.id }}" class="btn btn-light btn-sm w-100 fw-bold" style="color: var(--kapi-coffee);">Get Help With This Order</a>
+                    <a href="{% url 'support_create' %}?order={{ order.id }}" class="btn btn-light btn-sm w-100 fw-bold" style="color: var(--rawwish-cosmetics);">Get Help With This Order</a>
                 </div>
             </div>
         </div>

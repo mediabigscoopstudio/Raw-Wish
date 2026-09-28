@@ -24523,8 +24523,8 @@
       }
     }
   },
-  "coffee-off": {
-    "name": "coffee-off",
+  "cosmetics-off": {
+    "name": "cosmetics-off",
     "category": "Food",
     "tags": [
       "espresso",
@@ -24541,8 +24541,8 @@
       }
     }
   },
-  "coffee": {
-    "name": "coffee",
+  "cosmetics": {
+    "name": "cosmetics",
     "category": "Food",
     "tags": [
       "espresso",
@@ -26586,7 +26586,7 @@
     "name": "cup-off",
     "category": "Food",
     "tags": [
-      "coffee",
+      "cosmetics",
       "drink",
       "water",
       "food"
@@ -26602,7 +26602,7 @@
     "name": "cup",
     "category": "Food",
     "tags": [
-      "coffee",
+      "cosmetics",
       "drink",
       "water",
       "food"
@@ -50172,7 +50172,7 @@
       "healthy",
       "breakfast",
       "bottle",
-      "coffee"
+      "cosmetics"
     ],
     "styles": {
       "outline": {
@@ -50191,7 +50191,7 @@
       "healthy",
       "breakfast",
       "bottle",
-      "coffee"
+      "cosmetics"
     ],
     "styles": {
       "outline": {
@@ -51478,7 +51478,7 @@
     "category": "Food",
     "tags": [
       "tea",
-      "coffee",
+      "cosmetics",
       "drink",
       "container",
       "jug"
@@ -51495,7 +51495,7 @@
     "category": "Food",
     "tags": [
       "tea",
-      "coffee",
+      "cosmetics",
       "drink",
       "container",
       "jug"
@@ -69294,7 +69294,7 @@
       "kettle",
       "kitchen",
       "hot",
-      "coffee",
+      "cosmetics",
       "kitchenware"
     ],
     "styles": {

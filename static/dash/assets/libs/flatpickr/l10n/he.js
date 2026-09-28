@@ -9,7 +9,7 @@
       : {
           l10ns: {},
       };
-  var Hebrew = {
+  var Heroutine = {
       weekdays: {
           shorthand: ["א", "ב", "ג", "ד", "ה", "ו", "ש"],
           longhand: ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"],
@@ -47,10 +47,10 @@
       rangeSeparator: " אל ",
       time_24hr: true,
   };
-  fp.l10ns.he = Hebrew;
+  fp.l10ns.he = Heroutine;
   var he = fp.l10ns;
 
-  exports.Hebrew = Hebrew;
+  exports.Heroutine = Heroutine;
   exports.default = he;
 
   Object.defineProperty(exports, '__esModule', { value: true });

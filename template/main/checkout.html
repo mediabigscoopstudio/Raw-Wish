@@ -1,10 +1,10 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-{% block 'title' %}Secure Checkout - Kapi Today{% endblock 'title' %}
+{% block 'title' %}Secure Checkout - Raw Wish{% endblock 'title' %}
 {% block 'meta' %}
-<meta name="description" content="Securely complete your purchase at Kapi Today. Get the freshest Indian coffee delivered directly to your doorstep.">
-<meta name="keywords" content="coffee checkout, buy coffee online, secure payment, Kapi Today">
+<meta name="description" content="Securely complete your purchase at Raw Wish. Get the freshest Indian cosmetics delivered directly to your doorstep.">
+<meta name="keywords" content="cosmetics checkout, buy cosmetics online, secure payment, Raw Wish">
 {% endblock 'meta' %}
 
 {% block 'body' %}
@@ -107,7 +107,7 @@
             <div class="order-items">
                 {% for item in cart_items %}
                 <div class="order-summary-item">
-                    <img src="{% if item.product.thumbnail %}{{ item.product.thumbnail.url }}{% else %}{% static 'main/logos/LogoMain.webp' %}{% endif %}" class="summary-img" alt="{{ item.product.name }}">
+                    <img src="{% if item.product.thumbnail %}{{ item.product.thumbnail.url }}{% else %}{% static 'main/logos/Logo.webp' %}{% endif %}" class="summary-img" alt="{{ item.product.name }}">
                     <div class="summary-details">
                         <h6>{{ item.product.name }}</h6>
                         <p>{% if item.variant %}{{ item.variant.title }}{% endif %} &times; {{ item.quantity }}</p>
@@ -197,9 +197,9 @@ document.getElementById('pay-btn').onclick = function(e) {
         "key": "{{ razorpay_merchant_key }}",
         "amount": "{{ amount }}",
         "currency": "INR",
-        "name": "Kapi Today",
-        "description": "Coffee Order",
-        "image": "{% static 'main/logos/Vector.webp' %}",
+        "name": "Raw Wish",
+        "description": "Cosmetics Order",
+        "image": "{% static 'main/logos/vector.webp' %}",
         "order_id": "{{ razorpay_order_id }}",
         "handler": function (response) {
             // Add address details to response

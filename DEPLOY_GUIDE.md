@@ -1,15 +1,15 @@
-# Kapi Today: VPS Deployment & Data Migration Guide
+# Raw Wish: VPS Deployment & Data Migration Guide
 
 This guide is meant for internal use to help you move your exact localhost database (with all the products, variants, and categories) and all uploaded images directly to your VPS.
 
 ## 1. Exporting Your Local Database
 Instead of re-running seed scripts and hoping everything matches, the safest and most exact way to copy your data is to create a JSON dump of your local database.
 
-Run this command on your **local machine** inside the `Kapitoday` directory:
+Run this command on your **local machine** inside the `Rawwish` directory:
 ```bash
-../venv/bin/python manage.py dumpdata --exclude auth.permission --exclude contenttypes > kapi_datadump.json
+../venv/bin/python manage.py dumpdata --exclude auth.permission --exclude contenttypes > rawwish_datadump.json
 ```
-*This creates a `kapi_datadump.json` file containing all your local data.*
+*This creates a `rawwish_datadump.json` file containing all your local data.*
 
 ## 2. Transferring Files to the VPS
 You need to transfer your code, the datadump, and most importantly, your `media/` folder (which contains all the product/category images).
@@ -17,17 +17,17 @@ You need to transfer your code, the datadump, and most importantly, your `media/
 Using `scp` (or your preferred SFTP tool like FileZilla):
 ```bash
 # Upload the database dump
-scp kapi_datadump.json user@your_vps_ip:/path/to/remote/Kapitoday/
+scp rawwish_datadump.json user@your_vps_ip:/path/to/remote/Rawwish/
 
 # Upload the entire media folder
-scp -r media/ user@your_vps_ip:/path/to/remote/Kapitoday/
+scp -r media/ user@your_vps_ip:/path/to/remote/Rawwish/
 ```
 
 ## 3. Setting Up the VPS
 SSH into your VPS and navigate to the project directory:
 ```bash
 ssh user@your_vps_ip
-cd /path/to/remote/Kapitoday/
+cd /path/to/remote/Rawwish/
 ```
 
 Create and activate a virtual environment, then install the dependencies:
@@ -45,7 +45,7 @@ Run migrations to set up the empty database tables, and then load the JSON dump 
 python manage.py migrate
 
 # Load your exact local data into the remote DB
-python manage.py loaddata kapi_datadump.json
+python manage.py loaddata rawwish_datadump.json
 ```
 
 ## 5. Final Steps

@@ -6,28 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-  <title>{% block 'title' %}Kapi Today - Authentic South Indian Filter Coffee{% endblock 'title' %}</title>
-  <meta name="description" content="{% block 'meta_description' %}Experience the rich, authentic taste of South Indian filter coffee. Estate-grown, artisanal roasts from the Western Ghats to your cup.{% endblock 'meta_description' %}">
-  <meta name="keywords" content="{% block 'meta_keywords' %}South Indian Coffee, Filter Coffee, Coffee Beans, Artisanal Coffee, Indian Coffee Roasters{% endblock 'meta_keywords' %}">
+  <title>{% block 'title' %}Rawwish | The Look That Matters{% endblock 'title' %}</title>
+  <meta name="description" content="{% block 'meta_description' %}Thoughtfully crafted beauty essentials with clean ingredients, real intention and a deeper respect for you and the planet.{% endblock 'meta_description' %}">
+  <meta name="keywords" content="{% block 'meta_keywords' %}Rawwish, cosmetics, skincare, body care, beauty essentials, clean beauty{% endblock 'meta_keywords' %}">
   
   <link rel="canonical" href="{% block 'canonical_url' %}{{ request.build_absolute_uri }}{% endblock 'canonical_url' %}">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="{% block 'og_type' %}website{% endblock 'og_type' %}">
   <meta property="og:url" content="{% block 'og_url' %}{{ request.build_absolute_uri }}{% endblock 'og_url' %}">
-  <meta property="og:title" content="{% block 'og_title' %}Kapi Today - Authentic South Indian Filter Coffee{% endblock 'og_title' %}">
-  <meta property="og:description" content="{% block 'og_description' %}Experience the rich, authentic taste of South Indian filter coffee. Estate-grown, artisanal roasts from the Western Ghats to your cup.{% endblock 'og_description' %}">
-  <meta property="og:image" content="{% block 'og_image' %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/seo/og-image.webp{% endblock 'og_image' %}">
-  <meta property="og:site_name" content="Kapi Today">
+  <meta property="og:title" content="{% block 'og_title' %}Rawwish | The Look That Matters{% endblock 'og_title' %}">
+  <meta property="og:description" content="{% block 'og_description' %}Thoughtfully crafted beauty essentials with clean ingredients, real intention and a deeper respect for you and the planet.{% endblock 'og_description' %}">
+  <meta property="og:image" content="{% block 'og_image' %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/og-rawwish.webp{% endblock 'og_image' %}">
+  <meta property="og:site_name" content="Rawwish">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="{% block 'twitter_card' %}summary_large_image{% endblock 'twitter_card' %}">
   <meta property="twitter:url" content="{% block 'twitter_url' %}{{ request.build_absolute_uri }}{% endblock 'twitter_url' %}">
-  <meta property="twitter:title" content="{% block 'twitter_title' %}Kapi Today - Authentic South Indian Filter Coffee{% endblock 'twitter_title' %}">
-  <meta property="twitter:description" content="{% block 'twitter_description' %}Experience the rich, authentic taste of South Indian filter coffee. Estate-grown, artisanal roasts from the Western Ghats to your cup.{% endblock 'twitter_description' %}">
-  <meta property="twitter:image" content="{% block 'twitter_image' %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/seo/og-image.webp{% endblock 'twitter_image' %}">
+  <meta property="twitter:title" content="{% block 'twitter_title' %}Rawwish | The Look That Matters{% endblock 'twitter_title' %}">
+  <meta property="twitter:description" content="{% block 'twitter_description' %}Thoughtfully crafted beauty essentials with clean ingredients, real intention and a deeper respect for you and the planet.{% endblock 'twitter_description' %}">
+  <meta property="twitter:image" content="{% block 'twitter_image' %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/og-rawwish.webp{% endblock 'twitter_image' %}">
 
-  <link rel="shortcut icon" href="/static/main/logos/Vector.webp" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/main/logos/vector.webp" type="image/x-icon">
   
   {% block 'meta' %}{% endblock 'meta' %}
 
@@ -36,12 +36,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Kapi Today",
+    "name": "Rawwish",
     "url": "{{ request.scheme }}://{{ request.get_host }}/",
-    "logo": "{{ request.scheme }}://{{ request.get_host }}/static/main/logos/LogoMain.webp",
-    "description": "Authentic South Indian Filter Coffee. Estate-grown, artisanal roasts from the Western Ghats.",
+    "logo": "{{ request.scheme }}://{{ request.get_host }}/static/main/images/og-rawwish.webp",
+    "description": "Premium editorial cosmetics and beauty essentials.",
     "sameAs": [
-      "https://www.instagram.com/kapitoday"
+      "https://www.instagram.com/rawwish"
     ]
   }
   </script>
@@ -50,13 +50,18 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
 
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/static/main/css/base.css?v={% now "U" %}">
+  <link rel="stylesheet" href="/static/main/css/style.min.css?v={% now "U" %}">
+  
+  <!-- Rawwish Design System -->
+  
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
   {% block 'css' %}{% endblock 'css' %}
   
 
@@ -83,7 +88,7 @@
     padding: 10px;
     border-bottom: 1px solid #f5f5f5;
     text-decoration: none;
-    color: var(--kapi-espresso);
+    color: var(--rw-dark);
     transition: background 0.2s;
 }
 .search-result-item:hover {
@@ -102,7 +107,7 @@
 }
 .search-result-price {
     font-size: 0.8rem;
-    color: var(--kapi-sienna);
+    color: var(--rawwish-sienna);
     margin: 0;
 }
 .search-no-results {
@@ -126,7 +131,7 @@
 <!-- Mobile Menu Offcanvas -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
   <div class="offcanvas-header border-bottom">
-    <img src="/static/main/logos/LogoMain.webp" alt="Kapi Today" height="60">
+    <img src="/static/main/logos/Logo.webp" alt="Raw Wish" height="60">
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
@@ -134,17 +139,15 @@
     <!-- Mobile Search -->
     <form class="search-bar position-relative w-100 mb-4 border rounded-3 px-3 py-2 d-flex align-items-center" action="/shop" method="GET">
         <button type="submit" style="background:transparent; border:none; padding:0; margin-right:8px;"><i class="bi bi-search text-muted"></i></button>
-        <input type="text" name="q" id="kapiSearchInputMobile" class="border-0 w-100 bg-transparent" placeholder="Search..." autocomplete="off" style="outline:none;">
-        <div id="kapiSearchResultsMobile" class="search-results-dropdown shadow-sm rounded-3" style="position:absolute; top:110%; left:0; width:100%; background:#fff; z-index:9999; display:none; max-height:400px; overflow-y:auto; border:1px solid #eee;"></div>
+        <input type="text" name="q" id="rawwishSearchInputMobile" class="border-0 w-100 bg-transparent" placeholder="Search..." autocomplete="off" style="outline:none;">
+        <div id="rawwishSearchResultsMobile" class="search-results-dropdown shadow-sm rounded-3" style="position:absolute; top:110%; left:0; width:100%; background:#fff; z-index:9999; display:none; max-height:400px; overflow-y:auto; border:1px solid #eee;"></div>
     </form>
     
     <nav class="mobile-nav-links d-flex flex-column gap-3">
         <a href="/shop">Shop</a>
-        <a href="/origins">Origins</a>
-        <a href="/learn">Learn</a>
+        <a href="/ingredients">Ingredients</a>
         <a href="/about">Our Story</a>
-        <a href="/journal">Journal</a>
-        
+        <a href="/content">Journal</a>
     </nav>
   </div>
 </div>
@@ -160,7 +163,7 @@
         <!-- Header & Progress -->
         <div style="background: #3A2A1D; color: #fff;">
             <div style="padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
-                <h5 style="margin: 0; font-family: serif; font-size: 1.2rem; color: #fdfaf4;">Kapi Today Checkout</h5>
+                <h5 style="margin: 0; font-family: serif; font-size: 1.2rem; color: #fdfaf4;">Raw Wish Checkout</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="filter: invert(1); opacity: 0.8;"></button>
             </div>
             <div id="fcProgress" style="display: flex; background: #4a3625; padding: 10px 20px; font-size: 0.75rem; color: rgba(255,255,255,0.6); justify-content: space-between;">
@@ -182,7 +185,7 @@
 
             <!-- STEP 2: LOGIN -->
             <div id="fc-step-login" class="fc-step-container" style="padding: 20px; display:none; text-align:center;">
-                <h3 style="font-family: serif; color: #3A2A1D; margin-bottom: 15px; margin-top:20px;">Welcome to Kapi Today</h3>
+                <h3 style="font-family: serif; color: #3A2A1D; margin-bottom: 15px; margin-top:20px;">Welcome to Raw Wish</h3>
                 <p style="color:#666; font-size:0.9rem;">Log in to view your saved addresses, orders and exclusive offers.</p>
                 <div id="fcGoogleBtnContainer" style="margin-top: 30px; display: flex; justify-content: center;">
                     <!-- Google button renders here -->
@@ -584,7 +587,7 @@
 
       window.addEventListener('load', function () {
         // Only initialize if GOOGLE_CLIENT_ID is available (i.e., not logged in and configured)
-        const clientId = '{{ GOOGLE_CLIENT_ID|escapejs }}';
+        const clientId = '{{ GOOGLE_CLIENT_ID }}';
         if (clientId) {
           google.accounts.id.initialize({
             client_id: clientId,
@@ -610,9 +613,9 @@
       });
     </script>
 <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 <script>
     // Fast Checkout State
     let fcState = {
@@ -881,7 +884,7 @@
                     "key": data.key,
                     "amount": data.amount,
                     "currency": "INR",
-                    "name": "Kapi Today",
+                    "name": "Raw Wish",
                     "description": "Fast Checkout",
                     "order_id": data.order_id,
                     "handler": function (response) {
@@ -979,7 +982,7 @@ function initSearch(inputId, resultsId) {
                     if (data.products && data.products.length > 0) {
                         data.products.forEach(p => {
                             results.innerHTML += `
-                                <a href="${p.url}" class="search-result-item d-flex align-items-center gap-2 p-2 border-bottom text-decoration-none" style="color:var(--kapi-espresso);">
+                                <a href="${p.url}" class="search-result-item d-flex align-items-center gap-2 p-2 border-bottom text-decoration-none" style="color:var(--rw-dark);">
                                     <img src="${p.image}" class="search-result-img rounded" style="width:40px; height:40px; object-fit:cover;" alt="${p.name}">
                                     <div>
                                         <p class="search-result-title mb-0 fw-bold" style="font-size:0.85rem;">${p.name}</p>
@@ -999,8 +1002,8 @@ function initSearch(inputId, resultsId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    initSearch('kapiSearchInput', 'kapiSearchResults');
-    initSearch('kapiSearchInputMobile', 'kapiSearchResultsMobile');
+    initSearch('rawwishSearchInput', 'rawwishSearchResults');
+    initSearch('rawwishSearchInputMobile', 'rawwishSearchResultsMobile');
 });
 </script>
 

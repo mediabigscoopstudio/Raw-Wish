@@ -1,22 +1,22 @@
 {% extends "dash/base.html" %}
-{% block 'title' %}Intelligence — Kapi Today{% endblock 'title' %}
+{% block 'title' %}Intelligence — Raw Wish{% endblock 'title' %}
 
 {% block 'css' %}
 <style>
     :root {
-        --coffee-dark:  #1a0a00;
-        --coffee-mid:   #3d1f00;
-        --coffee-warm:  #6b3a1f;
-        --coffee-gold:  #c8882a;
-        --coffee-cream: #f5efe6;
-        --coffee-light: #faf7f3;
+        --cosmetics-dark:  #1a0a00;
+        --cosmetics-mid:   #3d1f00;
+        --cosmetics-warm:  #6b3a1f;
+        --cosmetics-gold:  #c8882a;
+        --cosmetics-cream: #f5efe6;
+        --cosmetics-light: #faf7f3;
     }
 
-    .intel-page { background: var(--coffee-light); min-height: 100vh; }
+    .intel-page { background: var(--cosmetics-light); min-height: 100vh; }
 
     /* ── PAGE HEADER ── */
     .intel-header {
-        background: linear-gradient(135deg, var(--coffee-dark) 0%, var(--coffee-mid) 100%);
+        background: linear-gradient(135deg, var(--cosmetics-dark) 0%, var(--cosmetics-mid) 100%);
         border-radius: 16px;
         padding: 24px 28px;
         margin-bottom: 24px;
@@ -69,7 +69,7 @@
     .stat-card .stat-value {
         font-size: 28px;
         font-weight: 800;
-        color: var(--coffee-dark);
+        color: var(--cosmetics-dark);
         letter-spacing: -0.5px;
         line-height: 1;
         margin-bottom: 4px;
@@ -88,14 +88,14 @@
     }
 
     /* accent colours */
-    .accent-gold   { background: var(--coffee-gold); }
+    .accent-gold   { background: var(--cosmetics-gold); }
     .accent-green  { background: #16a34a; }
     .accent-red    { background: #dc2626; }
     .accent-blue   { background: #2563eb; }
     .accent-purple { background: #7c3aed; }
     .accent-orange { background: #ea580c; }
 
-    .icon-gold   { background: rgba(200,136,42,0.12); color: var(--coffee-gold); }
+    .icon-gold   { background: rgba(200,136,42,0.12); color: var(--cosmetics-gold); }
     .icon-green  { background: rgba(22,163,74,0.12);  color: #16a34a; }
     .icon-red    { background: rgba(220,38,38,0.12);  color: #dc2626; }
     .icon-blue   { background: rgba(37,99,235,0.12);  color: #2563eb; }
@@ -120,7 +120,7 @@
         margin: 0;
         font-size: 14px;
         font-weight: 800;
-        color: var(--coffee-dark);
+        color: var(--cosmetics-dark);
         letter-spacing: -0.2px;
     }
     .section-head span {
@@ -140,7 +140,7 @@
     .chart-card h6 {
         font-size: 13px;
         font-weight: 700;
-        color: var(--coffee-dark);
+        color: var(--cosmetics-dark);
         margin-bottom: 16px;
     }
 
@@ -156,7 +156,7 @@
     .status-row:last-child { border: none; }
     .status-row .status-name { color: #555; font-weight: 500; display: flex; align-items: center; gap: 8px; }
     .status-row .status-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .status-row .status-count { font-weight: 700; color: var(--coffee-dark); }
+    .status-row .status-count { font-weight: 700; color: var(--cosmetics-dark); }
 
     /* ── TOP SUMMARY BAR ── */
     .summary-bar {
@@ -178,7 +178,7 @@
     .summary-item .s-value {
         font-size: 22px;
         font-weight: 800;
-        color: var(--coffee-dark);
+        color: var(--cosmetics-dark);
         letter-spacing: -0.5px;
         display: block;
     }
@@ -219,7 +219,7 @@
     .alert-item:last-child { margin-bottom: 0; }
     .alert-item i { font-size: 16px; flex-shrink: 0; }
     .alert-item .alert-text { flex: 1; color: #444; }
-    .alert-item .alert-val { font-weight: 700; color: var(--coffee-dark); font-size: 12px; }
+    .alert-item .alert-val { font-weight: 700; color: var(--cosmetics-dark); font-size: 12px; }
     .alert-red    { background: #fff5f5; }
     .alert-orange { background: #fff8f0; }
     .alert-green  { background: #f0fdf4; }
@@ -373,7 +373,7 @@
     <div class="row g-3 mb-4">
         <div class="col-md-5">
             <div class="chart-card">
-                <h6><i class="mdi mdi-chart-donut me-2" style="color:var(--coffee-gold);"></i>Orders by Status</h6>
+                <h6><i class="mdi mdi-chart-donut me-2" style="color:var(--cosmetics-gold);"></i>Orders by Status</h6>
                 {% for s in orders_by_status %}
                 <div class="status-row">
                     <div class="status-name">
@@ -397,7 +397,7 @@
         </div>
         <div class="col-md-7">
             <div class="chart-card">
-                <h6><i class="mdi mdi-chart-bar me-2" style="color:var(--coffee-gold);"></i>Order Status Distribution</h6>
+                <h6><i class="mdi mdi-chart-bar me-2" style="color:var(--cosmetics-gold);"></i>Order Status Distribution</h6>
                 <canvas id="orderStatusChart" height="200"></canvas>
             </div>
         </div>
@@ -415,7 +415,7 @@
         <div class="col-6 col-md-3">
             <div class="stat-card">
                 <div class="card-accent accent-green"></div>
-                <div class="stat-icon icon-green"><i class="mdi mdi-coffee"></i></div>
+                <div class="stat-icon icon-green"><i class="mdi mdi-cosmetics"></i></div>
                 <div class="stat-value">{{ total_products }}</div>
                 <div class="stat-label">Total Products</div>
                 <div class="stat-sub">In your catalogue</div>
@@ -487,7 +487,7 @@
         </div>
         <div class="col-md-6">
             <div class="chart-card">
-                <h6><i class="mdi mdi-chart-donut me-2" style="color:var(--coffee-gold);"></i>Inventory Health</h6>
+                <h6><i class="mdi mdi-chart-donut me-2" style="color:var(--cosmetics-gold);"></i>Inventory Health</h6>
                 <canvas id="inventoryChart" height="180"></canvas>
             </div>
         </div>
@@ -638,14 +638,14 @@
                     <div class="intel-progress flex-grow-1">
                         <div class="intel-progress-bar" style="width:{% if total_support > 0 %}{% widthratio resolved_today total_support 100 %}{% else %}0{% endif %}%; background:#16a34a;"></div>
                     </div>
-                    <span style="font-size:12px; font-weight:700; color:var(--coffee-dark); min-width:40px;">{% if total_support > 0 %}{% widthratio resolved_today total_support 100 %}%{% else %}0%{% endif %}</span>
+                    <span style="font-size:12px; font-weight:700; color:var(--cosmetics-dark); min-width:40px;">{% if total_support > 0 %}{% widthratio resolved_today total_support 100 %}%{% else %}0%{% endif %}</span>
                 </div>
                 <div class="d-flex align-items-center gap-3">
                     <span style="font-size:12px; color:#888; min-width:80px;">Pending</span>
                     <div class="intel-progress flex-grow-1">
                         <div class="intel-progress-bar" style="width:{% if total_support > 0 %}{% widthratio pending_support total_support 100 %}{% else %}0{% endif %}%; background:#dc2626;"></div>
                     </div>
-                    <span style="font-size:12px; font-weight:700; color:var(--coffee-dark); min-width:40px;">{% if total_support > 0 %}{% widthratio pending_support total_support 100 %}%{% else %}0%{% endif %}</span>
+                    <span style="font-size:12px; font-weight:700; color:var(--cosmetics-dark); min-width:40px;">{% if total_support > 0 %}{% widthratio pending_support total_support 100 %}%{% else %}0%{% endif %}</span>
                 </div>
             </div>
         </div>

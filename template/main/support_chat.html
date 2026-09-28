@@ -1,12 +1,12 @@
 {% extends "main/base.html" %}
-{% block 'title' %}Support {{ query.support_id }} | Kapi Today{% endblock 'title' %}
+{% block 'title' %}Support {{ query.support_id }} | Raw Wish{% endblock 'title' %}
 {% block 'css' %}
 <style>
     .chat-box { height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; padding: 20px; background: #fff; border-radius: 10px; }
     .msg-bubble { max-width: 80%; padding: 12px 18px; border-radius: 20px; font-size: 14.5px; line-height: 1.4; }
-    .msg-customer { background: var(--kapi-coffee); color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
-    .msg-bot { background: var(--kapi-cream); color: #333; align-self: flex-start; border-bottom-left-radius: 4px; }
-    .msg-agent { background: var(--kapi-gold-accent); color: white; align-self: flex-start; border-bottom-left-radius: 4px; }
+    .msg-customer { background: var(--rawwish-cosmetics); color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
+    .msg-bot { background: var(--rawwish-cream); color: #333; align-self: flex-start; border-bottom-left-radius: 4px; }
+    .msg-agent { background: var(--rawwish-gold-accent); color: white; align-self: flex-start; border-bottom-left-radius: 4px; }
     .msg-meta { font-size: 10px; opacity: 0.7; margin-top: 5px; display: block; text-align: right; }
 </style>
 {% endblock 'css' %}
@@ -14,7 +14,7 @@
 <div class="container py-5" style="margin-top: 100px; max-width: 800px;">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h3 class="m-0" style="color: var(--kapi-coffee);">{{ query.support_id }}</h3>
+            <h3 class="m-0" style="color: var(--rawwish-cosmetics);">{{ query.support_id }}</h3>
             <p class="m-0 text-muted small">Status: <strong>{{ query.get_status_display }}</strong> {% if query.order %} | Order: {{ query.order.display_order_id }}{% endif %}</p>
         </div>
         <a href="{% url 'customer_support' %}" class="btn btn-outline-dark btn-sm">&larr; Back</a>

@@ -381,7 +381,7 @@
                 <div class="pblock" id="sec-core">
                     <div class="pblock-head">
                         <div class="pblock-head-left">
-                            <div class="pblock-icon icon-brown"><i class="mdi mdi-coffee"></i></div>
+                            <div class="pblock-icon icon-brown"><i class="mdi mdi-cosmetics"></i></div>
                             <div>
                                 <h6>Core Information</h6>
                                 <p>Product name, category, description and thumbnail</p>
@@ -776,7 +776,7 @@
                     <div class="sidebar-block-head">Jump to Section</div>
                     <div class="sidebar-block-body" style="padding:10px 12px;">
                         <div class="nav-steps">
-                            <a href="#sec-core"       class="nav-step active"><i class="mdi mdi-coffee"></i> Core Info</a>
+                            <a href="#sec-core"       class="nav-step active"><i class="mdi mdi-cosmetics"></i> Core Info</a>
                             <a href="#sec-seo"        class="nav-step"><i class="mdi mdi-magnify"></i> SEO</a>
                             <a href="#sec-images"     class="nav-step"><i class="mdi mdi-image-multiple"></i> Images</a>
                             <a href="#sec-variants"   class="nav-step"><i class="mdi mdi-package-variant"></i> Variants</a>
@@ -809,7 +809,7 @@
 // ── Quill Editor — load existing description ──
 const quill = new Quill('#quill-editor', {
     theme: 'snow',
-    placeholder: 'Describe the coffee...',
+    placeholder: 'Describe the cosmetics...',
     modules: {
         toolbar: [
             [{ 'header': [1, 2, 3, 4, false] }],
@@ -999,13 +999,13 @@ function addAplus() {
                 <label class="form-label">Content Image <span class="text-danger">*</span></label>
                 <div class="mini-upload" style="height:100px" onclick="this.querySelector('input').click()">
                     <input type="file" name="aplus_image" accept="image/*" onchange="previewMini(this)">
-                    <i class="mdi mdi-image-frame"></i><span>Roasting, brew guide</span><img>
+                    <i class="mdi mdi-image-frame"></i><span>Shadeing, routine guide</span><img>
                 </div>
             </div>
             <div class="col-md-8">
                 <label class="form-label">Alt Text</label>
                 <input type="text" class="form-control" name="aplus_alt"
-                    placeholder="e.g. Slow roasting process at Coorg estate">
+                    placeholder="e.g. Dermatologically tested for sensitive skin">
             </div>
         </div>`;
     document.getElementById('aplus-container').appendChild(div);

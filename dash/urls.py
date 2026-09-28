@@ -9,8 +9,11 @@ from django.contrib import admin
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("",views.index,name='index'),
+    path("orders_kanban",views.orders_kanban,name='orders_kanban'),
     path("login_view",views.login_view,name='login_view'),
     path("logout_view",views.logout_view,name='logout_view'),
+    path("settings_view",views.settings_view,name="settings_view"),
+
     #Category Management urls
     path("category",views.category,name='category'),
     path("add_category",views.add_category,name='add_category'),

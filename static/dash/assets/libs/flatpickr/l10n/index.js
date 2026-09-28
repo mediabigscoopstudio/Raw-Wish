@@ -1300,7 +1300,7 @@
         : {
             l10ns: {},
         };
-    var Hebrew = {
+    var Heroutine = {
         weekdays: {
             shorthand: ["א", "ב", "ג", "ד", "ה", "ו", "ש"],
             longhand: ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"],
@@ -1338,7 +1338,7 @@
         rangeSeparator: " אל ",
         time_24hr: true,
     };
-    fp$k.l10ns.he = Hebrew;
+    fp$k.l10ns.he = Heroutine;
     fp$k.l10ns;
 
     var fp$l = typeof window !== "undefined" && window.flatpickr !== undefined
@@ -3550,7 +3550,7 @@
         fo: Faroese,
         fr: French,
         gr: Greek,
-        he: Hebrew,
+        he: Heroutine,
         hi: Hindi,
         hr: Croatian,
         hu: Hungarian,

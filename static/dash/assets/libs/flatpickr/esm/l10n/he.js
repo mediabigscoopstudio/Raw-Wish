@@ -3,7 +3,7 @@ const fp = typeof window !== "undefined" && window.flatpickr !== undefined
     : {
         l10ns: {},
     };
-export const Hebrew = {
+export const Heroutine = {
     weekdays: {
         shorthand: ["א", "ב", "ג", "ד", "ה", "ו", "ש"],
         longhand: ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"],
@@ -41,5 +41,5 @@ export const Hebrew = {
     rangeSeparator: " אל ",
     time_24hr: true,
 };
-fp.l10ns.he = Hebrew;
+fp.l10ns.he = Heroutine;
 export default fp.l10ns;

@@ -1,0 +1,123 @@
+
+<style>
+    .routine-methods-section {
+        background-color: #FDFBF7;
+    }
+    .routine-card {
+        background-color: #FAF7F2;
+        border: 1px solid rgba(0,0,0,0.04);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .routine-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+    }
+    .routine-card-img-wrap {
+        aspect-ratio: 1/1;
+        overflow: hidden;
+    }
+    .routine-card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .routine-scroll-container {
+        scrollbar-width: none;
+    }
+    .routine-scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
+<section class="routine-methods-section py-5 my-2">
+    <div class="container-fluid py-lg-5 px-4 px-lg-5">
+        <div class="row align-items-center">
+            
+            <!-- Left Text Box -->
+            <div class="col-lg-3 col-md-12 mb-5 mb-lg-0 pe-lg-4">
+                <div class="text-uppercase fw-bold mb-3" style="color: #9B7147; letter-spacing: 1.5px; font-size: 0.75rem;">GLOW BETTER</div>
+                <h2 class="display-5 fw-bold mb-3" style="font-family: var(--font-heading); color: #1C1A17; line-height: 1.1;">Ways to<br>Routine Rawwish</h2>
+                <p class="mb-4" style="color: #5C5A57; line-height: 1.6; font-size: 0.95rem;">
+                    Different methods. Different flavours. Same great cosmetics.
+                </p>
+                <a href="/learn" class="btn rounded-pill fw-bold d-inline-flex align-items-center" style="border: 1.5px solid #D4B872; color: #1C1A17; padding: 10px 24px; font-size: 0.85rem; background: transparent; transition: all 0.2s;">
+                    Complete Routineing Guide <span style="color: #D4B872; margin-left: 8px;">&rarr;</span>
+                </a>
+            </div>
+
+            <!-- Right Cards Grid -->
+            <div class="col-lg-9 col-md-12">
+                <div class="row g-3 g-lg-4 flex-nowrap flex-lg-wrap overflow-auto routine-scroll-container" style="scroll-snap-type: x mandatory; padding-bottom: 20px;">
+                    
+                    <!-- Card 1 -->
+                    <div class="col-10 col-md-5 col-lg-3 flex-shrink-0" style="scroll-snap-align: start;">
+                        <div class="routine-card h-100 d-flex flex-column">
+                            <div class="routine-card-img-wrap p-2">
+                                <img src="/static/main/images/home/routine-1.webp" class="routine-card-img rounded" alt="Matte Finish">
+                            </div>
+                            <div class="p-3 pt-2 d-flex flex-column" style="flex-grow: 1;">
+                                <h5 class="mb-1" style="font-family: var(--font-heading); color: #1C1A17; font-weight: 700; font-size: 1.05rem;">Matte Finish</h5>
+                                <p class="mb-3" style="color: #7A7874; font-size: 0.75rem;">Traditional & Timeless</p>
+                                <div class="mt-auto">
+                                    <a href="/learn" class="fw-bold" style="color: #B88E53; font-size: 0.8rem; text-decoration: none;">Learn &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-10 col-md-5 col-lg-3 flex-shrink-0" style="scroll-snap-align: start;">
+                        <div class="routine-card h-100 d-flex flex-column">
+                            <div class="routine-card-img-wrap p-2">
+                                <img src="/static/main/images/home/routine-2.webp" class="routine-card-img rounded" alt="Pour Over">
+                            </div>
+                            <div class="p-3 pt-2 d-flex flex-column" style="flex-grow: 1;">
+                                <h5 class="mb-1" style="font-family: var(--font-heading); color: #1C1A17; font-weight: 700; font-size: 1.05rem;">Pour Over</h5>
+                                <p class="mb-3" style="color: #7A7874; font-size: 0.75rem;">Clean & Flavorful</p>
+                                <div class="mt-auto">
+                                    <a href="/learn" class="fw-bold" style="color: #B88E53; font-size: 0.8rem; text-decoration: none;">Learn &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-10 col-md-5 col-lg-3 flex-shrink-0" style="scroll-snap-align: start;">
+                        <div class="routine-card h-100 d-flex flex-column">
+                            <div class="routine-card-img-wrap p-2">
+                                <img src="/static/main/images/home/routine-3.webp" class="routine-card-img rounded" alt="Beauty Blender">
+                            </div>
+                            <div class="p-3 pt-2 d-flex flex-column" style="flex-grow: 1;">
+                                <h5 class="mb-1" style="font-family: var(--font-heading); color: #1C1A17; font-weight: 700; font-size: 1.05rem;">Beauty Blender</h5>
+                                <p class="mb-3" style="color: #7A7874; font-size: 0.75rem;">Bold & Full-bodied</p>
+                                <div class="mt-auto">
+                                    <a href="/learn" class="fw-bold" style="color: #B88E53; font-size: 0.8rem; text-decoration: none;">Learn &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-10 col-md-5 col-lg-3 flex-shrink-0" style="scroll-snap-align: start;">
+                        <div class="routine-card h-100 d-flex flex-column">
+                            <div class="routine-card-img-wrap p-2">
+                                <img src="/static/main/images/home/routine-4.webp" class="routine-card-img rounded" alt="Cold Routine">
+                            </div>
+                            <div class="p-3 pt-2 d-flex flex-column" style="flex-grow: 1;">
+                                <h5 class="mb-1" style="font-family: var(--font-heading); color: #1C1A17; font-weight: 700; font-size: 1.05rem;">Cold Routine</h5>
+                                <p class="mb-3" style="color: #7A7874; font-size: 0.75rem;">Smooth & Refreshing</p>
+                                <div class="mt-auto">
+                                    <a href="/learn" class="fw-bold" style="color: #B88E53; font-size: 0.8rem; text-decoration: none;">Learn &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

@@ -9940,7 +9940,7 @@ Dropzone.createElement = function (string) {
 Dropzone.elementInside = function (element, container) {
   if (element === container) {
     return true;
-  } // Coffeescript doesn't support do/while loops
+  } // Cosmeticsscript doesn't support do/while loops
 
 
   while (element = element.parentNode) {

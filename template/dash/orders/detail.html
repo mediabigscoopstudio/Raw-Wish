@@ -3,11 +3,11 @@
 {% block 'css' %}
 <style>
     :root {
-        --coffee-dark:  #1a0a00;
-        --coffee-warm:  #6b3a1f;
-        --coffee-gold:  #c8882a;
-        --coffee-cream: #f5efe6;
-        --coffee-light: #faf7f3;
+        --cosmetics-dark:  #1a0a00;
+        --cosmetics-warm:  #6b3a1f;
+        --cosmetics-gold:  #c8882a;
+        --cosmetics-cream: #f5efe6;
+        --cosmetics-light: #faf7f3;
     }
 
     .detail-page { display: flex; gap: 24px; align-items: flex-start; }
@@ -35,12 +35,12 @@
         display: flex; align-items: center; justify-content: center;
         font-size: 15px; color: #fff; flex-shrink: 0;
     }
-    .dblock-head h6 { margin: 0; font-size: 13.5px; font-weight: 700; color: var(--coffee-dark); }
+    .dblock-head h6 { margin: 0; font-size: 13.5px; font-weight: 700; color: var(--cosmetics-dark); }
     .dblock-body { padding: 20px; }
 
     /* ── ORDER HEADER ── */
     .order-header {
-        background: linear-gradient(135deg, var(--coffee-dark) 0%, #3d1f00 100%);
+        background: linear-gradient(135deg, var(--cosmetics-dark) 0%, #3d1f00 100%);
         border-radius: 14px;
         padding: 22px 26px;
         color: #fff;
@@ -85,18 +85,18 @@
     }
     .info-row:last-child { border: none; padding-bottom: 0; }
     .info-label { color: #999; font-weight: 500; flex-shrink: 0; padding-right: 12px; }
-    .info-value { color: var(--coffee-dark); font-weight: 600; text-align: right; word-break: break-word; overflow-wrap: break-word; min-width: 0; flex: 1; margin-left: 10px; }
+    .info-value { color: var(--cosmetics-dark); font-weight: 600; text-align: right; word-break: break-word; overflow-wrap: break-word; min-width: 0; flex: 1; margin-left: 10px; }
 
     /* ── ORDER ITEMS TABLE ── */
     .items-table { width: 100%; border-collapse: collapse; }
     .items-table th {
         font-size: 11px;
         font-weight: 700;
-        color: var(--coffee-warm);
+        color: var(--cosmetics-warm);
         text-transform: uppercase;
         letter-spacing: 0.5px;
         padding: 10px 12px;
-        background: var(--coffee-light);
+        background: var(--cosmetics-light);
         border-bottom: 2px solid #f0ebe5;
     }
     .items-table td {
@@ -118,9 +118,9 @@
     .product-thumb-placeholder {
         width: 44px; height: 44px;
         border-radius: 8px;
-        background: var(--coffee-cream);
+        background: var(--cosmetics-cream);
         display: flex; align-items: center; justify-content: center;
-        color: var(--coffee-gold); font-size: 18px;
+        color: var(--cosmetics-gold); font-size: 18px;
     }
 
     /* ── PRICING SUMMARY ── */
@@ -133,14 +133,14 @@
     }
     .price-row:last-child { border: none; }
     .price-label { color: #888; }
-    .price-value { font-weight: 600; color: var(--coffee-dark); }
+    .price-value { font-weight: 600; color: var(--cosmetics-dark); }
     .price-total {
         display: flex;
         justify-content: space-between;
         padding: 12px 0 0;
         font-size: 16px;
         font-weight: 800;
-        color: var(--coffee-dark);
+        color: var(--cosmetics-dark);
         border-top: 2px solid #f0ebe5;
         margin-top: 4px;
     }
@@ -154,7 +154,7 @@
         overflow: hidden;
     }
     .sblock-head {
-        background: var(--coffee-dark);
+        background: var(--cosmetics-dark);
         padding: 11px 16px;
         color: #fff;
         font-size: 12.5px;
@@ -165,7 +165,7 @@
 
     /* ── ACTION BUTTONS ── */
     .btn-fulfill {
-        background: linear-gradient(135deg, var(--coffee-gold) 0%, #a86e1a 100%);
+        background: linear-gradient(135deg, var(--cosmetics-gold) 0%, #a86e1a 100%);
         border: none;
         color: #fff;
         padding: 10px 16px;
@@ -248,7 +248,7 @@
         z-index: 1;
     }
     .timeline-content { flex: 1; }
-    .timeline-title { font-size: 12.5px; font-weight: 600; color: var(--coffee-dark); }
+    .timeline-title { font-size: 12.5px; font-weight: 600; color: var(--cosmetics-dark); }
     .timeline-sub   { font-size: 11px; color: #bbb; margin-top: 1px; }
 
     @media (max-width: 991px) {
@@ -337,7 +337,7 @@
             <!-- Order Items -->
             <div class="dblock">
                 <div class="dblock-head">
-                    <div class="dblock-icon" style="background:#c8882a;"><i class="mdi mdi-coffee"></i></div>
+                    <div class="dblock-icon" style="background:#c8882a;"><i class="mdi mdi-cosmetics"></i></div>
                     <h6>Order Items ({{ order_items.count }})</h6>
                 </div>
                 <div style="overflow-x:auto;">
@@ -360,7 +360,7 @@
                                         {% if item.product and item.product.thumbnail %}
                                         <img src="{{ item.product.thumbnail.url }}" class="product-thumb" alt="{{ item.product_name }}">
                                         {% else %}
-                                        <div class="product-thumb-placeholder"><i class="mdi mdi-coffee"></i></div>
+                                        <div class="product-thumb-placeholder"><i class="mdi mdi-cosmetics"></i></div>
                                         {% endif %}
                                         <div>
                                             <div style="font-weight:600; color:#1a0a00; font-size:13px;">{{ item.product_name }}</div>

@@ -1,4 +1,4 @@
-# KAPI TODAY SUPPORT & ORDER MANAGEMENT IMPLEMENTATION PLAN
+# RAWWISH TODAY SUPPORT & ORDER MANAGEMENT IMPLEMENTATION PLAN
 
 ## CURRENT ARCHITECTURE
 - **Authentication**: Google One Tap/OAuth is fully implemented. Users are mapped to a `Customers` profile.

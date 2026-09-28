@@ -1,28 +1,28 @@
 
-<section class="kapi-bestsellers py-5" style="background-color: var(--kapi-cream, #FAF6F0);">
+<section class="rawwish-bestsellers py-5" style="background-color: var(--rawwish-cream, #FAF6F0);">
     <div class="container py-5">
         <div class="row mb-5 align-items-end">
             <div class="col-lg-8">
-                <div class="text-gold text-uppercase fw-bold mb-3" style="letter-spacing: 1.5px; font-size: 0.8rem;">FRESHLY ROASTED</div>
-                <h2 class="display-4 fw-bold mb-3" style="font-family: var(--font-heading); color: var(--kapi-espresso);">Our Bestsellers</h2>
-                <p class="text-muted fs-5 mb-0" style="max-width: 600px;">Loved by coffee drinkers across India. Discover your perfect cup.</p>
+                <div class="text-gold text-uppercase fw-bold mb-3" style="letter-spacing: 1.5px; font-size: 0.8rem;">BEST SELLERS</div>
+                <h2 class="display-4 fw-bold mb-3" style="font-family: var(--font-heading); color: var(--rw-dark);">Our Bestsellers</h2>
+                <p class="text-muted fs-5 mb-0" style="max-width: 600px;">Loved by cosmetics drinkers across India. Discover your perfect cup.</p>
             </div>
             <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 d-none d-lg-block">
-                <a href="/shop" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold" style="border-color: var(--kapi-espresso); color: var(--kapi-espresso);">Shop All Coffee &rarr;</a>
+                <a href="/shop" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold" style="border-color: var(--rw-dark); color: var(--rw-dark);">Shop All Cosmetics &rarr;</a>
             </div>
         </div>
 
         <div class="product-grid">
             {% for p in bestseller_products %}
-            <div class="kapi-card" style="height: 100%;">
+            <div class="rawwish-card" style="height: 100%;">
                 
                 <!-- Image & Badges -->
-                <div class="kapi-card-img-wrap">
+                <div class="rawwish-card-img-wrap">
                   <a href="/{{ p.category.slug }}/{{ p.sub_category.slug|default:'all' }}/{{ p.slug }}/" style="display:block; width:100%; height:100%;">
                     {% if p.thumbnail %}
                       <img loading="lazy" src="{{ p.thumbnail.url }}" alt="{{ p.name }}">
                     {% else %}
-                      <img loading="lazy" src="/static/main/logos/LogoMain.webp" alt="Placeholder" style="object-fit: contain; padding: 15px; background:#fff;">
+                      <img loading="lazy" src="/static/main/logos/Logo.webp" alt="Placeholder" style="object-fit: contain; padding: 15px; background:#fff;">
                     {% endif %}
                   </a>
                   
@@ -38,12 +38,12 @@
                 </div>
 
                 <!-- Card Body -->
-                <div class="kapi-card-body">
-                  <a href="/{{ p.category.slug }}/{{ p.sub_category.slug|default:'all' }}/{{ p.slug }}/" class="kapi-title-link">
-                    <h3 class="kapi-title">{{ p.name }}</h3>
+                <div class="rawwish-card-body">
+                  <a href="/{{ p.category.slug }}/{{ p.sub_category.slug|default:'all' }}/{{ p.slug }}/" class="rawwish-title-link">
+                    <h3 class="rawwish-title">{{ p.name }}</h3>
                   </a>
                   
-                  <div class="kapi-reviews">
+                  <div class="rawwish-reviews">
                     <i class="bi bi-star-fill"></i> <strong>4.8</strong> <span style="color:#888;">(320 reviews)</span>
                   </div>
 
@@ -98,7 +98,7 @@
         </div>
         
         <div class="d-block d-lg-none text-center mt-4">
-            <a href="/shop" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold w-100" style="border-color: var(--kapi-espresso); color: var(--kapi-espresso);">Shop All Coffee &rarr;</a>
+            <a href="/shop" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold w-100" style="border-color: var(--rw-dark); color: var(--rw-dark);">Shop All Cosmetics &rarr;</a>
         </div>
     </div>
 </section>

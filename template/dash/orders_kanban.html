@@ -1,0 +1,246 @@
+{% extends "dash/base.html" %}
+{% block 'title' %}Dashboard - Kanban Orders{% endblock 'title' %}
+{% block 'css' %}
+<style>
+    /* Kanban Styles */
+    .kanban-board {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 20px;
+        gap: 20px;
+        height: calc(100vh - 170px); 
+        align-items: flex-start;
+    }
+    .kanban-board::-webkit-scrollbar {
+        height: 8px;
+    }
+    .kanban-board::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1;
+        border-radius: 10px;
+    }
+    .kanban-column {
+        min-width: 320px;
+        max-width: 320px;
+        background: #f1f5f9;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+        border: 1px solid #e2e8f0;
+    }
+    .kanban-header {
+        padding: 15px;
+        font-weight: 700;
+        color: #334155;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #e2e8f0;
+        border-radius: 8px 8px 0 0;
+    }
+    .kanban-header.pending { border-bottom-color: #f59e0b; }
+    .kanban-header.processing { border-bottom-color: #3b82f6; }
+    .kanban-header.shipped { border-bottom-color: #8b5cf6; }
+    .kanban-header.delivered { border-bottom-color: #10b981; }
+    .kanban-header.cancelled { border-bottom-color: #ef4444; }
+    .kanban-header.returned { border-bottom-color: #64748b; }
+
+    .kanban-header .badge {
+        background: #e2e8f0;
+        color: #475569;
+        font-size: 11px;
+    }
+    .kanban-cards {
+        padding: 10px;
+        overflow-y: auto;
+        flex: 1;
+    }
+    .kanban-cards::-webkit-scrollbar { width: 4px; }
+    .kanban-cards::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 4px; }
+    
+    .k-card {
+        background: #fff;
+        border-radius: 6px;
+        padding: 12px;
+        margin-bottom: 12px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        border: 1px solid #e2e8f0;
+        transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .k-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border-color: #cbd5e1;
+    }
+    .k-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    .k-id {
+        font-size: 11px;
+        font-weight: 700;
+        color: #6b3a1f;
+        background: #f5efe6;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+    .k-id:hover { text-decoration: underline; }
+    .k-date {
+        font-size: 11px;
+        color: #94a3b8;
+    }
+    .k-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 2px;
+        color: #1e293b;
+    }
+    .k-meta {
+        font-size: 12px;
+        color: #64748b;
+        margin-bottom: 10px;
+    }
+    .k-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        border-top: 1px solid #f1f5f9;
+    }
+    .k-amount {
+        font-size: 13px;
+        font-weight: 700;
+        color: #059669;
+    }
+    .k-payment {
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-transform: uppercase;
+    }
+    .k-payment.paid { background: #d1fae5; color: #059669; }
+    .k-payment.pending { background: #fef3c7; color: #d97706; }
+</style>
+{% endblock 'css' %}
+
+{% block 'body' %}
+<div class="container-fluid">
+    <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
+        <div class="flex-grow-1">
+            <h4 class="fs-18 fw-semibold m-0">Orders Kanban Board</h4>
+            <p class="text-muted mb-0" style="font-size:13px;">Manage all {{ all_orders_count }} orders across all fulfillment stages</p>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            <form method="GET" action="" id="timeFilterForm">
+                <select name="time_filter" class="form-select form-select-sm" onchange="document.getElementById('timeFilterForm').submit()" style="min-width: 150px; font-weight: 500;">
+                    <option value="today" {% if current_filter == 'today' %}selected{% endif %}>Today</option>
+                    <option value="this_week" {% if current_filter == 'this_week' %}selected{% endif %}>This Week</option>
+                    <option value="this_month" {% if current_filter == 'this_month' %}selected{% endif %}>This Month</option>
+                    <option value="this_quarter" {% if current_filter == 'this_quarter' %}selected{% endif %}>This Quarter</option>
+                    <option value="last_6_months" {% if current_filter == 'last_6_months' %}selected{% endif %}>Last 6 Months</option>
+                    <option value="all" {% if current_filter == 'all' %}selected{% endif %}>All Time</option>
+                </select>
+            </form>
+            <a aria-label="Register Order" class="btn btn-sm btn-primary" href="{% url 'create_order' %}">
+                <i class="bi bi-plus-lg"></i> Create Manual Order
+            </a>
+        </div>
+    </div>
+
+    <!-- Kanban Board Container -->
+    <div class="kanban-board">
+        
+        <!-- PENDING -->
+        <div class="kanban-column">
+            <div class="kanban-header pending">
+                <span>NEW / PENDING</span>
+                <span class="badge">{{ grouped_orders.pending|length }}</span>
+            </div>
+            <div class="kanban-cards">
+                {% for o in grouped_orders.pending %}
+                    {% include 'dash/partials/kanban_card.html' with order=o %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- PROCESSING -->
+        <div class="kanban-column">
+            <div class="kanban-header processing">
+                <span>PROCESSING</span>
+                <span class="badge">{{ grouped_orders.processing|length }}</span>
+            </div>
+            <div class="kanban-cards">
+                {% for o in grouped_orders.processing %}
+                    {% include 'dash/partials/kanban_card.html' with order=o %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- SHIPPED & OUT FOR DELIVERY -->
+        <div class="kanban-column">
+            <div class="kanban-header shipped">
+                <span>SHIPPED / IN TRANSIT</span>
+                <span class="badge">{{ grouped_orders.shipped|length|add:grouped_orders.out_for_delivery|length }}</span>
+            </div>
+            <div class="kanban-cards">
+                {% for o in grouped_orders.shipped %}
+                    {% include 'dash/partials/kanban_card.html' with order=o %}
+                {% endfor %}
+                {% for o in grouped_orders.out_for_delivery %}
+                    {% include 'dash/partials/kanban_card.html' with order=o %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- DELIVERED -->
+        <div class="kanban-column">
+            <div class="kanban-header delivered">
+                <span>DELIVERED</span>
+                <span class="badge">{{ grouped_orders.delivered|length }}</span>
+            </div>
+            <div class="kanban-cards">
+                {% for o in grouped_orders.delivered %}
+                    {% include 'dash/partials/kanban_card.html' with order=o %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- RETURNS & REFUNDS -->
+        <div class="kanban-column">
+            <div class="kanban-header returned">
+                <span>RETURNS / REFUNDS</span>
+                <span class="badge">{{ grouped_orders.return_requested|length|add:grouped_orders.returned|length|add:grouped_orders.refunded|length }}</span>
+            </div>
+            <div class="kanban-cards">
+                {% for o in grouped_orders.return_requested %}
+                    {% include 'dash/partials/kanban_card.html' with order=o %}
+                {% endfor %}
+                {% for o in grouped_orders.returned %}
+                    {% include 'dash/partials/kanban_card.html' with order=o %}
+                {% endfor %}
+                {% for o in grouped_orders.refunded %}
+                    {% include 'dash/partials/kanban_card.html' with order=o %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- CANCELLED -->
+        <div class="kanban-column">
+            <div class="kanban-header cancelled">
+                <span>CANCELLED</span>
+                <span class="badge">{{ grouped_orders.cancelled|length }}</span>
+            </div>
+            <div class="kanban-cards">
+                {% for o in grouped_orders.cancelled %}
+                    {% include 'dash/partials/kanban_card.html' with order=o %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock 'body' %}

@@ -1,290 +1,349 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-{% block 'title' %}Kapi Today | From South India to the World{% endblock 'title' %}
+{% block 'title' %}Rawwish | The Look That Matters{% endblock 'title' %}
 
 {% block 'meta' %}
-<meta name="description" content="Single-origin Indian coffee, from misty plantations to your morning cup. Rich in heritage, crafted for today.">
+<meta name="description" content="Thoughtfully crafted beauty essentials with clean ingredients, real intention and a deeper respect for you and the planet.">
 {% endblock 'meta' %}
 
 {% block 'css' %}
 <style>
-/* ==========================================
-   STAGE 3: HERO SECTION
-   ========================================== */
-.kapi-hero {
-    position: relative;
-    height: 85vh;
-    min-height: 600px;
-    background-color: var(--kapi-espresso);
+/* Hero Section */
+.hero-section {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--rw-cream);
     overflow: hidden;
 }
-.kapi-hero-img {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+.hero-img-container {
+    height: 100%;
+    min-height: 50vh;
+}
+.hero-img-container img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: 1;
 }
-.kapi-hero-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(26,20,18,0.9) 0%, rgba(26,20,18,0.4) 60%, rgba(26,20,18,0.1) 100%);
-    z-index: 2;
-}
-.kapi-hero-content {
-    position: relative;
-    z-index: 3;
-    color: #fff;
-}
-.hero-tagline {
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--kapi-gold-accent, #C9A84C);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
+.hero-text {
+    padding: 4rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 .hero-title {
-    font-family: var(--font-heading);
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 900;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
-}
-.text-gold {
-    color: var(--kapi-gold-accent, #C9A84C);
 }
 .hero-subtitle {
     font-size: 1.1rem;
     line-height: 1.6;
-    opacity: 0.9;
-    max-width: 480px;
-}
-.btn-hero-primary {
-    background-color: var(--kapi-gold-accent, #C9A84C);
-    color: var(--kapi-espresso);
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-.btn-hero-primary:hover {
-    background-color: var(--kapi-brass-light);
-    color: var(--kapi-espresso);
-    transform: translateY(-2px);
-}
-.btn-hero-secondary {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: rgba(255,255,255,0.1);
-    backdrop-filter: blur(8px);
-    color: #fff;
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.3);
-    transition: all 0.3s;
-}
-.btn-hero-secondary:hover {
-    background-color: rgba(255,255,255,0.2);
-    color: #fff;
-}
-.hero-badge {
-    position: absolute;
-    bottom: 80px;
-    right: 60px;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: rgba(44, 24, 16, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(201, 168, 76, 0.3);
-    padding: 16px 24px;
-    border-radius: 12px;
-    color: #fff;
+    color: var(--rw-muted);
+    margin-bottom: 2.5rem;
 }
 
-.hero-badge .flag-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--kapi-gold-accent, #C9A84C);
-}
-
-.hero-badge .badge-icon {
-    width: 32px;
-    height: 32px;
-    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg); /* Golden tint */
-}
-.badge-text {
-    font-size: 0.8rem;
-    line-height: 1.4;
-    color: #e0e0e0;
-}
-.badge-text strong {
-    color: var(--kapi-gold-accent);
-    font-size: 0.9rem;
-}
-
-@media (max-width: 767px) {
-    .kapi-hero-overlay {
-        background: linear-gradient(to bottom, rgba(26,20,18,0.2) 0%, rgba(26,20,18,0.8) 50%, rgba(26,20,18,1) 100%);
-    }
-    .kapi-hero-content {
-        margin-top: auto;
-        padding-bottom: 80px;
-    }
-    .kapi-hero {
-        align-items: flex-end;
-        display: flex;
-        height: 90vh;
-    }
-    .hero-actions {
-        flex-direction: column;
-        width: 100%;
-    }
-    .btn-hero-primary, .btn-hero-secondary {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-    }
-}
-
-/* ==========================================
-   STAGE 4: CATEGORY & STORY
-   ========================================== */
-.category-strip-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-}
-.category-strip-container::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-}
-.category-strip {
-    display: flex;
-    gap: 20px;
-    padding-bottom: 10px;
-}
+/* Category Discovery */
 .category-card {
-    text-align: center;
-    text-decoration: none;
-    flex: 0 0 auto;
-    width: 100px;
-}
-.category-img-wrapper {
-    width: 90px;
-    height: 90px;
-    border-radius: 24px; /* Squircle look */
+    position: relative;
     overflow: hidden;
-    margin: 0 auto 10px;
-    background-color: var(--kapi-cream-warm, #F5EDE0);
-    transition: transform 0.3s;
-    border: 1px solid rgba(0,0,0,0.05);
+    display: block;
+    aspect-ratio: 3/4;
+    text-decoration: none;
 }
-.category-card:hover .category-img-wrapper {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-.category-img-wrapper img {
+.category-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.8s ease;
 }
-.category-placeholder {
-    width: 100%;
-    height: 100%;
-    background: var(--kapi-cream-dark, #EBE0D0);
-}
-.category-name {
-    color: var(--kapi-espresso);
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.kapi-story-card {
-    background-color: var(--kapi-cream, #FAF6F0);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-.kapi-story-image img {
-    min-height: 400px;
-}
-
-
-/* ==========================================
-   STAGE 5: BESTSELLERS
-   ========================================== */
-.bestsellers-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 20px;
-}
-.bestsellers-scroll::-webkit-scrollbar {
-    display: none;
-}
-.kapi-product-card {
-    transition: transform 0.3s;
-}
-.kapi-product-card:hover {
-    transform: translateY(-5px);
-}
-.variant-selector-pills .btn-check:checked + .btn-outline-secondary {
-    background-color: var(--kapi-plantation-dark, #1B3A28);
-    color: #fff;
-    border-color: var(--kapi-plantation-dark, #1B3A28);
-}
-.variant-selector-pills .btn-outline-secondary {
-    border-color: #dee2e6;
-    color: var(--kapi-espresso);
-}
-
-
-/* ==========================================
-   STAGE 6-8: ROAST, BREW, ORIGINS
-   ========================================== */
-.roast-card {
-    transition: all 0.3s ease;
-}
-.roast-card:hover {
-    background: rgba(255,255,255,0.1) !important;
-    transform: translateX(10px);
-}
-.brew-card img {
-    transition: transform 0.4s ease;
-}
-.brew-card:hover img {
+.category-card:hover img {
     transform: scale(1.05);
 }
+.category-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    color: white;
+}
+.category-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin: 0;
+    color: white;
+}
+.category-subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.category-subtitle i {
+    transition: transform 0.3s ease;
+}
+.category-card:hover .category-subtitle i {
+    transform: translateX(5px);
+}
 
+/* Editorial Story */
+.editorial-section {
+    background-color: var(--rw-plum-dark);
+    color: var(--rw-cream);
+    padding: 6rem 0;
+}
+.editorial-title {
+    color: var(--rw-cream);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 1.5rem;
+}
+
+/* Ingredients */
+.ingredient-badge {
+    border: 1px solid var(--rw-border);
+    padding: 1rem 2rem;
+    display: inline-block;
+    margin: 0.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--rw-plum);
+}
 </style>
 {% endblock 'css' %}
 
 {% block 'body' %}
-    {% include 'main/components/hero.html' %}
-    {% include 'main/components/categories.html' %}
-    {% include 'main/components/story.html' %}
 
-    
-    {% include 'main/components/bestsellers.html' %}
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div class="container-fluid p-0">
+        <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
+            <div class="col-lg-5 col-xl-4 text-center text-lg-start">
+                <div class="hero-text fade-up is-visible">
+                    <div class="mb-4 text-uppercase fw-bold text-muted-rw" style="letter-spacing: 0.1em; font-size: 0.8rem;">
+                        The Look That Matters
+                    </div>
+                    <h1 class="hero-title">Beauty That Does More Good.</h1>
+                    <p class="hero-subtitle">Thoughtfully crafted beauty essentials with clean ingredients, real intention and a deeper respect for you and the planet.</p>
+                    <a href="{% url 'shop' %}" class="btn btn-primary px-5 py-3">Shop The Collection</a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-xl-8">
+                <div class="hero-img-container">
+                    <img src="/static/main/images/hero.webp" alt="Rawwish Beauty Collection" loading="eager" fetchpriority="high">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    
-    {% include 'main/components/roast_spectrum.html' %}
-    {% include 'main/components/brew_methods.html' %}
-    {% include 'main/components/origins_video.html' %}
+<!-- CATEGORY DISCOVERY -->
+<section class="py-5 bg-white">
+    <div class="container py-5">
+        <div class="text-center mb-5 fade-up">
+            <h2 class="mb-3">Essential Rituals</h2>
+            <p class="text-muted-rw">Explore our thoughtfully formulated collections.</p>
+        </div>
+        
+        <div class="row g-4">
+            {% for cat in categories|slice:":4" %}
+            <div class="col-6 col-md-3 fade-up" style="transition-delay: 0.{{ forloop.counter0 }}s;">
+                <a href="{% url 'shop_category' cat.slug %}" class="category-card">
+                    {% if cat.category_image %}
+                    <img src="{{ cat.category_image.url }}" alt="{{ cat.title }}" loading="lazy">
+                    {% else %}
+                    <img src="/static/main/images/product_1.webp" alt="{{ cat.title }}" loading="lazy">
+                    {% endif %}
+                    <div class="category-overlay">
+                        <h3 class="category-title">{{ cat.title }}</h3>
+                        <div class="category-subtitle">Explore <i class="bi bi-arrow-right"></i></div>
+                    </div>
+                </a>
+            </div>
+            {% empty %}
+            <p>No categories found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
-    
-    {% include 'main/components/testimonials.html' %}
+<!-- BESTSELLERS / FEATURED PRODUCTS -->
+<section class="py-5 bg-cream">
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-end mb-5 fade-up">
+            <div>
+                <h2 class="mb-2">Featured Essentials</h2>
+                <p class="text-muted-rw mb-0">Our most loved formulations.</p>
+            </div>
+            <a href="{% url 'shop' %}" class="text-plum text-decoration-none fw-bold text-uppercase" style="letter-spacing: 0.05em; font-size: 0.85rem;">View All <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+        
+        <div class="row g-4">
+            {% for product in featured_products|slice:":4" %}
+            <div class="col-6 col-lg-3 fade-up">
+                {% include 'main/components/product_card.html' with product=product %}
+            </div>
+            {% empty %}
+            <div class="col-12 text-center py-5">
+                <p class="text-muted-rw">New collection launching soon.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
-    {% include 'main/components/newsletter.html' %}
+<!-- EDITORIAL BRAND STORY -->
+<section class="more-than-beauty" style="background-color: #2F1A1B; overflow: hidden;">
+    <div class="row g-0">
+        <div class="col-lg-5 d-flex align-items-center" style="padding: 10%;">
+            <div class="fade-up" style="color: #FFFFFF;">
+                <div class="text-uppercase mb-4" style="font-size: 0.65rem; letter-spacing: 0.15em; color: #FFFFFF; opacity: 0.9;">Our Philosophy</div>
+                <h2 class="mb-4" style="font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 5.5rem); line-height: 1.05; letter-spacing: -0.02em; color: #FFFFFF;">More Than<br>Beauty.</h2>
+                <p class="mb-5" style="font-size: 0.85rem; line-height: 1.8; max-width: 400px; color: #E0D3D1;">
+                    Self-care is a form of power. Rawwish products are made with real ingredients, real intention and a deep respect for you and the planet.
+                </p>
+                <a href="/about" class="text-uppercase text-decoration-none" style="color: #FFFFFF; font-size: 0.65rem; letter-spacing: 0.15em; border-bottom: 1px solid #FFFFFF; padding-bottom: 4px;">Our Story &rarr;</a>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <img src="/static/main/images/phsio.webp" alt="More Than Beauty" style="width: 100%; height: 100%; object-fit: cover; min-height: 500px;">
+        </div>
+    </div>
+</section>
 
-    
+<!-- INGREDIENTS -->
+<section class="ingredients-section py-5" style="background-color: #4A2B2D; overflow-x: hidden;">
+    <div class="container-fluid py-5 px-lg-5">
+        <div class="row align-items-center g-4 g-lg-5">
+            <!-- Left Text -->
+            <div class="col-lg-4 col-xl-3 pe-lg-4 mb-4 mb-lg-0 fade-up">
+                <div class="text-uppercase mb-4" style="font-size: 0.65rem; letter-spacing: 0.15em; color: #FFFFFF; opacity: 0.9;">Nature's Finest</div>
+                <h2 class="mb-4" style="font-family: var(--font-serif); font-size: clamp(2.2rem, 3.2vw, 3.4rem); line-height: 1.1; color: #FFFFFF; letter-spacing: -0.01em;">Ingredients<br>That Care.</h2>
+                <p class="mb-4" style="font-size: 0.85rem; line-height: 1.8; color: #E0D3D1; max-width: 320px;">
+                    Thoughtfully chosen, high-quality ingredients that are gentle, effective and good for your skin &mdash; and the planet.
+                </p>
+                <a href="/ingredients" class="text-uppercase text-decoration-none" style="color: #FFFFFF; font-size: 0.65rem; letter-spacing: 0.15em; border-bottom: 1px solid #FFFFFF; padding-bottom: 4px;">Explore Ingredients &rarr;</a>
+            </div>
+            
+            <!-- Right Grid -->
+            <div class="col-lg-8 col-xl-9 ps-lg-3 fade-up" style="transition-delay: 0.2s;">
+                <div class="row row-cols-2 row-cols-md-4 g-3 g-xl-4">
+                    
+                    <div class="col">
+                        <img src="/static/main/indgre/1.webp" alt="Coffee" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 0;">
+                        <div style="background-color: #F8F6F0; padding: 12px 15px;">
+                            <h4 class="mb-1" style="font-family: var(--font-serif); font-size: 1rem; color: #231C18;">Coffee</h4>
+                            <p class="mb-0" style="font-size: 0.6rem; color: #5A524D;">Energises & revitalises</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <img src="/static/main/indgre/2.webp" alt="Shea Butter" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 0;">
+                        <div style="background-color: #F8F6F0; padding: 12px 15px;">
+                            <h4 class="mb-1" style="font-family: var(--font-serif); font-size: 1rem; color: #231C18;">Shea Butter</h4>
+                            <p class="mb-0" style="font-size: 0.6rem; color: #5A524D;">Nourishes & repairs</p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="/static/main/indgre/3.webp" alt="Aloe Vera" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 0;">
+                        <div style="background-color: #F8F6F0; padding: 12px 15px;">
+                            <h4 class="mb-1" style="font-family: var(--font-serif); font-size: 1rem; color: #231C18;">Aloe Vera</h4>
+                            <p class="mb-0" style="font-size: 0.6rem; color: #5A524D;">Calms & heals</p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="/static/main/indgre/4.webp" alt="Turmeric" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 0;">
+                        <div style="background-color: #F8F6F0; padding: 12px 15px;">
+                            <h4 class="mb-1" style="font-family: var(--font-serif); font-size: 1rem; color: #231C18;">Turmeric</h4>
+                            <p class="mb-0" style="font-size: 0.6rem; color: #5A524D;">Brightens & protects</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEWSLETTER & INSTAGRAM -->
+<section class="newsletter-instagram-section py-5" style="background-color: #1F1112; color: #FFFFFF;">
+    <div class="container py-5">
+        <!-- Newsletter Row -->
+        <div class="row mb-5 align-items-center fade-up">
+            <div class="col-lg-5">
+                <div class="text-uppercase mb-3" style="font-size: 0.65rem; letter-spacing: 0.15em; color: #FFFFFF; opacity: 0.9;">Join The Rawwish Community</div>
+                <h2 style="font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.05; margin-bottom: 0; letter-spacing: -0.02em; color: #FFFFFF;">Good skin.<br>Good rituals.</h2>
+            </div>
+            <div class="col-lg-6 offset-lg-1 mt-4 mt-lg-0">
+                <p class="mb-4" style="font-size: 0.75rem; color: #D1B8B6; letter-spacing: 0.02em;">Be first to know about new launches, thoughtful offers and beauty rituals worth keeping.</p>
+                <form class="d-flex align-items-center border-bottom pb-2" style="border-color: rgba(255,255,255,0.4) !important;">
+                    <input type="email" class="form-control bg-transparent border-0 px-0 shadow-none text-light" placeholder="Your email address" style="color: #FFFFFF; font-size: 0.85rem;" required>
+                    <button type="submit" class="btn p-0 text-decoration-none border-0 bg-transparent" style="color: #FFFFFF;">&rarr;</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- UGC / Real Stories Row -->
+        <div class="row mt-5 pt-4 fade-up" style="transition-delay: 0.2s;">
+            <div class="col-12 mb-4">
+                <div class="text-uppercase mb-1" style="font-size: 0.65rem; letter-spacing: 0.15em; color: #FFFFFF; opacity: 0.9;">Real People</div>
+                <h3 style="font-family: var(--font-serif); font-size: 2.5rem; line-height: 1.1; margin-bottom: 0.5rem; letter-spacing: -0.02em; color: #FFFFFF;">Real Skin.<br>Real Stories.</h3>
+                <p style="font-size: 0.75rem; color: #D1B8B6;">#RawwishRituals &middot; See how our community uses their favourites.</p>
+            </div>
+            
+            <!-- UGC Videos (Webm) -->
+            <div class="col-12">
+                <div class="row g-3">
+                    <div class="col-6 col-lg-3">
+                        <video src="/static/main/UGC/1.webm" autoplay loop muted playsinline style="width: 100%; height: 450px; object-fit: cover; border-radius: 4px; background: #2B1618;"></video>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <video src="/static/main/UGC/2.webm" autoplay loop muted playsinline style="width: 100%; height: 450px; object-fit: cover; border-radius: 4px; background: #2B1618;"></video>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <video src="/static/main/UGC/3.webm" autoplay loop muted playsinline style="width: 100%; height: 450px; object-fit: cover; border-radius: 4px; background: #2B1618;"></video>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <video src="/static/main/UGC/4.webm" autoplay loop muted playsinline style="width: 100%; height: 450px; object-fit: cover; border-radius: 4px; background: #2B1618;"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
 {% endblock 'body' %}
+
+{% block 'script' %}
+<script>
+    // Intersection Observer for fade-up animations
+    document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((elem) => {
+            if (!elem.classList.contains('is-visible')) {
+                observer.observe(elem);
+            }
+        });
+    });
+</script>
+{% endblock 'script' %}

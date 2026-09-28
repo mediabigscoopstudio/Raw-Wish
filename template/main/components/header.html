@@ -1,5 +1,5 @@
 
-<header class="kapi-header">
+<header class="rawwish-header">
     <div class="container-fluid px-4">
         <!-- Desktop Header -->
         <div class="row align-items-center d-none d-lg-flex py-3">
@@ -7,16 +7,15 @@
             <div class="col-4">
                 <nav class="desktop-nav-links">
                     <a href="/shop">Shop</a>
-                    <a href="/origins">Origins</a>
-                    <a href="/learn">Learn</a>
+                    <a href="/ingredients/">Ingredients</a>
                     <a href="/about">Our Story</a>
-                    <a href="/journal">Journal</a>
+                    <a href="/content">Journal</a>
                 </nav>
             </div>
             <!-- Center Logo -->
             <div class="col-4 text-center">
                 <a href="/" class="header-logo">
-                    <img src="/static/main/logos/LogoMain.webp" alt="Kapi Today" style="height: 90px; object-fit: contain;">
+                    <img src="/static/main/logos/Logo.webp" alt="Raw Wish" style="height: 60px; object-fit: contain;">
                 </a>
             </div>
             <!-- Right Actions -->
@@ -24,9 +23,9 @@
                 <!-- Search Bar -->
                 <form class="search-bar position-relative" action="/shop" method="GET">
                     <button type="submit" style="background:transparent; border:none; padding:0; margin-right:8px;"><i class="bi bi-search text-muted"></i></button>
-                    <input type="text" name="q" id="kapiSearchInput" placeholder="Search coffee, equipment..." autocomplete="off" style="border:none; outline:none; background:transparent;">
+                    <input type="text" name="q" id="rawwishSearchInput" placeholder="Search beauty essentials..." autocomplete="off" style="border:none; outline:none; background:transparent;">
                     <!-- Search Results Dropdown -->
-                    <div id="kapiSearchResults" class="search-results-dropdown shadow-sm rounded-3" style="position:absolute; top:110%; left:0; width:300px; background:#fff; z-index:9999; display:none; max-height:400px; overflow-y:auto; border:1px solid #eee;"></div>
+                    <div id="rawwishSearchResults" class="search-results-dropdown shadow-sm rounded-3" style="position:absolute; top:110%; left:0; width:300px; background:#fff; z-index:9999; display:none; max-height:400px; overflow-y:auto; border:1px solid #eee;"></div>
                 </form>
                 
                 <!-- Account Dropdown -->
@@ -47,7 +46,30 @@
                 <a href="#" class="header-icon google-login-trigger" title="Login"><i class="bi bi-person"></i></a>
                 {% endif %}
                 
-                <!-- Cart Button -->
+                
+                <!-- Wishlist Dropdown -->
+                <div class="dropdown me-3">
+                    <a href="#" class="header-icon position-relative" data-bs-toggle="dropdown" aria-expanded="false" id="wishlistDropdownDesktop">
+                        <i class="bi bi-heart"></i>
+                        <span class="cart-badge wishlist-badge-counter" style="display: {% if global_wishlist_count > 0 %}flex{% else %}none{% endif %};">{{ global_wishlist_count }}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end p-3 shadow wishlist-menu-dropdown" style="width: 300px; max-height: 400px; overflow-y: auto;">
+                        {% if global_wishlist_count == 0 %}
+                        <li class="text-center text-muted" style="font-size: 0.85rem; padding: 10px;">Your wishlist is empty</li>
+                        {% else %}
+                            {% for item in global_wishlist_items %}
+                            <li class="mb-3 wishlist-item-{{ item.id }}">
+                                <div class="d-flex align-items-center position-relative">
+                                    <img src="{% if item.product.product_images.first %}{{ item.product.product_images.first.image.url }}{% else %}/static/main/images/product_1.webp{% endif %}" alt="{{ item.product.name }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px; margin-right: 10px;">
+                                    <a href="{% url 'product_detail' item.product.category.slug item.product.sub_category.slug|default:'all' item.product.slug %}" class="text-decoration-none text-dark" style="font-size: 0.85rem; font-weight: 600; line-height: 1.2; flex-grow: 1;">{{ item.product.name }}</a>
+                                    <button class="btn btn-sm text-danger p-0 ms-2" onclick="removeWishlistItem('{{ item.id }}', event)"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
+<!-- Cart Button -->
                 <button type="button" class="header-icon position-relative border-0 bg-transparent" data-bs-toggle="offcanvas" data-bs-target="#fastCheckoutDrawer">
                     <i class="bi bi-bag"></i>
                     <span class="cart-badge">{{ global_cart_count|default:"0" }}</span>
@@ -62,7 +84,7 @@
             </button>
             
             <a href="/" class="header-logo">
-                <img src="/static/main/logos/LogoMain.webp" alt="Kapi Today" style="height: 60px; object-fit: contain;">
+                <img src="/static/main/logos/Logo.webp" alt="Rawwish Logo" style="height: 40px; object-fit: contain;">
             </a>
             
             <div class="d-flex align-items-center gap-3">
@@ -85,6 +107,30 @@
                 <a href="#" class="header-icon google-login-trigger" title="Login"><i class="bi bi-person"></i></a>
                 {% endif %}
 
+                
+                <!-- Wishlist Mobile -->
+                <div class="dropdown me-3">
+                    <a href="#" class="header-icon position-relative" data-bs-toggle="dropdown" aria-expanded="false" id="wishlistDropdownMobile">
+                        <i class="bi bi-heart"></i>
+                        <span class="cart-badge wishlist-badge-counter" style="display: {% if global_wishlist_count > 0 %}flex{% else %}none{% endif %};">{{ global_wishlist_count }}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end p-3 shadow wishlist-menu-dropdown" style="width: 250px; max-height: 400px; overflow-y: auto;">
+                        {% if global_wishlist_count == 0 %}
+                        <li class="text-center text-muted" style="font-size: 0.85rem; padding: 10px;">Your wishlist is empty</li>
+                        {% else %}
+                            {% for item in global_wishlist_items %}
+                            <li class="mb-3 wishlist-item-{{ item.id }}">
+                                <div class="d-flex align-items-center position-relative">
+                                    <img src="{% if item.product.product_images.first %}{{ item.product.product_images.first.image.url }}{% else %}/static/main/images/product_1.webp{% endif %}" alt="{{ item.product.name }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px; margin-right: 10px;">
+                                    <a href="{% url 'product_detail' item.product.category.slug item.product.sub_category.slug|default:'all' item.product.slug %}" class="text-decoration-none text-dark" style="font-size: 0.85rem; font-weight: 600; line-height: 1.2; flex-grow: 1;">{{ item.product.name }}</a>
+                                    <button class="btn btn-sm text-danger p-0 ms-2" onclick="removeWishlistItem('{{ item.id }}', event)"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
+
                 <!-- Cart Button -->
                 <button type="button" class="header-icon position-relative border-0 bg-transparent" data-bs-toggle="offcanvas" data-bs-target="#fastCheckoutDrawer">
                     <i class="bi bi-bag"></i>
@@ -95,3 +141,62 @@
     </div>
 </header>
 
+
+<script>
+    // Server-synced Wishlist Logic
+    
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+
+    function toggleWishlist(productId, btnElement) {
+        fetch('/api/wishlist/toggle/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken
+            },
+            body: JSON.stringify({ product_id: productId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // We'll just reload the page for now to keep the UI perfectly synced with the backend 
+                // since the dropdown HTML is rendered by Django. A full SPA approach would rebuild the HTML here.
+                window.location.reload();
+            } else {
+                console.error(data.error);
+            }
+        });
+    }
+
+    function removeWishlistItem(itemId, event) {
+        if(event) { event.preventDefault(); event.stopPropagation(); }
+        fetch('/api/wishlist/remove/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken
+            },
+            body: JSON.stringify({ item_id: itemId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.reload();
+            }
+        });
+    }
+</script>

@@ -1,0 +1,129 @@
+
+<style>
+    .shade-spectrum-section {
+        position: relative;
+        background-color: #1a1a1a;
+        background-image: url('/static/main/images/home/shade-bg.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .shade-spectrum-section::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.4); /* subtle darkening to ensure text pops */
+        z-index: 1;
+    }
+    .shade-spectrum-content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .shade-tile {
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(255,255,255,0.05);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .shade-tile:hover {
+        transform: translateY(-5px);
+    }
+    
+    .shade-scroll-container {
+        scrollbar-width: none;
+    }
+    .shade-scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
+<section class="shade-spectrum-section py-5 my-2">
+    <div class="container-fluid py-lg-5 px-4 px-lg-5 shade-spectrum-content">
+        <div class="row align-items-center">
+            
+            <!-- Left Text Box -->
+            <div class="col-lg-3 col-md-12 text-white mb-5 mb-lg-0 pe-lg-4">
+                <div class="text-uppercase fw-bold mb-3" style="color: #D4B872; letter-spacing: 2px; font-size: 0.8rem;">FIND YOUR FLAVOR</div>
+                <h2 class="display-6 fw-bold mb-4" style="font-family: var(--font-heading); color: #F8F5EE; line-height: 1.1;">The Shade<br>Spectrum</h2>
+                <p class="mb-4" style="color: #CCCCCC; line-height: 1.6; font-size: 0.95rem;">
+                    From light and bright to dark and bold, explore shades crafted for every mood and moment.
+                </p>
+                <a href="/shop" class="btn rounded-pill fw-bold" style="background-color: #E2BB66; color: #111; padding: 10px 24px; font-size: 0.9rem; border: none; transition: background 0.2s;">
+                    Learn About Shades &rarr;
+                </a>
+            </div>
+
+            <!-- Right Tiles Grid -->
+            <div class="col-lg-9 col-md-12">
+                <div class="row g-3 flex-nowrap flex-lg-wrap overflow-auto shade-scroll-container" style="scroll-snap-type: x mandatory; padding-bottom: 20px;">
+                    
+                    <!-- Light Shade -->
+                    <div class="col-10 col-md-5 col-lg-3 flex-shrink-0" style="scroll-snap-align: start;">
+                        <div class="shade-tile position-relative overflow-hidden rounded-4 w-100" style="aspect-ratio: 4/5;">
+                            <img src="/static/main/images/home/shade-light.webp" class="position-absolute w-100 h-100 object-fit-cover" alt="Light Shade">
+                            <div class="position-absolute bottom-0 w-100 p-4 text-center d-flex flex-column justify-content-end h-100" style="background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 80%);">
+                                <h4 class="text-white mb-2" style="font-family: var(--font-heading); font-size: 1.25rem;">Light Shade</h4>
+                                <p class="mb-3" style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.4;">Bright, fruity and vibrant.<br>Discover the origin.</p>
+                                <div class="mx-auto d-flex align-items-center justify-content-center gap-2" style="color: #D4B872; opacity: 0.8;">
+                                    <div style="height: 1px; width: 12px; background-color: #D4B872;"></div>
+                                    <div style="font-size: 0.6rem;">&#10022;</div>
+                                    <div style="height: 1px; width: 12px; background-color: #D4B872;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medium Shade -->
+                    <div class="col-10 col-md-5 col-lg-3 flex-shrink-0" style="scroll-snap-align: start;">
+                        <div class="shade-tile position-relative overflow-hidden rounded-4 w-100" style="aspect-ratio: 4/5;">
+                            <img src="/static/main/images/home/shade-dark.webp" class="position-absolute w-100 h-100 object-fit-cover" alt="Medium Shade">
+                            <div class="position-absolute bottom-0 w-100 p-4 text-center d-flex flex-column justify-content-end h-100" style="background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 80%);">
+                                <h4 class="text-white mb-2" style="font-family: var(--font-heading); font-size: 1.25rem;">Medium Shade</h4>
+                                <p class="mb-3" style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.4;">Balanced, smooth<br>and versatile.</p>
+                                <div class="mx-auto d-flex align-items-center justify-content-center gap-2" style="color: #D4B872; opacity: 0.8;">
+                                    <div style="height: 1px; width: 12px; background-color: #D4B872;"></div>
+                                    <div style="font-size: 0.6rem;">&#10022;</div>
+                                    <div style="height: 1px; width: 12px; background-color: #D4B872;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dark Shade -->
+                    <div class="col-10 col-md-5 col-lg-3 flex-shrink-0" style="scroll-snap-align: start;">
+                        <div class="shade-tile position-relative overflow-hidden rounded-4 w-100" style="aspect-ratio: 4/5;">
+                            <img src="/static/main/images/home/shade-dark.webp" class="position-absolute w-100 h-100 object-fit-cover" style="filter: brightness(0.85);" alt="Dark Shade">
+                            <div class="position-absolute bottom-0 w-100 p-4 text-center d-flex flex-column justify-content-end h-100" style="background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 80%);">
+                                <h4 class="text-white mb-2" style="font-family: var(--font-heading); font-size: 1.25rem;">Dark Shade</h4>
+                                <p class="mb-3" style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.4;">Bold, rich and<br>full-bodied.</p>
+                                <div class="mx-auto d-flex align-items-center justify-content-center gap-2" style="color: #D4B872; opacity: 0.8;">
+                                    <div style="height: 1px; width: 12px; background-color: #D4B872;"></div>
+                                    <div style="font-size: 0.6rem;">&#10022;</div>
+                                    <div style="height: 1px; width: 12px; background-color: #D4B872;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monsoon Malabar -->
+                    <div class="col-10 col-md-5 col-lg-3 flex-shrink-0" style="scroll-snap-align: start;">
+                        <div class="shade-tile position-relative overflow-hidden rounded-4 w-100" style="aspect-ratio: 4/5;">
+                            <img src="/static/main/images/home/shade-malabar.webp" class="position-absolute w-100 h-100 object-fit-cover" alt="Monsoon Malabar">
+                            <div class="position-absolute bottom-0 w-100 p-4 text-center d-flex flex-column justify-content-end h-100" style="background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 80%);">
+                                <h4 class="text-white mb-2" style="font-family: var(--font-heading); font-size: 1.25rem;">Monsoon Malabar</h4>
+                                <p class="mb-3" style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.4;">Unique, low acidity<br>and earthy.</p>
+                                <div class="mx-auto d-flex align-items-center justify-content-center gap-2" style="color: #D4B872; opacity: 0.8;">
+                                    <div style="height: 1px; width: 12px; background-color: #D4B872;"></div>
+                                    <div style="font-size: 0.6rem;">&#10022;</div>
+                                    <div style="height: 1px; width: 12px; background-color: #D4B872;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

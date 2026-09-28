@@ -1,17 +1,17 @@
 {% extends "main/base.html" %}
-{% block 'title' %}Our Content — Kapi Today{% endblock 'title' %}
+{% block 'title' %}Our Content — Raw Wish{% endblock 'title' %}
 {% block 'meta' %}
-<meta name="description" content="Stories, Brews and the World of Coffee.">
+<meta name="description" content="Stories, Routines and the World of Cosmetics.">
 {% endblock 'meta' %}
 {% block 'css' %}
   <style>
     /* ── FEATURED ── */
-    .kt-featured {
-      border-bottom: 1px solid var(--kt-border);
+    .rw-featured {
+      border-bottom: 1px solid var(--rw-border);
       padding: 2.5rem 0;
     }
-    .kt-featured-img {
-      background: var(--kt-surface);
+    .rw-featured-img {
+      background: var(--rw-surface);
       border-radius: 6px;
       aspect-ratio: 16/9;
       display: flex;
@@ -19,132 +19,132 @@
       justify-content: center;
       overflow: hidden;
     }
-    .kt-featured-img img {
+    .rw-featured-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .kt-featured-img .placeholder-icon {
+    .rw-featured-img .placeholder-icon {
       opacity: 0.2;
     }
-    .kt-label {
+    .rw-label {
       font-size: 0.6875rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      background: var(--kapi-cream-dark);
-      color: var(--kapi-espresso);
+      background: var(--rawwish-cream-dark);
+      color: var(--rw-dark);
       padding: 3px 10px;
       border-radius: 3px;
       display: inline-block;
     }
  
-    .kt-feat-title {
+    .rw-feat-title {
       font-family: var(--font-heading);
       font-size: 2rem;
       font-weight: 700;
       line-height: 1.25;
-      color: var(--kapi-ink);
+      color: var(--rawwish-ink);
     }
-    .kt-feat-title a {
+    .rw-feat-title a {
         color: inherit;
         text-decoration: none;
     }
-    .kt-feat-title a:hover {
-        color: var(--kapi-red-oxide);
+    .rw-feat-title a:hover {
+        color: var(--rw-primary);
     }
-    .kt-feat-excerpt {
+    .rw-feat-excerpt {
       font-family: var(--font-body);
       font-size: 0.9375rem;
-      color: var(--kapi-charcoal);
+      color: var(--rawwish-charcoal);
       line-height: 1.7;
     }
-    .kt-feat-meta {
+    .rw-feat-meta {
       font-size: 0.75rem;
-      color: var(--kapi-stone);
+      color: var(--rawwish-stone);
     }
-    .kt-read-link {
+    .rw-read-link {
       font-size: 0.875rem;
       font-weight: 500;
-      color: var(--kapi-ink);
+      color: var(--rawwish-ink);
       text-decoration: none;
-      border-bottom: 1.5px solid var(--kapi-ink);
+      border-bottom: 1.5px solid var(--rawwish-ink);
       padding-bottom: 1px;
       transition: color 0.15s, border-color 0.15s;
       align-self: flex-start;
     }
-    .kt-read-link:hover {
-      color: var(--kapi-red-oxide);
-      border-color: var(--kapi-red-oxide);
+    .rw-read-link:hover {
+      color: var(--rw-primary);
+      border-color: var(--rw-primary);
     }
  
     /* ── CATEGORY FILTERS ── */
-    .kt-filters { padding: 1.5rem 0; border-bottom: 1px solid var(--kapi-cream-dark); margin-bottom: 2rem; }
-    .kt-filter-btn {
+    .rw-filters { padding: 1.5rem 0; border-bottom: 1px solid var(--rawwish-cream-dark); margin-bottom: 2rem; }
+    .rw-filter-btn {
       font-size: 0.8125rem;
       padding: 5px 18px;
-      border: 1px solid var(--kapi-stone);
+      border: 1px solid var(--rawwish-stone);
       border-radius: 20px;
       background: transparent;
-      color: var(--kapi-charcoal);
+      color: var(--rawwish-charcoal);
       cursor: pointer;
       transition: all 0.12s;
       font-family: var(--font-body);
       text-decoration: none;
     }
-    .kt-filter-btn:hover {
-      border-color: var(--kapi-ink);
-      color: var(--kapi-ink);
+    .rw-filter-btn:hover {
+      border-color: var(--rawwish-ink);
+      color: var(--rawwish-ink);
     }
-    .kt-filter-btn.active {
-      background: var(--kapi-espresso);
-      color: var(--kapi-cream);
-      border-color: var(--kapi-espresso);
+    .rw-filter-btn.active {
+      background: var(--rw-dark);
+      color: var(--rawwish-cream);
+      border-color: var(--rw-dark);
     }
  
     /* ── ARTICLE LIST ── */
-    .kt-article-item {
+    .rw-article-item {
       display: grid;
       grid-template-columns: 1fr 140px;
       gap: 1rem;
       padding: 1.25rem 0;
-      border-bottom: 1px solid var(--kapi-cream-dark);
+      border-bottom: 1px solid var(--rawwish-cream-dark);
       transition: opacity 0.15s;
     }
-    .kt-article-item:first-of-type { border-top: 1px solid var(--kapi-cream-dark); }
+    .rw-article-item:first-of-type { border-top: 1px solid var(--rawwish-cream-dark); }
     
-    .kt-art-tag {
+    .rw-art-tag {
       font-size: 0.6875rem;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--kapi-sienna);
+      color: var(--rawwish-sienna);
       margin-bottom: 5px;
     }
-    .kt-art-tag a { color: inherit; text-decoration: none; }
+    .rw-art-tag a { color: inherit; text-decoration: none; }
     
-    .kt-art-title {
+    .rw-art-title {
       font-family: var(--font-heading);
       font-size: 1.2rem;
       font-weight: 600;
       line-height: 1.4;
-      color: var(--kapi-ink);
+      color: var(--rawwish-ink);
       margin-bottom: 6px;
     }
-    .kt-art-title a { color: inherit; text-decoration: none; }
-    .kt-art-title a:hover { text-decoration: underline; color: var(--kapi-red-oxide); }
+    .rw-art-title a { color: inherit; text-decoration: none; }
+    .rw-art-title a:hover { text-decoration: underline; color: var(--rw-primary); }
     
-    .kt-art-excerpt {
+    .rw-art-excerpt {
       font-size: 0.8125rem;
-      color: var(--kapi-charcoal);
+      color: var(--rawwish-charcoal);
       line-height: 1.65;
       margin-bottom: 8px;
     }
-    .kt-art-meta { font-size: 0.75rem; color: var(--kapi-stone); }
-    .kt-art-thumb {
+    .rw-art-meta { font-size: 0.75rem; color: var(--rawwish-stone); }
+    .rw-art-thumb {
       width: 140px;
       height: 100px;
-      background: var(--kapi-cream-warm);
+      background: var(--rawwish-cream-warm);
       border-radius: 5px;
       flex-shrink: 0;
       display: flex;
@@ -152,19 +152,19 @@
       justify-content: center;
       overflow: hidden;
     }
-    .kt-art-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .kt-article-item:hover .kt-art-thumb img { transform: scale(1.05); }
-    .kt-art-thumb .ph { opacity: 0.2; }
+    .rw-art-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .rw-article-item:hover .rw-art-thumb img { transform: scale(1.05); }
+    .rw-art-thumb .ph { opacity: 0.2; }
  
     /* ── PAGINATION ── */
-    .kt-pagination { display: flex; gap: 6px; }
-    .kt-pg-btn {
+    .rw-pagination { display: flex; gap: 6px; }
+    .rw-pg-btn {
       width: 36px;
       height: 36px;
-      border: 1px solid var(--kapi-cream-dark);
+      border: 1px solid var(--rawwish-cream-dark);
       border-radius: 5px;
       background: transparent;
-      color: var(--kapi-charcoal);
+      color: var(--rawwish-charcoal);
       font-size: 0.8125rem;
       font-family: var(--font-body);
       transition: all 0.12s;
@@ -173,57 +173,57 @@
       justify-content: center;
       text-decoration: none;
     }
-    .kt-pg-btn:hover { border-color: var(--kapi-ink); color: var(--kapi-ink); }
-    .kt-pg-btn.active { background: var(--kapi-espresso); color: var(--kapi-cream); border-color: var(--kapi-espresso); }
+    .rw-pg-btn:hover { border-color: var(--rawwish-ink); color: var(--rawwish-ink); }
+    .rw-pg-btn.active { background: var(--rw-dark); color: var(--rawwish-cream); border-color: var(--rw-dark); }
  
     /* ── SIDEBAR ── */
-    .kt-sidebar-block {
+    .rw-sidebar-block {
       padding-bottom: 2rem;
       margin-bottom: 2rem;
-      border-bottom: 1px solid var(--kapi-cream-dark);
+      border-bottom: 1px solid var(--rawwish-cream-dark);
     }
-    .kt-sidebar-block:last-child { border-bottom: none; }
-    .kt-sb-heading {
+    .rw-sidebar-block:last-child { border-bottom: none; }
+    .rw-sb-heading {
       font-size: 0.6875rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--kapi-stone);
+      color: var(--rawwish-stone);
       margin-bottom: 1rem;
     }
-    .kt-trending-item {
+    .rw-trending-item {
       display: flex;
       gap: 12px;
       padding: 10px 0;
       border-bottom: 1px solid rgba(235, 224, 208, 0.5);
     }
-    .kt-trending-item:last-child { border-bottom: none; }
-    .kt-trend-num {
+    .rw-trending-item:last-child { border-bottom: none; }
+    .rw-trend-num {
       font-family: var(--font-heading);
       font-size: 1.375rem;
       font-weight: 700;
-      color: var(--kapi-sand);
+      color: var(--rawwish-sand);
       min-width: 28px;
       line-height: 1;
     }
-    .kt-trend-title {
+    .rw-trend-title {
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--kapi-ink);
+      color: var(--rawwish-ink);
       line-height: 1.4;
       margin-bottom: 3px;
     }
-    .kt-trend-title a { color: inherit; text-decoration: none; }
-    .kt-trend-title a:hover { color: var(--kapi-red-oxide); }
+    .rw-trend-title a { color: inherit; text-decoration: none; }
+    .rw-trend-title a:hover { color: var(--rw-primary); }
     
-    .kt-trend-meta { font-size: 0.75rem; color: var(--kapi-stone); }
+    .rw-trend-meta { font-size: 0.75rem; color: var(--rawwish-stone); }
  
-    .kt-tag {
+    .rw-tag {
       font-size: 0.75rem;
       padding: 5px 13px;
-      border: 1px solid var(--kapi-cream-dark);
+      border: 1px solid var(--rawwish-cream-dark);
       border-radius: 20px;
-      color: var(--kapi-charcoal);
+      color: var(--rawwish-charcoal);
       text-decoration: none;
       background: transparent;
       font-family: var(--font-body);
@@ -231,45 +231,45 @@
       display: inline-block;
       margin: 3px;
     }
-    .kt-tag:hover { border-color: var(--kapi-ink); color: var(--kapi-ink); background: rgba(0,0,0,0.02); }
+    .rw-tag:hover { border-color: var(--rawwish-ink); color: var(--rawwish-ink); background: rgba(0,0,0,0.02); }
  
-    .kt-newsletter {
-      background: var(--kapi-cream-warm);
+    .rw-newsletter {
+      background: var(--rawwish-cream-warm);
       border-radius: 8px;
       padding: 1.5rem;
     }
-    .kt-nl-title {
+    .rw-nl-title {
       font-family: var(--font-heading);
       font-size: 1.125rem;
       font-weight: 700;
-      color: var(--kapi-espresso);
+      color: var(--rw-dark);
       margin-bottom: 6px;
     }
-    .kt-nl-sub {
+    .rw-nl-sub {
       font-size: 0.8125rem;
-      color: var(--kapi-charcoal);
+      color: var(--rawwish-charcoal);
       margin-bottom: 12px;
       line-height: 1.55;
     }
-    .kt-nl-input {
+    .rw-nl-input {
       width: 100%;
       padding: 10px 12px;
-      border: 1px solid var(--kapi-sand);
+      border: 1px solid var(--rawwish-sand);
       border-radius: 4px;
-      background: var(--kapi-cream);
-      color: var(--kapi-ink);
+      background: var(--rawwish-cream);
+      color: var(--rawwish-ink);
       font-size: 0.8125rem;
       font-family: var(--font-body);
       margin-bottom: 8px;
       outline: none;
       transition: border-color 0.12s;
     }
-    .kt-nl-input:focus { border-color: var(--kapi-espresso); }
-    .kt-nl-btn {
+    .rw-nl-input:focus { border-color: var(--rw-dark); }
+    .rw-nl-btn {
       width: 100%;
       padding: 10px;
-      background: var(--kapi-espresso);
-      color: var(--kapi-cream);
+      background: var(--rw-dark);
+      color: var(--rawwish-cream);
       border: none;
       border-radius: 4px;
       font-size: 0.8125rem;
@@ -278,12 +278,12 @@
       cursor: pointer;
       transition: background 0.12s;
     }
-    .kt-nl-btn:hover { background: var(--kapi-dark-roast); }
+    .rw-nl-btn:hover { background: var(--rw-medium); }
  
     @media (max-width: 767px) {
-      .kt-feat-title { font-size: 1.5rem; }
-      .kt-article-item { grid-template-columns: 1fr; gap: 10px; }
-      .kt-art-thumb { width: 100%; height: 200px; order: -1; }
+      .rw-feat-title { font-size: 1.5rem; }
+      .rw-article-item { grid-template-columns: 1fr; gap: 10px; }
+      .rw-art-thumb { width: 100%; height: 200px; order: -1; }
     }
   </style>
 {% endblock 'css' %}
@@ -292,16 +292,16 @@
     
     <!-- HEADER -->
     <div class="py-4 py-md-5 text-center">
-        <h1 style="font-family: var(--font-heading); color: var(--kapi-espresso); font-weight: 800;">Stories, Brews & the World of Coffee</h1>
-        <p style="color: var(--kapi-charcoal); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Explore the heritage, culture, and science behind every cup of Kapi Today.</p>
+        <h1 style="font-family: var(--font-heading); color: var(--rw-dark); font-weight: 800;">Stories, Routines & the World of Cosmetics</h1>
+        <p style="color: var(--rawwish-charcoal); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Explore the heritage, culture, and science behind every cup of Raw Wish.</p>
     </div>
 
     <!-- FEATURED ARTICLE -->
     {% if featured_article %}
-    <div class="kt-featured mb-4">
+    <div class="rw-featured mb-4">
       <div class="row align-items-center g-4">
         <div class="col-md-7">
-          <div class="kt-featured-img">
+          <div class="rw-featured-img">
             <a href="{% url 'article_detail' featured_article.category.slug featured_article.slug %}">
                 {% if featured_article.banner_image %}
                     <img src="{{ featured_article.banner_image.url }}" alt="{{ featured_article.title }}">
@@ -317,11 +317,11 @@
         </div>
         <div class="col-md-5">
           <div class="d-flex flex-column gap-3">
-            <div><span class="kt-label featured">{{ featured_article.category.title }}</span></div>
-            <h2 class="kt-feat-title"><a href="{% url 'article_detail' featured_article.category.slug featured_article.slug %}">{{ featured_article.title }}</a></h2>
-            <p class="kt-feat-excerpt">{{ featured_article.description|default:featured_article.tldr|truncatewords:25 }}</p>
-            <p class="kt-feat-meta">By {{ featured_article.author.name }} &middot; {{ featured_article.created_at|date:"F j, Y" }}</p>
-            <a href="{% url 'article_detail' featured_article.category.slug featured_article.slug %}" class="kt-read-link">Read story &rarr;</a>
+            <div><span class="rw-label featured">{{ featured_article.category.title }}</span></div>
+            <h2 class="rw-feat-title"><a href="{% url 'article_detail' featured_article.category.slug featured_article.slug %}">{{ featured_article.title }}</a></h2>
+            <p class="rw-feat-excerpt">{{ featured_article.description|default:featured_article.tldr|truncatewords:25 }}</p>
+            <p class="rw-feat-meta">By {{ featured_article.author.name }} &middot; {{ featured_article.created_at|date:"F j, Y" }}</p>
+            <a href="{% url 'article_detail' featured_article.category.slug featured_article.slug %}" class="rw-read-link">Read story &rarr;</a>
           </div>
         </div>
       </div>
@@ -329,10 +329,10 @@
     {% endif %}
  
     <!-- CATEGORY FILTERS -->
-    <div class="kt-filters d-flex flex-wrap gap-2">
-      <a href="{% url 'content' %}" class="kt-filter-btn {% if not current_category %}active{% endif %}">All</a>
+    <div class="rw-filters d-flex flex-wrap gap-2">
+      <a href="{% url 'content' %}" class="rw-filter-btn {% if not current_category %}active{% endif %}">All</a>
       {% for cat in categories %}
-        <a href="{% url 'category_detail' cat.slug %}" class="kt-filter-btn {% if current_category and current_category.id == cat.id %}active{% endif %}">{{ cat.title }}</a>
+        <a href="{% url 'category_detail' cat.slug %}" class="rw-filter-btn {% if current_category and current_category.id == cat.id %}active{% endif %}">{{ cat.title }}</a>
       {% endfor %}
     </div>
  
@@ -344,14 +344,14 @@
         <div id="article-list">
             
           {% for article in page_obj %}
-          <div class="kt-article-item">
+          <div class="rw-article-item">
             <div>
-              <p class="kt-art-tag"><a href="{% url 'category_detail' article.category.slug %}">{{ article.category.title }}</a></p>
-              <h3 class="kt-art-title"><a href="{% url 'article_detail' article.category.slug article.slug %}">{{ article.title }}</a></h3>
-              <p class="kt-art-excerpt">{{ article.description|default:article.tldr|truncatewords:20 }}</p>
-              <p class="kt-art-meta">{{ article.author.name }} &middot; {{ article.created_at|date:"F j, Y" }}</p>
+              <p class="rw-art-tag"><a href="{% url 'category_detail' article.category.slug %}">{{ article.category.title }}</a></p>
+              <h3 class="rw-art-title"><a href="{% url 'article_detail' article.category.slug article.slug %}">{{ article.title }}</a></h3>
+              <p class="rw-art-excerpt">{{ article.description|default:article.tldr|truncatewords:20 }}</p>
+              <p class="rw-art-meta">{{ article.author.name }} &middot; {{ article.created_at|date:"F j, Y" }}</p>
             </div>
-            <div class="kt-art-thumb">
+            <div class="rw-art-thumb">
               <a href="{% url 'article_detail' article.category.slug article.slug %}">
                   {% if article.thumbnail_image %}
                     <img src="{{ article.thumbnail_image.url }}" alt="{{ article.title }}">
@@ -365,7 +365,7 @@
           </div>
           {% empty %}
           <div class="py-5 text-center text-muted">
-              <i class="bi bi-journal-x" style="font-size: 3rem; color: var(--kapi-stone);"></i>
+              <i class="bi bi-journal-x" style="font-size: 3rem; color: var(--rawwish-stone);"></i>
               <p class="mt-3">No articles found in this category.</p>
           </div>
           {% endfor %}
@@ -375,21 +375,21 @@
         <!-- PAGINATION -->
         {% if page_obj.has_other_pages %}
         <div class="d-flex align-items-center justify-content-center mt-5 mb-5">
-          <div class="kt-pagination">
+          <div class="rw-pagination">
             {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}" class="kt-pg-btn">&laquo;</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="rw-pg-btn">&laquo;</a>
             {% endif %}
             
             {% for num in page_obj.paginator.page_range %}
                 {% if page_obj.number == num %}
-                    <a href="?page={{ num }}" class="kt-pg-btn active">{{ num }}</a>
+                    <a href="?page={{ num }}" class="rw-pg-btn active">{{ num }}</a>
                 {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                    <a href="?page={{ num }}" class="kt-pg-btn">{{ num }}</a>
+                    <a href="?page={{ num }}" class="rw-pg-btn">{{ num }}</a>
                 {% endif %}
             {% endfor %}
             
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}" class="kt-pg-btn">&raquo;</a>
+                <a href="?page={{ page_obj.next_page_number }}" class="rw-pg-btn">&raquo;</a>
             {% endif %}
           </div>
         </div>
@@ -401,14 +401,14 @@
  
         <!-- Trending -->
         {% if popular_articles %}
-        <div class="kt-sidebar-block">
-          <p class="kt-sb-heading">Popular Articles</p>
+        <div class="rw-sidebar-block">
+          <p class="rw-sb-heading">Popular Articles</p>
           {% for pop in popular_articles %}
-          <div class="kt-trending-item">
-            <span class="kt-trend-num">0{{ forloop.counter }}</span>
+          <div class="rw-trending-item">
+            <span class="rw-trend-num">0{{ forloop.counter }}</span>
             <div>
-              <p class="kt-trend-title"><a href="{% url 'article_detail' pop.category.slug pop.slug %}">{{ pop.title }}</a></p>
-              <p class="kt-trend-meta">{{ pop.views }} reads</p>
+              <p class="rw-trend-title"><a href="{% url 'article_detail' pop.category.slug pop.slug %}">{{ pop.title }}</a></p>
+              <p class="rw-trend-meta">{{ pop.views }} reads</p>
             </div>
           </div>
           {% endfor %}
@@ -416,23 +416,23 @@
         {% endif %}
  
         <!-- Tags -->
-        <div class="kt-sidebar-block">
-          <p class="kt-sb-heading">Browse Topics</p>
+        <div class="rw-sidebar-block">
+          <p class="rw-sb-heading">Browse Topics</p>
           <div>
             {% for cat in categories %}
-                <a href="{% url 'category_detail' cat.slug %}" class="kt-tag">{{ cat.title }}</a>
+                <a href="{% url 'category_detail' cat.slug %}" class="rw-tag">{{ cat.title }}</a>
             {% endfor %}
           </div>
         </div>
  
         <!-- Newsletter -->
-        <div class="kt-sidebar-block border-0">
-          <div class="kt-newsletter">
-            <p class="kt-nl-title">Stay Brewed</p>
-            <p class="kt-nl-sub">Get brew tips, origin stories, and the best of Kapi Today delivered to your inbox.</p>
+        <div class="rw-sidebar-block border-0">
+          <div class="rw-newsletter">
+            <p class="rw-nl-title">Stay Routineed</p>
+            <p class="rw-nl-sub">Get routine tips, origin stories, and the best of Raw Wish delivered to your inbox.</p>
             <form onsubmit="event.preventDefault(); alert('Subscribed!');">
-                <input class="kt-nl-input" type="email" placeholder="your@email.com" required />
-                <button class="kt-nl-btn" type="submit">Subscribe</button>
+                <input class="rw-nl-input" type="email" placeholder="your@email.com" required />
+                <button class="rw-nl-btn" type="submit">Subscribe</button>
             </form>
           </div>
         </div>

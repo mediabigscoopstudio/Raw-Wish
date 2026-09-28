@@ -1,6 +1,6 @@
 
 <style>
-    .kapi-newsletter-section {
+    .rawwish-newsletter-section {
         position: relative;
         background-color: #3b201a;
         background-image: url('/static/main/images/home/newsletter-bg.webp');
@@ -14,14 +14,14 @@
     }
     
     /* Gentle center overlay to guarantee text readability without ruining the edges */
-    .kapi-newsletter-overlay {
+    .rawwish-newsletter-overlay {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
         background: radial-gradient(circle at center, rgba(40, 20, 15, 0.45) 0%, rgba(40, 20, 15, 0.1) 60%, rgba(40, 20, 15, 0) 100%);
         z-index: 1;
     }
 
-    .kapi-newsletter-content {
+    .rawwish-newsletter-content {
         position: relative;
         z-index: 2;
         width: 100%;
@@ -31,7 +31,7 @@
     }
 
     /* Typography */
-    .kapi-newsletter-eyebrow {
+    .rawwish-newsletter-eyebrow {
         color: #C9A84C; /* muted gold */
         font-family: var(--bs-body-font-family, sans-serif);
         font-size: 0.75rem;
@@ -44,8 +44,8 @@
         justify-content: center;
         gap: 12px;
     }
-    .kapi-newsletter-eyebrow::before,
-    .kapi-newsletter-eyebrow::after {
+    .rawwish-newsletter-eyebrow::before,
+    .rawwish-newsletter-eyebrow::after {
         content: '';
         display: block;
         width: 24px;
@@ -53,7 +53,7 @@
         background-color: rgba(201, 168, 76, 0.5);
     }
     
-    .kapi-newsletter-heading {
+    .rawwish-newsletter-heading {
         font-family: var(--font-heading);
         color: #F8F5EE; /* warm cream */
         font-size: clamp(2rem, 4vw, 3rem);
@@ -62,7 +62,7 @@
         margin-bottom: 1rem;
     }
     
-    .kapi-newsletter-copy {
+    .rawwish-newsletter-copy {
         color: rgba(248, 245, 238, 0.85);
         font-size: 0.95rem;
         line-height: 1.5;
@@ -70,18 +70,18 @@
     }
 
     /* Form Styles */
-    .kapi-newsletter-form {
+    .rawwish-newsletter-form {
         display: flex;
         gap: 0;
         position: relative;
     }
     
-    .kapi-newsletter-input-group {
+    .rawwish-newsletter-input-group {
         position: relative;
         flex-grow: 1;
     }
     
-    .kapi-newsletter-icon {
+    .rawwish-newsletter-icon {
         position: absolute;
         left: 16px;
         top: 50%;
@@ -90,7 +90,7 @@
         pointer-events: none;
     }
 
-    .kapi-newsletter-input {
+    .rawwish-newsletter-input {
         width: 100%;
         background-color: rgba(75, 46, 42, 0.4); /* translucent warm brown */
         border: 1px solid rgba(201, 168, 76, 0.4); /* thin muted-gold border */
@@ -101,19 +101,19 @@
         backdrop-filter: blur(4px);
         transition: all 0.3s ease;
     }
-    .kapi-newsletter-input::placeholder {
+    .rawwish-newsletter-input::placeholder {
         color: rgba(248, 245, 238, 0.5);
     }
-    .kapi-newsletter-input:focus {
+    .rawwish-newsletter-input:focus {
         outline: none;
         background-color: rgba(75, 46, 42, 0.6);
         border-color: #C9A84C;
         box-shadow: 0 0 15px rgba(201, 168, 76, 0.2); /* soft focus glow */
     }
 
-    .kapi-newsletter-btn {
-        background-color: #C9A84C; /* muted Kapi gold */
-        color: #2A1C18; /* dark coffee text */
+    .rawwish-newsletter-btn {
+        background-color: #C9A84C; /* muted Rawwish gold */
+        color: #2A1C18; /* dark cosmetics text */
         border: none;
         border-radius: 30px;
         padding: 0 28px;
@@ -129,36 +129,36 @@
         top: 4px;
         bottom: 4px;
     }
-    .kapi-newsletter-btn:hover {
+    .rawwish-newsletter-btn:hover {
         transform: translateY(-2px);
         background-color: #d8b75c;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .kapi-newsletter-btn i {
+    .rawwish-newsletter-btn i {
         transition: transform 0.3s ease;
     }
-    .kapi-newsletter-btn:hover i {
+    .rawwish-newsletter-btn:hover i {
         transform: translateX(4px);
     }
 
     /* Mobile Redesign */
     @media (max-width: 767px) {
-        .kapi-newsletter-section {
+        .rawwish-newsletter-section {
             min-height: 500px;
             /* Enhance background position for mobile to keep cherries and cup visible */
             background-position: center bottom;
         }
-        .kapi-newsletter-heading {
+        .rawwish-newsletter-heading {
             font-size: 2.2rem;
         }
-        .kapi-newsletter-form {
+        .rawwish-newsletter-form {
             flex-direction: column;
             gap: 12px;
         }
-        .kapi-newsletter-input {
+        .rawwish-newsletter-input {
             border-radius: 12px; /* standard rounded for mobile */
         }
-        .kapi-newsletter-btn {
+        .rawwish-newsletter-btn {
             position: relative;
             right: 0; top: 0; bottom: 0;
             width: 100%;
@@ -169,29 +169,29 @@
     }
 </style>
 
-<section class="kapi-newsletter-section text-center py-5">
+<section class="rawwish-newsletter-section text-center py-5">
     
-    <div class="kapi-newsletter-overlay"></div>
+    <div class="rawwish-newsletter-overlay"></div>
     
-    <div class="kapi-newsletter-content">
-        <div class="kapi-newsletter-eyebrow">
-            Join the Kapi Culture
+    <div class="rawwish-newsletter-content">
+        <div class="rawwish-newsletter-eyebrow">
+            Join the Rawwish Culture
         </div>
         
-        <h2 class="kapi-newsletter-heading">Good Coffee.<br>Brighter Days.</h2>
+        <h2 class="rawwish-newsletter-heading">Good Cosmetics.<br>Brighter Days.</h2>
         
-        <p class="kapi-newsletter-copy">
-            Get updates on new harvests, brewing tips, exclusive offers and stories from our plantations.
+        <p class="rawwish-newsletter-copy">
+            Join our community for early access to new launches, skincare advice, and exclusive offers.
         </p>
         
         <!-- Form configured to support existing django functionality if wired -->
-        <form class="kapi-newsletter-form" action="#" method="POST" onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-success fw-bold p-3 bg-white rounded-3\'>Thank you for subscribing!</div>';">
-            <div class="kapi-newsletter-input-group w-100">
+        <form class="rawwish-newsletter-form" action="#" method="POST" onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-success fw-bold p-3 bg-white rounded-3\'>Thank you for subscribing!</div>';">
+            <div class="rawwish-newsletter-input-group w-100">
                 <label for="newsletter-email" class="visually-hidden">Email address</label>
-                <i class="bi bi-envelope kapi-newsletter-icon"></i>
-                <input type="email" id="newsletter-email" name="email" class="kapi-newsletter-input" placeholder="Enter your email address" required aria-label="Enter your email address">
+                <i class="bi bi-envelope rawwish-newsletter-icon"></i>
+                <input type="email" id="newsletter-email" name="email" class="rawwish-newsletter-input" placeholder="Enter your email address" required aria-label="Enter your email address">
             </div>
-            <button type="submit" class="kapi-newsletter-btn" aria-label="Subscribe">
+            <button type="submit" class="rawwish-newsletter-btn" aria-label="Subscribe">
                 Subscribe <i class="bi bi-arrow-right"></i>
             </button>
         </form>

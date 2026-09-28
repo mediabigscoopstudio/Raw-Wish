@@ -1,13 +1,25 @@
 from django.contrib import admin
 from django.urls import path
+from django.contrib.sitemaps.views import sitemap
+from main.sitemaps import ProductSitemap, StaticViewSitemap
 from django.views.generic import TemplateView
 from main import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'products': ProductSitemap,
+}
+
 urlpatterns = [
     path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('llms.txt', TemplateView.as_view(template_name='llms.txt', content_type='text/plain')),
+
     path('my-orders/', views.my_orders, name='my_orders'),
     path('api/search/', views.search_products_api, name='search_products_api'),
     path('my-orders/<str:display_id>/', views.my_order_detail, name='my_order_detail'),
@@ -21,7 +33,8 @@ urlpatterns = [
     path('subscribe-newsletter/', views.subscribe_newsletter, name='subscribe_newsletter'),
 
     path("", views.index, name='index'),
-    path("about", views.about, name='about'),
+    path("about/", views.about, name='about'),
+    path("ingredients/", views.ingredients, name='ingredients'),
     path("learn", views.learn, name='learn'),
     
     # CMS / Content Routes
@@ -33,6 +46,11 @@ urlpatterns = [
     path('checkout/', views.checkout, name='checkout'),
         path('verify_payment/', views.verify_payment, name='verify_payment'),
     
+
+    # Wishlist APIs
+    path('api/wishlist/toggle/', views.toggle_wishlist, name='toggle_wishlist'),
+    path('api/wishlist/remove/', views.remove_wishlist, name='remove_wishlist'),
+
     # Fast Checkout APIs
     path('api/fc/state/', views.fc_get_state, name='fc_get_state'),
     path('api/fc/cart/update/', views.fc_update_cart, name='fc_update_cart'),

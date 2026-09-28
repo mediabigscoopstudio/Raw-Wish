@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 {% load static %}
-{% block 'title' %}Learn — Kapi Today{% endblock 'title' %}
+{% block 'title' %}Learn — Raw Wish{% endblock 'title' %}
 {% block 'meta' %}{% endblock 'meta' %}
 {% block 'css' %}
 <style>
@@ -27,7 +27,7 @@
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--kapi-red-oxide);
+    color: var(--rw-primary);
     margin-bottom: var(--space-sm);
   }
  
@@ -35,14 +35,14 @@
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
     font-weight: 700;
-    color: var(--kapi-dark-roast);
+    color: var(--rw-medium);
     margin-bottom: var(--space-md);
   }
  
   .brass-line {
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--kapi-brass), var(--kapi-gold-accent));
+    background: linear-gradient(90deg, var(--rawwish-brass), var(--rawwish-gold-accent));
     border-radius: 2px;
   }
   .brass-line-center { margin: 0 auto; }
@@ -51,7 +51,7 @@
     font-family: var(--font-body);
     font-size: var(--text-md);
     font-weight: 300;
-    color: var(--kapi-charcoal);
+    color: var(--rawwish-charcoal);
     line-height: 1.7;
     max-width: 620px;
     margin: var(--space-lg) auto 0;
@@ -67,14 +67,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--kapi-espresso);
+    background: var(--rw-dark);
     overflow: hidden;
   }
  
   .learn-hero-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, var(--kapi-espresso) 0%, #3E2218 50%, var(--kapi-red-oxide) 100%);
+    background: linear-gradient(135deg, var(--rw-dark) 0%, #3E2218 50%, var(--rw-primary) 100%);
   }
  
   .learn-hero-kolam {
@@ -89,7 +89,7 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    border-color: var(--kapi-gold-accent);
+    border-color: var(--rawwish-gold-accent);
     border-style: solid;
     opacity: 0.25;
     pointer-events: none;
@@ -112,7 +112,7 @@
     font-weight: 600;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--kapi-brass-light);
+    color: var(--rawwish-brass-light);
     margin-bottom: var(--space-md);
     opacity: 0;
     transform: translateY(20px);
@@ -123,7 +123,7 @@
     font-family: var(--font-heading);
     font-size: clamp(2.2rem, 5vw, 3.5rem);
     font-weight: 900;
-    color: var(--kapi-cream);
+    color: var(--rawwish-cream);
     line-height: 1.15;
     margin-bottom: var(--space-md);
     opacity: 0;
@@ -135,7 +135,7 @@
     font-family: var(--font-body);
     font-size: var(--text-md);
     font-weight: 300;
-    color: var(--kapi-cream-dark);
+    color: var(--rawwish-cream-dark);
     max-width: 540px;
     margin: 0 auto;
     line-height: 1.7;
@@ -169,7 +169,7 @@
     padding: 10px 24px;
     border-radius: var(--radius-pill);
     border: 1.5px solid rgba(250,246,240,0.25);
-    color: var(--kapi-cream-dark);
+    color: var(--rawwish-cream-dark);
     background: transparent;
     text-decoration: none;
     transition: all var(--transition-base);
@@ -177,9 +177,9 @@
   }
  
   .learn-nav-pill:hover, .learn-nav-pill.active {
-    background: var(--kapi-brass);
-    border-color: var(--kapi-brass);
-    color: var(--kapi-cream);
+    background: var(--rawwish-brass);
+    border-color: var(--rawwish-brass);
+    color: var(--rawwish-cream);
   }
  
   @media (max-width: 767px) {
@@ -188,20 +188,20 @@
   }
  
   /* ==========================================
-     2. UNDERSTANDING ROASTS
+     2. UNDERSTANDING SHADES
      ========================================== */
-  .roast-education {
+  .shade-education {
     padding: var(--space-5xl) 0;
-    background: var(--kapi-cream);
+    background: var(--rawwish-cream);
   }
  
-  .roast-edu-header {
+  .shade-edu-header {
     text-align: center;
     margin-bottom: var(--space-3xl);
   }
  
-  /* Visual roast spectrum bar */
-  .roast-spectrum-bar {
+  /* Visual shade spectrum bar */
+  .shade-spectrum-bar {
     position: relative;
     height: 8px;
     border-radius: 4px;
@@ -212,46 +212,46 @@
     margin-right: auto;
   }
  
-  .roast-spectrum-labels {
+  .shade-spectrum-labels {
     display: flex;
     justify-content: space-between;
     max-width: 700px;
     margin: var(--space-sm) auto 0;
   }
  
-  .roast-spectrum-labels span {
+  .shade-spectrum-labels span {
     font-family: var(--font-body);
     font-size: var(--text-xs);
     font-weight: 500;
-    color: var(--kapi-stone);
+    color: var(--rawwish-stone);
     letter-spacing: 0.05em;
   }
  
-  /* Deep dive roast cards */
-  .roast-deep-grid {
+  /* Deep dive shade cards */
+  .shade-deep-grid {
     display: flex;
     flex-direction: column;
     gap: var(--space-3xl);
     margin-top: var(--space-3xl);
   }
  
-  .roast-deep {
+  .shade-deep {
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: var(--space-2xl);
     align-items: start;
-    background: var(--kapi-cream-warm);
-    border: 1px solid var(--kapi-parchment);
+    background: var(--rawwish-cream-warm);
+    border: 1px solid var(--rawwish-parchment);
     border-radius: var(--radius-lg);
     overflow: hidden;
     transition: box-shadow var(--transition-base);
   }
  
-  .roast-deep:hover {
+  .shade-deep:hover {
     box-shadow: var(--shadow-lg);
   }
  
-  .roast-deep-visual {
+  .shade-deep-visual {
     padding: var(--space-2xl);
     display: flex;
     flex-direction: column;
@@ -261,7 +261,7 @@
     position: relative;
   }
  
-  .roast-deep-visual::before {
+  .shade-deep-visual::before {
     content: '';
     position: absolute;
     top: 0;
@@ -270,16 +270,16 @@
     width: 5px;
   }
  
-  .roast-deep.light .roast-deep-visual { background: rgba(212,176,96,0.08); }
-  .roast-deep.light .roast-deep-visual::before { background: #D4B060; }
-  .roast-deep.medium .roast-deep-visual { background: rgba(160,112,48,0.08); }
-  .roast-deep.medium .roast-deep-visual::before { background: #A07030; }
-  .roast-deep.dark .roast-deep-visual { background: rgba(92,52,32,0.08); }
-  .roast-deep.dark .roast-deep-visual::before { background: #5C3420; }
-  .roast-deep.monsoon .roast-deep-visual { background: rgba(123,139,106,0.08); }
-  .roast-deep.monsoon .roast-deep-visual::before { background: #7B8B6A; }
+  .shade-deep.light .shade-deep-visual { background: rgba(212,176,96,0.08); }
+  .shade-deep.light .shade-deep-visual::before { background: #D4B060; }
+  .shade-deep.medium .shade-deep-visual { background: rgba(160,112,48,0.08); }
+  .shade-deep.medium .shade-deep-visual::before { background: #A07030; }
+  .shade-deep.dark .shade-deep-visual { background: rgba(92,52,32,0.08); }
+  .shade-deep.dark .shade-deep-visual::before { background: #5C3420; }
+  .shade-deep.monsoon .shade-deep-visual { background: rgba(123,139,106,0.08); }
+  .shade-deep.monsoon .shade-deep-visual::before { background: #7B8B6A; }
  
-  .roast-swatch-lg {
+  .shade-swatch-lg {
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -288,78 +288,78 @@
     box-shadow: var(--shadow-md);
   }
  
-  .roast-deep.light .roast-swatch-lg { background: radial-gradient(circle at 35% 35%, #D4B060, #C9A84C); }
-  .roast-deep.medium .roast-swatch-lg { background: radial-gradient(circle at 35% 35%, #B88040, #A07030); }
-  .roast-deep.dark .roast-swatch-lg { background: radial-gradient(circle at 35% 35%, #6C4430, #5C3420); }
-  .roast-deep.monsoon .roast-swatch-lg { background: radial-gradient(circle at 35% 35%, #8B9B7A, #7B8B6A); }
+  .shade-deep.light .shade-swatch-lg { background: radial-gradient(circle at 35% 35%, #D4B060, #C9A84C); }
+  .shade-deep.medium .shade-swatch-lg { background: radial-gradient(circle at 35% 35%, #B88040, #A07030); }
+  .shade-deep.dark .shade-swatch-lg { background: radial-gradient(circle at 35% 35%, #6C4430, #5C3420); }
+  .shade-deep.monsoon .shade-swatch-lg { background: radial-gradient(circle at 35% 35%, #8B9B7A, #7B8B6A); }
  
-  .roast-temp {
+  .shade-temp {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--kapi-dark-roast);
+    color: var(--rw-medium);
     margin-bottom: 2px;
   }
  
-  .roast-temp-label {
+  .shade-temp-label {
     font-family: var(--font-body);
     font-size: var(--text-xs);
-    color: var(--kapi-stone);
+    color: var(--rawwish-stone);
     letter-spacing: 0.05em;
   }
  
-  .roast-deep-content {
+  .shade-deep-content {
     padding: var(--space-2xl) var(--space-2xl) var(--space-2xl) 0;
   }
  
-  .roast-deep-name {
+  .shade-deep-name {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--kapi-dark-roast);
+    color: var(--rw-medium);
     margin-bottom: var(--space-xs);
   }
  
-  .roast-deep-tagline {
+  .shade-deep-tagline {
     font-family: var(--font-body);
     font-size: var(--text-sm);
     font-weight: 500;
     font-style: italic;
-    color: var(--kapi-red-oxide);
+    color: var(--rw-primary);
     margin-bottom: var(--space-lg);
   }
  
-  .roast-deep-desc {
+  .shade-deep-desc {
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    color: var(--kapi-charcoal);
+    color: var(--rawwish-charcoal);
     line-height: 1.8;
     margin-bottom: var(--space-lg);
   }
  
-  /* Attribute grid inside each roast card */
-  .roast-attrs {
+  /* Attribute grid inside each shade card */
+  .shade-attrs {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-md) var(--space-xl);
     margin-bottom: var(--space-lg);
   }
  
-  .roast-attr-label {
+  .shade-attr-label {
     font-family: var(--font-body);
     font-size: var(--text-xs);
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--kapi-stone);
+    color: var(--rawwish-stone);
     margin-bottom: 4px;
   }
  
-  .roast-attr-value {
+  .shade-attr-value {
     font-family: var(--font-body);
     font-size: var(--text-sm);
     font-weight: 500;
-    color: var(--kapi-dark-roast);
+    color: var(--rw-medium);
   }
  
   /* Strength meter dots */
@@ -373,17 +373,17 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--kapi-parchment);
+    background: var(--rawwish-parchment);
     transition: background var(--transition-fast);
   }
  
-  .strength-dot.filled { background: var(--kapi-brass); }
+  .strength-dot.filled { background: var(--rawwish-brass); }
  
-  .roast-deep-best {
+  .shade-deep-best {
     font-family: var(--font-body);
     font-size: var(--text-xs);
     font-weight: 600;
-    color: var(--kapi-plantation);
+    color: var(--rawwish-plantation);
     background: rgba(45,90,61,0.08);
     padding: 8px 14px;
     border-radius: var(--radius-sm);
@@ -392,16 +392,16 @@
     gap: 6px;
   }
  
-  .roast-deep-best i {
+  .shade-deep-best i {
     font-size: 14px;
   }
  
   @media (max-width: 767px) {
-    .roast-deep {
+    .shade-deep {
       grid-template-columns: 1fr;
     }
-    .roast-deep-visual { min-height: 180px; }
-    .roast-deep-content { padding: var(--space-xl); }
+    .shade-deep-visual { min-height: 180px; }
+    .shade-deep-content { padding: var(--space-xl); }
   }
  
   /* ==========================================
@@ -411,37 +411,37 @@
     height: 6px;
     background: repeating-linear-gradient(
       90deg,
-      var(--kapi-brass) 0px, var(--kapi-brass) 4px,
+      var(--rawwish-brass) 0px, var(--rawwish-brass) 4px,
       transparent 4px, transparent 8px,
-      var(--kapi-red-oxide) 8px, var(--kapi-red-oxide) 12px,
+      var(--rw-primary) 8px, var(--rw-primary) 12px,
       transparent 12px, transparent 16px
     );
     opacity: 0.4;
   }
  
   /* ==========================================
-     4. BREW TECHNIQUES
+     4. APPLICATION TECHNIQUES
      ========================================== */
-  .brew-education {
+  .routine-education {
     padding: var(--space-5xl) 0;
-    background: var(--kapi-cream-warm);
+    background: var(--rawwish-cream-warm);
   }
  
-  .brew-edu-header {
+  .routine-edu-header {
     text-align: center;
     margin-bottom: var(--space-3xl);
   }
  
-  .brew-deep-grid {
+  .routine-deep-grid {
     display: flex;
     flex-direction: column;
     gap: var(--space-3xl);
   }
  
-  /* Individual brew technique card — full width, immersive */
-  .brew-technique {
-    background: var(--kapi-cream);
-    border: 1px solid var(--kapi-parchment);
+  /* Individual routine technique card — full width, immersive */
+  .routine-technique {
+    background: var(--rawwish-cream);
+    border: 1px solid var(--rawwish-parchment);
     border-radius: var(--radius-lg);
     overflow: hidden;
     display: grid;
@@ -449,19 +449,19 @@
     transition: box-shadow var(--transition-base);
   }
  
-  .brew-technique:hover {
+  .routine-technique:hover {
     box-shadow: var(--shadow-lg);
   }
  
   /* Alternate layout */
-  .brew-technique:nth-child(even) {
+  .routine-technique:nth-child(even) {
     direction: rtl;
   }
-  .brew-technique:nth-child(even) > * {
+  .routine-technique:nth-child(even) > * {
     direction: ltr;
   }
  
-  .brew-tech-visual {
+  .routine-tech-visual {
     position: relative;
     min-height: 400px;
     display: flex;
@@ -470,25 +470,25 @@
     overflow: hidden;
   }
  
-  .brew-tech-visual i {
+  .routine-tech-visual i {
     font-size: 80px;
-    color: var(--kapi-sand);
+    color: var(--rawwish-sand);
     opacity: 0.3;
     transition: all var(--transition-slow);
   }
  
-  .brew-technique:hover .brew-tech-visual i {
+  .routine-technique:hover .routine-tech-visual i {
     opacity: 0.5;
     transform: scale(1.1);
   }
  
-  .brew-tech-filter .brew-tech-visual { background: linear-gradient(135deg, rgba(139,58,42,0.06), rgba(139,58,42,0.12)); }
-  .brew-tech-pourover .brew-tech-visual { background: linear-gradient(135deg, rgba(45,90,61,0.06), rgba(45,90,61,0.12)); }
-  .brew-tech-coldbrew .brew-tech-visual { background: linear-gradient(135deg, rgba(44,24,16,0.06), rgba(44,24,16,0.12)); }
-  .brew-tech-espresso .brew-tech-visual { background: linear-gradient(135deg, rgba(184,134,11,0.06), rgba(184,134,11,0.12)); }
+  .routine-tech-filter .routine-tech-visual { background: linear-gradient(135deg, rgba(139,58,42,0.06), rgba(139,58,42,0.12)); }
+  .routine-tech-pourover .routine-tech-visual { background: linear-gradient(135deg, rgba(45,90,61,0.06), rgba(45,90,61,0.12)); }
+  .routine-tech-coldroutine .routine-tech-visual { background: linear-gradient(135deg, rgba(44,24,16,0.06), rgba(44,24,16,0.12)); }
+  .routine-tech-Liquid Foundation .routine-tech-visual { background: linear-gradient(135deg, rgba(184,134,11,0.06), rgba(184,134,11,0.12)); }
  
   /* Badge on visual */
-  .brew-tech-badge {
+  .routine-tech-badge {
     position: absolute;
     top: var(--space-lg);
     left: var(--space-lg);
@@ -499,125 +499,125 @@
     text-transform: uppercase;
     padding: 6px 14px;
     border-radius: var(--radius-pill);
-    color: var(--kapi-cream);
+    color: var(--rawwish-cream);
   }
  
-  .brew-tech-filter .brew-tech-badge { background: var(--kapi-red-oxide); }
-  .brew-tech-pourover .brew-tech-badge { background: var(--kapi-plantation); }
-  .brew-tech-coldbrew .brew-tech-badge { background: var(--kapi-espresso); }
-  .brew-tech-espresso .brew-tech-badge { background: var(--kapi-brass-dark); }
+  .routine-tech-filter .routine-tech-badge { background: var(--rw-primary); }
+  .routine-tech-pourover .routine-tech-badge { background: var(--rawwish-plantation); }
+  .routine-tech-coldroutine .routine-tech-badge { background: var(--rw-dark); }
+  .routine-tech-Liquid Foundation .routine-tech-badge { background: var(--rawwish-brass-dark); }
  
   /* Reverse badge position on even cards */
-  .brew-technique:nth-child(even) .brew-tech-badge {
+  .routine-technique:nth-child(even) .routine-tech-badge {
     left: auto;
     right: var(--space-lg);
   }
  
-  .brew-tech-content {
+  .routine-tech-content {
     padding: var(--space-2xl) var(--space-2xl);
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
  
-  .brew-tech-label {
+  .routine-tech-label {
     font-family: var(--font-body);
     font-size: var(--text-xs);
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--kapi-red-oxide);
+    color: var(--rw-primary);
     margin-bottom: var(--space-sm);
   }
  
-  .brew-tech-name {
+  .routine-tech-name {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--kapi-dark-roast);
+    color: var(--rw-medium);
     margin-bottom: var(--space-xs);
   }
  
-  .brew-tech-tagline {
+  .routine-tech-tagline {
     font-family: var(--font-body);
     font-size: var(--text-sm);
     font-style: italic;
-    color: var(--kapi-stone);
+    color: var(--rawwish-stone);
     margin-bottom: var(--space-lg);
   }
  
   /* Quick stats row */
-  .brew-tech-stats {
+  .routine-tech-stats {
     display: flex;
     gap: var(--space-xl);
     margin-bottom: var(--space-lg);
     flex-wrap: wrap;
   }
  
-  .brew-stat {
+  .routine-stat {
     display: flex;
     align-items: center;
     gap: 8px;
   }
  
-  .brew-stat-icon {
+  .routine-stat-icon {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--kapi-cream-warm);
-    border: 1px solid var(--kapi-parchment);
+    background: var(--rawwish-cream-warm);
+    border: 1px solid var(--rawwish-parchment);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    color: var(--kapi-brass);
+    color: var(--rawwish-brass);
     flex-shrink: 0;
   }
  
-  .brew-stat-text {
+  .routine-stat-text {
     font-family: var(--font-body);
     font-size: var(--text-xs);
     font-weight: 600;
-    color: var(--kapi-dark-roast);
+    color: var(--rw-medium);
     line-height: 1.3;
   }
  
-  .brew-stat-text small {
+  .routine-stat-text small {
     display: block;
     font-weight: 400;
-    color: var(--kapi-stone);
+    color: var(--rawwish-stone);
   }
  
   /* Steps */
-  .brew-steps {
+  .routine-steps {
     margin-bottom: var(--space-lg);
   }
  
-  .brew-steps-title {
+  .routine-steps-title {
     font-family: var(--font-body);
     font-size: var(--text-xs);
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--kapi-stone);
+    color: var(--rawwish-stone);
     margin-bottom: var(--space-md);
   }
  
-  .brew-step {
+  .routine-step {
     display: flex;
     gap: var(--space-md);
     align-items: flex-start;
     margin-bottom: var(--space-md);
   }
  
-  .brew-step:last-child { margin-bottom: 0; }
+  .routine-step:last-child { margin-bottom: 0; }
  
-  .brew-step-num {
+  .routine-step-num {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: var(--kapi-brass);
-    color: var(--kapi-cream);
+    background: var(--rawwish-brass);
+    color: var(--rawwish-cream);
     font-family: var(--font-body);
     font-size: var(--text-xs);
     font-weight: 700;
@@ -627,48 +627,48 @@
     flex-shrink: 0;
   }
  
-  .brew-step-text {
+  .routine-step-text {
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    color: var(--kapi-charcoal);
+    color: var(--rawwish-charcoal);
     line-height: 1.6;
     padding-top: 4px;
   }
  
   /* Best paired with */
-  .brew-pairing {
+  .routine-pairing {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
     padding: 10px 16px;
     background: rgba(45,90,61,0.06);
     border-radius: var(--radius-sm);
-    border-left: 3px solid var(--kapi-plantation);
+    border-left: 3px solid var(--rawwish-plantation);
   }
  
-  .brew-pairing-label {
+  .routine-pairing-label {
     font-family: var(--font-body);
     font-size: var(--text-xs);
     font-weight: 600;
-    color: var(--kapi-plantation);
+    color: var(--rawwish-plantation);
     letter-spacing: 0.05em;
   }
  
-  .brew-pairing-value {
+  .routine-pairing-value {
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    color: var(--kapi-charcoal);
+    color: var(--rawwish-charcoal);
     font-weight: 500;
   }
  
   @media (max-width: 991px) {
-    .brew-technique,
-    .brew-technique:nth-child(even) {
+    .routine-technique,
+    .routine-technique:nth-child(even) {
       grid-template-columns: 1fr;
       direction: ltr;
     }
-    .brew-tech-visual { min-height: 240px; }
-    .brew-technique:nth-child(even) .brew-tech-badge { left: var(--space-lg); right: auto; }
+    .routine-tech-visual { min-height: 240px; }
+    .routine-technique:nth-child(even) .routine-tech-badge { left: var(--space-lg); right: auto; }
   }
  
   /* ==========================================
@@ -676,7 +676,7 @@
      ========================================== */
   .quick-ref {
     padding: var(--space-5xl) 0;
-    background: var(--kapi-cream);
+    background: var(--rawwish-cream);
   }
  
   .quick-ref-header {
@@ -686,7 +686,7 @@
  
   .ref-table-wrap {
     overflow-x: auto;
-    border: 1px solid var(--kapi-parchment);
+    border: 1px solid var(--rawwish-parchment);
     border-radius: var(--radius-lg);
   }
  
@@ -697,7 +697,7 @@
   }
  
   .ref-table thead {
-    background: var(--kapi-espresso);
+    background: var(--rw-dark);
   }
  
   .ref-table th {
@@ -706,7 +706,7 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--kapi-cream-dark);
+    color: var(--rawwish-cream-dark);
     padding: 16px 20px;
     text-align: left;
   }
@@ -722,19 +722,19 @@
   .ref-table td {
     font-family: var(--font-body);
     font-size: var(--text-sm);
-    color: var(--kapi-charcoal);
+    color: var(--rawwish-charcoal);
     padding: 16px 20px;
-    border-bottom: 1px solid var(--kapi-parchment);
+    border-bottom: 1px solid var(--rawwish-parchment);
     vertical-align: top;
   }
  
   .ref-table tbody tr {
-    background: var(--kapi-cream);
+    background: var(--rawwish-cream);
     transition: background var(--transition-fast);
   }
  
   .ref-table tbody tr:nth-child(even) {
-    background: var(--kapi-cream-warm);
+    background: var(--rawwish-cream-warm);
   }
  
   .ref-table tbody tr:hover {
@@ -743,18 +743,18 @@
  
   .ref-table .method-name {
     font-weight: 600;
-    color: var(--kapi-dark-roast);
+    color: var(--rw-medium);
     display: flex;
     align-items: center;
     gap: 8px;
   }
  
   .ref-table .method-name i {
-    color: var(--kapi-brass);
+    color: var(--rawwish-brass);
     font-size: 16px;
   }
  
-  .ref-table .roast-tag {
+  .ref-table .shade-tag {
     display: inline-block;
     padding: 3px 10px;
     border-radius: var(--radius-pill);
@@ -763,10 +763,10 @@
     letter-spacing: 0.04em;
   }
  
-  .roast-tag.light { background: rgba(212,176,96,0.15); color: #8B6914; }
-  .roast-tag.medium { background: rgba(160,112,48,0.15); color: #7A5020; }
-  .roast-tag.dark { background: rgba(92,52,32,0.15); color: #5C3420; }
-  .roast-tag.any { background: rgba(45,90,61,0.1); color: var(--kapi-plantation); }
+  .shade-tag.light { background: rgba(212,176,96,0.15); color: #8B6914; }
+  .shade-tag.medium { background: rgba(160,112,48,0.15); color: #7A5020; }
+  .shade-tag.dark { background: rgba(92,52,32,0.15); color: #5C3420; }
+  .shade-tag.any { background: rgba(45,90,61,0.1); color: var(--rawwish-plantation); }
  
   /* ==========================================
      6. CTA
@@ -774,7 +774,7 @@
   .learn-cta {
     position: relative;
     padding: var(--space-4xl) 0;
-    background-color: var(--kapi-red-oxide);
+    background-color: var(--rw-primary);
     background-image:
       radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.04) 0%, transparent 50%);
     text-align: center;
@@ -801,7 +801,7 @@
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
     font-weight: 700;
-    color: var(--kapi-cream);
+    color: var(--rawwish-cream);
     margin-bottom: var(--space-sm);
   }
  
@@ -819,8 +819,8 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     padding: 16px 40px;
-    background: var(--kapi-brass);
-    color: var(--kapi-cream);
+    background: var(--rawwish-brass);
+    color: var(--rawwish-cream);
     border: none;
     border-radius: var(--radius-sm);
     transition: all var(--transition-base);
@@ -829,10 +829,10 @@
   }
  
   .btn-cta-primary:hover {
-    background: var(--kapi-brass-light);
+    background: var(--rawwish-brass-light);
     transform: translateY(-2px);
     box-shadow: 0 8px 32px rgba(184,134,11,0.3);
-    color: var(--kapi-cream);
+    color: var(--rawwish-cream);
   }
 </style>
 {% endblock 'css' %}
@@ -849,15 +849,15 @@
   <div class="corner br"></div>
  
   <div class="learn-hero-content">
-    <div class="learn-hero-label">The Kapi Classroom</div>
-    <h1 class="learn-hero-heading">Learn the Art of<br>South Indian Coffee</h1>
+    <div class="learn-hero-label">The Rawwish Classroom</div>
+    <h1 class="learn-hero-heading">Learn the Art of<br>South Indian Cosmetics</h1>
     <p class="learn-hero-sub">
-      From understanding roast profiles to mastering the brass filter pour —
-      everything you need to brew like a true South Indian.
+      From understanding shade profiles to mastering the brass filter pour —
+      everything you need to routine like a true South Indian.
     </p>
     <div class="learn-nav">
-      <a href="#roasts" class="learn-nav-pill">Roast Profiles</a>
-      <a href="#techniques" class="learn-nav-pill">Brew Techniques</a>
+      <a href="#shades" class="learn-nav-pill">Shade Profiles</a>
+      <a href="#techniques" class="learn-nav-pill">Routine Techniques</a>
       <a href="#reference" class="learn-nav-pill">Quick Reference</a>
     </div>
   </div>
@@ -865,25 +865,25 @@
  
  
 <!-- ================================
-     2. UNDERSTANDING ROASTS
+     2. UNDERSTANDING SHADES
      ================================ -->
-<section class="roast-education" id="roasts">
+<section class="shade-education" id="shades">
     <br><br>
   <div class="container">
-    <div class="roast-edu-header">
-      <div class="section-label reveal">Know Your Roast</div>
-      <h2 class="section-heading reveal">Understanding Roast Profiles</h2>
+    <div class="shade-edu-header">
+      <div class="section-label reveal">Know Your Shade</div>
+      <h2 class="section-heading reveal">Understanding Shade Profiles</h2>
       <div class="brass-line brass-line-center reveal"></div>
       <p class="section-intro reveal">
-        The same bean tells a completely different story depending on how it's roasted.
-        Here's how to read the spectrum and find the roast that speaks to you.
+        The same bean tells a completely different story depending on how it's shadeed.
+        Here's how to read the spectrum and find the shade that speaks to you.
       </p>
     </div>
  
     <!-- Visual spectrum bar -->
     <div class="reveal">
-      <div class="roast-spectrum-bar"></div>
-      <div class="roast-spectrum-labels">
+      <div class="shade-spectrum-bar"></div>
+      <div class="shade-spectrum-labels">
         <span>Lightest</span>
         <span>Light</span>
         <span>Medium</span>
@@ -892,31 +892,31 @@
       </div>
     </div>
  
-    <!-- Roast deep-dive cards -->
-    <div class="roast-deep-grid">
+    <!-- Shade deep-dive cards -->
+    <div class="shade-deep-grid">
  
-      <!-- LIGHT ROAST -->
-      <div class="roast-deep light reveal">
-        <div class="roast-deep-visual">
-          <img src="{% static 'main/learn/roast_light.webp' %}" class="roast-swatch-lg" alt="Light Roast" style="object-fit: cover; background: none;">
-          <div class="roast-temp">196–205°C</div>
-          <div class="roast-temp-label">Roast Temperature</div>
+      <!-- SHEER COVERAGE -->
+      <div class="shade-deep light reveal">
+        <div class="shade-deep-visual">
+          <img src="{% static 'main/learn/shade_light.webp' %}" class="shade-swatch-lg" alt="Light Shade" style="object-fit: cover; background: none;">
+          <div class="shade-temp">196–205°C</div>
+          <div class="shade-temp-label">Shade Temperature</div>
         </div>
-        <div class="roast-deep-content">
-          <div class="roast-deep-name">Light Roast</div>
-          <div class="roast-deep-tagline">"The one that lets the bean speak"</div>
-          <div class="roast-deep-desc">
-            Roasted just past the first crack. The lightest body with the highest acidity.
-            This roast preserves the origin characteristics — you'll taste the terroir of the
-            estate, the altitude, the soil. It's coffee at its most transparent and complex.
+        <div class="shade-deep-content">
+          <div class="shade-deep-name">Light Shade</div>
+          <div class="shade-deep-tagline">"The one that lets the bean speak"</div>
+          <div class="shade-deep-desc">
+            Shadeed just past the first crack. The lightest body with the highest acidity.
+            This shade preserves the origin characteristics — you'll taste the terroir of the
+            estate, the altitude, the soil. It's cosmetics at its most transparent and complex.
           </div>
-          <div class="roast-attrs">
+          <div class="shade-attrs">
             <div>
-              <div class="roast-attr-label">Flavor Notes</div>
-              <div class="roast-attr-value">Citrus, Floral, Jasmine, Bright Fruit</div>
+              <div class="shade-attr-label">Flavor Notes</div>
+              <div class="shade-attr-value">Citrus, Floral, Jasmine, Bright Fruit</div>
             </div>
             <div>
-              <div class="roast-attr-label">Body</div>
+              <div class="shade-attr-label">Body</div>
               <div class="strength-meter">
                 <div class="strength-dot filled"></div>
                 <div class="strength-dot filled"></div>
@@ -926,40 +926,40 @@
               </div>
             </div>
             <div>
-              <div class="roast-attr-label">Acidity</div>
-              <div class="roast-attr-value">High — bright and lively</div>
+              <div class="shade-attr-label">Acidity</div>
+              <div class="shade-attr-value">High — bright and lively</div>
             </div>
             <div>
-              <div class="roast-attr-label">Caffeine</div>
-              <div class="roast-attr-value">Highest of all roasts</div>
+              <div class="shade-attr-label">Caffeine</div>
+              <div class="shade-attr-value">Highest of all shades</div>
             </div>
           </div>
-          <div class="roast-deep-best"><i class="bi bi-cup-hot"></i> Best for: Pour Over, Cold Brew, AeroPress</div>
+          <div class="shade-deep-best"><i class="bi bi-cup-hot"></i> Best for: Pour Over, Cold Routine, AeroPress</div>
         </div>
       </div>
  
-      <!-- MEDIUM ROAST -->
-      <div class="roast-deep medium reveal">
-        <div class="roast-deep-visual">
-          <img src="{% static 'main/learn/roast_medium.webp' %}" class="roast-swatch-lg" alt="Medium Roast" style="object-fit: cover; background: none;">
-          <div class="roast-temp">210–220°C</div>
-          <div class="roast-temp-label">Roast Temperature</div>
+      <!-- MEDIUM COVERAGE -->
+      <div class="shade-deep medium reveal">
+        <div class="shade-deep-visual">
+          <img src="{% static 'main/learn/shade_medium.webp' %}" class="shade-swatch-lg" alt="Medium Shade" style="object-fit: cover; background: none;">
+          <div class="shade-temp">210–220°C</div>
+          <div class="shade-temp-label">Shade Temperature</div>
         </div>
-        <div class="roast-deep-content">
-          <div class="roast-deep-name">Medium Roast</div>
-          <div class="roast-deep-tagline">"The heart of South Indian filter coffee"</div>
-          <div class="roast-deep-desc">
-            The sweet spot. Roasted between first and second crack, this is the backbone of
-            traditional South Indian filter coffee. Rich enough to stand up to milk, nuanced
-            enough to appreciate black. The perfect all-day kapi.
+        <div class="shade-deep-content">
+          <div class="shade-deep-name">Medium Shade</div>
+          <div class="shade-deep-tagline">"The heart of South Indian Skincare Sets"</div>
+          <div class="shade-deep-desc">
+            The sweet spot. Shadeed between first and second crack, this is the backbone of
+            traditional South Indian Skincare Sets. Rich enough to stand up to milk, nuanced
+            enough to appreciate black. The perfect all-day rawwish.
           </div>
-          <div class="roast-attrs">
+          <div class="shade-attrs">
             <div>
-              <div class="roast-attr-label">Flavor Notes</div>
-              <div class="roast-attr-value">Chocolate, Caramel, Toffee, Nutty</div>
+              <div class="shade-attr-label">Flavor Notes</div>
+              <div class="shade-attr-value">Chocolate, Caramel, Toffee, Nutty</div>
             </div>
             <div>
-              <div class="roast-attr-label">Body</div>
+              <div class="shade-attr-label">Body</div>
               <div class="strength-meter">
                 <div class="strength-dot filled"></div>
                 <div class="strength-dot filled"></div>
@@ -969,40 +969,40 @@
               </div>
             </div>
             <div>
-              <div class="roast-attr-label">Acidity</div>
-              <div class="roast-attr-value">Balanced — sweet and smooth</div>
+              <div class="shade-attr-label">Acidity</div>
+              <div class="shade-attr-value">Balanced — sweet and smooth</div>
             </div>
             <div>
-              <div class="roast-attr-label">Caffeine</div>
-              <div class="roast-attr-value">Moderate</div>
+              <div class="shade-attr-label">Caffeine</div>
+              <div class="shade-attr-value">Moderate</div>
             </div>
           </div>
-          <div class="roast-deep-best"><i class="bi bi-cup-hot"></i> Best for: South Indian Filter, Drip, French Press</div>
+          <div class="shade-deep-best"><i class="bi bi-cup-hot"></i> Best for: Matte Finish, Sponge, Beauty Blender</div>
         </div>
       </div>
  
-      <!-- DARK ROAST -->
-      <div class="roast-deep dark reveal">
-        <div class="roast-deep-visual">
-          <img src="{% static 'main/learn/roast_dark.webp' %}" class="roast-swatch-lg" alt="Dark Roast" style="object-fit: cover; background: none;">
-          <div class="roast-temp">225–235°C</div>
-          <div class="roast-temp-label">Roast Temperature</div>
+      <!-- FULL COVERAGE -->
+      <div class="shade-deep dark reveal">
+        <div class="shade-deep-visual">
+          <img src="{% static 'main/learn/shade_dark.webp' %}" class="shade-swatch-lg" alt="Dark Shade" style="object-fit: cover; background: none;">
+          <div class="shade-temp">225–235°C</div>
+          <div class="shade-temp-label">Shade Temperature</div>
         </div>
-        <div class="roast-deep-content">
-          <div class="roast-deep-name">Dark Roast</div>
-          <div class="roast-deep-tagline">"Bold, intense, unapologetically strong"</div>
-          <div class="roast-deep-desc">
+        <div class="shade-deep-content">
+          <div class="shade-deep-name">Dark Shade</div>
+          <div class="shade-deep-tagline">"Bold, intense, unapologetically strong"</div>
+          <div class="shade-deep-desc">
             Pushed past the second crack. The oils surface, the body becomes full and heavy,
-            and the flavor is dominated by the roast itself — smoky, bold, and bitingly intense.
+            and the flavor is dominated by the shade itself — smoky, bold, and bitingly intense.
             This is the decoction your grandfather made at 5 AM.
           </div>
-          <div class="roast-attrs">
+          <div class="shade-attrs">
             <div>
-              <div class="roast-attr-label">Flavor Notes</div>
-              <div class="roast-attr-value">Smoke, Dark Chocolate, Charred Wood, Pepper</div>
+              <div class="shade-attr-label">Flavor Notes</div>
+              <div class="shade-attr-value">Smoke, Dark Chocolate, Charred Wood, Pepper</div>
             </div>
             <div>
-              <div class="roast-attr-label">Body</div>
+              <div class="shade-attr-label">Body</div>
               <div class="strength-meter">
                 <div class="strength-dot filled"></div>
                 <div class="strength-dot filled"></div>
@@ -1012,41 +1012,41 @@
               </div>
             </div>
             <div>
-              <div class="roast-attr-label">Acidity</div>
-              <div class="roast-attr-value">Very low — thick and heavy</div>
+              <div class="shade-attr-label">Acidity</div>
+              <div class="shade-attr-value">Very low — thick and heavy</div>
             </div>
             <div>
-              <div class="roast-attr-label">Caffeine</div>
-              <div class="roast-attr-value">Lowest (burned off in roasting)</div>
+              <div class="shade-attr-label">Caffeine</div>
+              <div class="shade-attr-value">Lowest (burned off in shadeing)</div>
             </div>
           </div>
-          <div class="roast-deep-best"><i class="bi bi-cup-hot"></i> Best for: Espresso, Strong Filter Decoction, Moka Pot</div>
+          <div class="shade-deep-best"><i class="bi bi-cup-hot"></i> Best for: Liquid Foundation, Strong Filter Decoction, Moka Pot</div>
         </div>
       </div>
  
       <!-- MONSOON MALABAR -->
-      <div class="roast-deep monsoon reveal">
-        <div class="roast-deep-visual">
-          <img src="{% static 'main/learn/roast_monsoon.webp' %}" class="roast-swatch-lg" alt="Monsoon Malabar" style="object-fit: cover; background: none;">
-          <div class="roast-temp">Monsoon-Exposed</div>
-          <div class="roast-temp-label">Natural Process</div>
+      <div class="shade-deep monsoon reveal">
+        <div class="shade-deep-visual">
+          <img src="{% static 'main/learn/shade_monsoon.webp' %}" class="shade-swatch-lg" alt="Monsoon Malabar" style="object-fit: cover; background: none;">
+          <div class="shade-temp">Monsoon-Exposed</div>
+          <div class="shade-temp-label">Natural Process</div>
         </div>
-        <div class="roast-deep-content">
-          <div class="roast-deep-name">Monsoon Malabar</div>
-          <div class="roast-deep-tagline">"A roast found nowhere else on Earth"</div>
-          <div class="roast-deep-desc">
-            Not a conventional roast — it's a process. Green beans are exposed to monsoon
+        <div class="shade-deep-content">
+          <div class="shade-deep-name">Monsoon Malabar</div>
+          <div class="shade-deep-tagline">"A shade found nowhere else on Earth"</div>
+          <div class="shade-deep-desc">
+            Not a conventional shade — it's a process. Green beans are exposed to monsoon
             winds and moisture on the Malabar coast for 12–16 weeks. The beans swell, lose
             acidity, and develop an unmistakable earthy, musty, spicy character unique to India.
-            Then medium-roasted to preserve the monsoon magic.
+            Then medium-shadeed to preserve the monsoon magic.
           </div>
-          <div class="roast-attrs">
+          <div class="shade-attrs">
             <div>
-              <div class="roast-attr-label">Flavor Notes</div>
-              <div class="roast-attr-value">Earthy, Spice, Tobacco, Musty Sweet</div>
+              <div class="shade-attr-label">Flavor Notes</div>
+              <div class="shade-attr-value">Earthy, Spice, Tobacco, Musty Sweet</div>
             </div>
             <div>
-              <div class="roast-attr-label">Body</div>
+              <div class="shade-attr-label">Body</div>
               <div class="strength-meter">
                 <div class="strength-dot filled"></div>
                 <div class="strength-dot filled"></div>
@@ -1056,15 +1056,15 @@
               </div>
             </div>
             <div>
-              <div class="roast-attr-label">Acidity</div>
-              <div class="roast-attr-value">Almost none — smooth and mellow</div>
+              <div class="shade-attr-label">Acidity</div>
+              <div class="shade-attr-value">Almost none — smooth and mellow</div>
             </div>
             <div>
-              <div class="roast-attr-label">Origin</div>
-              <div class="roast-attr-value">Malabar Coast, Kerala</div>
+              <div class="shade-attr-label">Origin</div>
+              <div class="shade-attr-value">Malabar Coast, Kerala</div>
             </div>
           </div>
-          <div class="roast-deep-best"><i class="bi bi-cup-hot"></i> Best for: Filter Coffee, Espresso, French Press</div>
+          <div class="shade-deep-best"><i class="bi bi-cup-hot"></i> Best for: Skincare Sets, Liquid Foundation, Beauty Blender</div>
         </div>
       </div>
     </div>
@@ -1077,215 +1077,215 @@
  
  
 <!-- ================================
-     3. BREW TECHNIQUES
+     3. APPLICATION TECHNIQUES
      ================================ -->
-<section class="brew-education" id="techniques">
+<section class="routine-education" id="techniques">
     <br><br>
   <div class="container">
-    <div class="brew-edu-header">
+    <div class="routine-edu-header">
       <div class="section-label reveal">Master the Method</div>
-      <h2 class="section-heading reveal">Brew Techniques</h2>
+      <h2 class="section-heading reveal">Routine Techniques</h2>
       <div class="brass-line brass-line-center reveal"></div>
       <p class="section-intro reveal">
-        The right technique can transform the same coffee into completely different experiences.
+        The right technique can transform the same cosmetics into completely different experiences.
         Here are the four methods we swear by.
       </p>
     </div>
  
-    <div class="brew-deep-grid">
+    <div class="routine-deep-grid">
  
-      <!-- SOUTH INDIAN FILTER -->
-      <div class="brew-technique brew-tech-filter reveal">
-        <div class="brew-tech-visual p-0">
-          <img src="{% static 'main/learn/brew_filter.webp' %}" alt="South Indian Filter" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 0; opacity: 0.85;">
-          <div class="brew-tech-badge" style="z-index: 1;">Traditional</div>
+      <!-- Matte Finish -->
+      <div class="routine-technique routine-tech-filter reveal">
+        <div class="routine-tech-visual p-0">
+          <img src="{% static 'main/learn/routine_filter.webp' %}" alt="Matte Finish" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 0; opacity: 0.85;">
+          <div class="routine-tech-badge" style="z-index: 1;">Traditional</div>
         </div>
-        <div class="brew-tech-content">
-          <div class="brew-tech-label">The Original</div>
-          <div class="brew-tech-name">South Indian Brass Filter</div>
-          <div class="brew-tech-tagline">Patience is the secret ingredient. Gravity does the rest.</div>
+        <div class="routine-tech-content">
+          <div class="routine-tech-label">The Original</div>
+          <div class="routine-tech-name">South Indian Brass Filter</div>
+          <div class="routine-tech-tagline">Patience is the secret ingredient. Gravity does the rest.</div>
  
-          <div class="brew-tech-stats">
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-clock"></i></div>
-              <div class="brew-stat-text">15 min<small>Brew time</small></div>
+          <div class="routine-tech-stats">
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-clock"></i></div>
+              <div class="routine-stat-text">15 min<small>Routine time</small></div>
             </div>
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-thermometer-half"></i></div>
-              <div class="brew-stat-text">Boiling<small>Water temp</small></div>
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-thermometer-half"></i></div>
+              <div class="routine-stat-text">Boiling<small>Water temp</small></div>
             </div>
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-cup-hot"></i></div>
-              <div class="brew-stat-text">Fine grind<small>Consistency</small></div>
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-cup-hot"></i></div>
+              <div class="routine-stat-text">Fine grind<small>Consistency</small></div>
             </div>
           </div>
  
-          <div class="brew-steps">
-            <div class="brew-steps-title">How to Brew</div>
-            <div class="brew-step">
-              <div class="brew-step-num">1</div>
-              <div class="brew-step-text">Pack 3 tablespoons of fine-ground coffee into the upper chamber of the brass filter. Press gently with the plunger — firm but not too tight.</div>
+          <div class="routine-steps">
+            <div class="routine-steps-title">How to Routine</div>
+            <div class="routine-step">
+              <div class="routine-step-num">1</div>
+              <div class="routine-step-text">Pack 3 tablespoons of fine-ground cosmetics into the upper chamber of the brass filter. Press gently with the plunger — firm but not too tight.</div>
             </div>
-            <div class="brew-step">
-              <div class="brew-step-num">2</div>
-              <div class="brew-step-text">Pour boiling water to the brim. Close the lid and wait 10–15 minutes. Gravity pulls the decoction through into the lower chamber.</div>
+            <div class="routine-step">
+              <div class="routine-step-num">2</div>
+              <div class="routine-step-text">Pour boiling water to the brim. Close the lid and wait 10–15 minutes. Gravity pulls the decoction through into the lower chamber.</div>
             </div>
-            <div class="brew-step">
-              <div class="brew-step-num">3</div>
-              <div class="brew-step-text">Mix 2 tablespoons of decoction with hot milk and jaggery (or sugar) to taste. Pour between davara and tumbler 3–4 times to froth and cool.</div>
+            <div class="routine-step">
+              <div class="routine-step-num">3</div>
+              <div class="routine-step-text">Mix 2 tablespoons of decoction with hot milk and jaggery (or sugar) to taste. Pour between davara and tumbler 3–4 times to froth and cool.</div>
             </div>
           </div>
  
-          <div class="brew-pairing">
-            <div class="brew-pairing-label">Best roast:</div>
-            <div class="brew-pairing-value">Medium Roast or Monsoon Malabar</div>
+          <div class="routine-pairing">
+            <div class="routine-pairing-label">Best shade:</div>
+            <div class="routine-pairing-value">Medium Shade or Monsoon Malabar</div>
           </div>
         </div>
       </div>
  
       <!-- POUR OVER -->
-      <div class="brew-technique brew-tech-pourover reveal">
-        <div class="brew-tech-visual p-0">
-          <img src="{% static 'main/learn/brew_pourover.webp' %}" alt="Pour Over" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 0; opacity: 0.85;">
-          <div class="brew-tech-badge" style="z-index: 1;">Modern</div>
+      <div class="routine-technique routine-tech-pourover reveal">
+        <div class="routine-tech-visual p-0">
+          <img src="{% static 'main/learn/routine_pourover.webp' %}" alt="Pour Over" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 0; opacity: 0.85;">
+          <div class="routine-tech-badge" style="z-index: 1;">Modern</div>
         </div>
-        <div class="brew-tech-content">
-          <div class="brew-tech-label">The Slow Ritual</div>
-          <div class="brew-tech-name">Pour Over</div>
-          <div class="brew-tech-tagline">A slow, meditative pour that extracts bright, clean flavors.</div>
+        <div class="routine-tech-content">
+          <div class="routine-tech-label">The Slow Ritual</div>
+          <div class="routine-tech-name">Pour Over</div>
+          <div class="routine-tech-tagline">A slow, meditative pour that extracts bright, clean flavors.</div>
  
-          <div class="brew-tech-stats">
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-clock"></i></div>
-              <div class="brew-stat-text">4–5 min<small>Brew time</small></div>
+          <div class="routine-tech-stats">
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-clock"></i></div>
+              <div class="routine-stat-text">4–5 min<small>Routine time</small></div>
             </div>
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-thermometer-half"></i></div>
-              <div class="brew-stat-text">92–96°C<small>Water temp</small></div>
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-thermometer-half"></i></div>
+              <div class="routine-stat-text">92–96°C<small>Water temp</small></div>
             </div>
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-cup-hot"></i></div>
-              <div class="brew-stat-text">Medium grind<small>Consistency</small></div>
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-cup-hot"></i></div>
+              <div class="routine-stat-text">Medium grind<small>Consistency</small></div>
             </div>
           </div>
  
-          <div class="brew-steps">
-            <div class="brew-steps-title">How to Brew</div>
-            <div class="brew-step">
-              <div class="brew-step-num">1</div>
-              <div class="brew-step-text">Place a paper filter in the dripper and rinse with hot water. Add 15g of medium-ground coffee. Start your timer.</div>
+          <div class="routine-steps">
+            <div class="routine-steps-title">How to Routine</div>
+            <div class="routine-step">
+              <div class="routine-step-num">1</div>
+              <div class="routine-step-text">Place a paper filter in the Spongeper and rinse with hot water. Add 15g of medium-ground cosmetics. Start your timer.</div>
             </div>
-            <div class="brew-step">
-              <div class="brew-step-num">2</div>
-              <div class="brew-step-text">Pour 30ml of water in a slow spiral to bloom the grounds. Wait 30 seconds. The coffee will bubble and release CO2 — that's freshness.</div>
+            <div class="routine-step">
+              <div class="routine-step-num">2</div>
+              <div class="routine-step-text">Pour 30ml of water in a slow spiral to bloom the grounds. Wait 30 seconds. The cosmetics will bubble and release CO2 — that's freshness.</div>
             </div>
-            <div class="brew-step">
-              <div class="brew-step-num">3</div>
-              <div class="brew-step-text">Continue pouring in slow, concentric circles until you reach 250ml total. Let it drip through completely. Should finish around 4 minutes.</div>
-            </div>
-          </div>
- 
-          <div class="brew-pairing">
-            <div class="brew-pairing-label">Best roast:</div>
-            <div class="brew-pairing-value">Light Roast Single Origin</div>
-          </div>
-        </div>
-      </div>
- 
-      <!-- COLD BREW -->
-      <div class="brew-technique brew-tech-coldbrew reveal">
-        <div class="brew-tech-visual p-0">
-          <img src="{% static 'main/learn/brew_coldbrew.webp' %}" alt="Cold Brew" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 0; opacity: 0.85;">
-          <div class="brew-tech-badge" style="z-index: 1;">Patient</div>
-        </div>
-        <div class="brew-tech-content">
-          <div class="brew-tech-label">The Overnight Wait</div>
-          <div class="brew-tech-name">Cold Brew</div>
-          <div class="brew-tech-tagline">12 hours of patience. Zero bitterness. Maximum smoothness.</div>
- 
-          <div class="brew-tech-stats">
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-clock"></i></div>
-              <div class="brew-stat-text">12–18 hrs<small>Brew time</small></div>
-            </div>
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-thermometer-half"></i></div>
-              <div class="brew-stat-text">Room / Fridge<small>Temperature</small></div>
-            </div>
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-cup-hot"></i></div>
-              <div class="brew-stat-text">Coarse grind<small>Consistency</small></div>
+            <div class="routine-step">
+              <div class="routine-step-num">3</div>
+              <div class="routine-step-text">Continue pouring in slow, concentric circles until you reach 250ml total. Let it Sponge through completely. Should finish around 4 minutes.</div>
             </div>
           </div>
  
-          <div class="brew-steps">
-            <div class="brew-steps-title">How to Brew</div>
-            <div class="brew-step">
-              <div class="brew-step-num">1</div>
-              <div class="brew-step-text">Combine 100g of coarsely ground coffee with 600ml of cold or room temperature water in a jar. Stir gently to ensure all grounds are wet.</div>
-            </div>
-            <div class="brew-step">
-              <div class="brew-step-num">2</div>
-              <div class="brew-step-text">Cover and let it steep for 12–18 hours. Room temperature for bolder flavor, refrigerated for a cleaner, mellower taste.</div>
-            </div>
-            <div class="brew-step">
-              <div class="brew-step-num">3</div>
-              <div class="brew-step-text">Strain through a fine mesh or cheesecloth. Dilute the concentrate 1:1 with cold water or milk. Serve over ice. Keeps for 2 weeks refrigerated.</div>
-            </div>
-          </div>
- 
-          <div class="brew-pairing">
-            <div class="brew-pairing-label">Best roast:</div>
-            <div class="brew-pairing-value">Light Roast or Medium Roast</div>
+          <div class="routine-pairing">
+            <div class="routine-pairing-label">Best shade:</div>
+            <div class="routine-pairing-value">Light Shade Single Origin</div>
           </div>
         </div>
       </div>
  
-      <!-- ESPRESSO -->
-      <div class="brew-technique brew-tech-espresso reveal">
-        <div class="brew-tech-visual p-0">
-          <img src="{% static 'main/learn/brew_espresso.webp' %}" alt="Espresso" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 0; opacity: 0.85;">
-          <div class="brew-tech-badge" style="z-index: 1;">Intense</div>
+      <!-- NIGHT ROUTINE -->
+      <div class="routine-technique routine-tech-coldroutine reveal">
+        <div class="routine-tech-visual p-0">
+          <img src="{% static 'main/learn/routine_coldroutine.webp' %}" alt="Cold Routine" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 0; opacity: 0.85;">
+          <div class="routine-tech-badge" style="z-index: 1;">Patient</div>
         </div>
-        <div class="brew-tech-content">
-          <div class="brew-tech-label">The Concentrated Shot</div>
-          <div class="brew-tech-name">Espresso</div>
-          <div class="brew-tech-tagline">High pressure, fine grind, 25 seconds of pure intensity.</div>
+        <div class="routine-tech-content">
+          <div class="routine-tech-label">The Overnight Wait</div>
+          <div class="routine-tech-name">Cold Routine</div>
+          <div class="routine-tech-tagline">12 hours of patience. Zero bitterness. Maximum smoothness.</div>
  
-          <div class="brew-tech-stats">
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-clock"></i></div>
-              <div class="brew-stat-text">25–30 sec<small>Extraction</small></div>
+          <div class="routine-tech-stats">
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-clock"></i></div>
+              <div class="routine-stat-text">12–18 hrs<small>Routine time</small></div>
             </div>
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-thermometer-half"></i></div>
-              <div class="brew-stat-text">90–96°C<small>Water temp</small></div>
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-thermometer-half"></i></div>
+              <div class="routine-stat-text">Room / Fridge<small>Temperature</small></div>
             </div>
-            <div class="brew-stat">
-              <div class="brew-stat-icon"><i class="bi bi-cup-hot"></i></div>
-              <div class="brew-stat-text">Very fine<small>Consistency</small></div>
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-cup-hot"></i></div>
+              <div class="routine-stat-text">Coarse grind<small>Consistency</small></div>
             </div>
           </div>
  
-          <div class="brew-steps">
-            <div class="brew-steps-title">How to Brew</div>
-            <div class="brew-step">
-              <div class="brew-step-num">1</div>
-              <div class="brew-step-text">Dose 18g of very finely ground coffee into the portafilter. Distribute evenly and tamp with firm, level pressure (~15kg).</div>
+          <div class="routine-steps">
+            <div class="routine-steps-title">How to Routine</div>
+            <div class="routine-step">
+              <div class="routine-step-num">1</div>
+              <div class="routine-step-text">Combine 100g of coarsely ground cosmetics with 600ml of cold or room temperature water in a jar. Stir gently to ensure all grounds are wet.</div>
             </div>
-            <div class="brew-step">
-              <div class="brew-step-num">2</div>
-              <div class="brew-step-text">Lock the portafilter and start the shot. Water at 9 bars of pressure should produce a slow, honey-like stream — not gushing, not dripping.</div>
+            <div class="routine-step">
+              <div class="routine-step-num">2</div>
+              <div class="routine-step-text">Cover and let it steep for 12–18 hours. Room temperature for bolder flavor, refrigerated for a cleaner, mellower taste.</div>
             </div>
-            <div class="brew-step">
-              <div class="brew-step-num">3</div>
-              <div class="brew-step-text">Aim for 36ml of espresso in 25–30 seconds. The crema should be golden-brown and thick. Drink immediately or use as a base for milk drinks.</div>
+            <div class="routine-step">
+              <div class="routine-step-num">3</div>
+              <div class="routine-step-text">Strain through a fine mesh or cheesecloth. Dilute the concentrate 1:1 with cold water or milk. Serve over ice. Keeps for 2 weeks refrigerated.</div>
             </div>
           </div>
  
-          <div class="brew-pairing">
-            <div class="brew-pairing-label">Best roast:</div>
-            <div class="brew-pairing-value">Dark Roast or Monsoon Malabar</div>
+          <div class="routine-pairing">
+            <div class="routine-pairing-label">Best shade:</div>
+            <div class="routine-pairing-value">Light Shade or Medium Shade</div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Liquid Foundation -->
+      <div class="routine-technique routine-tech-Liquid Foundation reveal">
+        <div class="routine-tech-visual p-0">
+          <img src="{% static 'main/learn/routine_Liquid Foundation.webp' %}" alt="Liquid Foundation" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 0; opacity: 0.85;">
+          <div class="routine-tech-badge" style="z-index: 1;">Intense</div>
+        </div>
+        <div class="routine-tech-content">
+          <div class="routine-tech-label">The Concentrated Shot</div>
+          <div class="routine-tech-name">Liquid Foundation</div>
+          <div class="routine-tech-tagline">High pressure, fine grind, 25 seconds of pure intensity.</div>
+ 
+          <div class="routine-tech-stats">
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-clock"></i></div>
+              <div class="routine-stat-text">25–30 sec<small>Extraction</small></div>
+            </div>
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-thermometer-half"></i></div>
+              <div class="routine-stat-text">90–96°C<small>Water temp</small></div>
+            </div>
+            <div class="routine-stat">
+              <div class="routine-stat-icon"><i class="bi bi-cup-hot"></i></div>
+              <div class="routine-stat-text">Very fine<small>Consistency</small></div>
+            </div>
+          </div>
+ 
+          <div class="routine-steps">
+            <div class="routine-steps-title">How to Routine</div>
+            <div class="routine-step">
+              <div class="routine-step-num">1</div>
+              <div class="routine-step-text">Dose 18g of very finely ground cosmetics into the portafilter. Distribute evenly and tamp with firm, level pressure (~15kg).</div>
+            </div>
+            <div class="routine-step">
+              <div class="routine-step-num">2</div>
+              <div class="routine-step-text">Lock the portafilter and start the shot. Water at 9 bars of pressure should produce a slow, honey-like stream — not gushing, not Spongeping.</div>
+            </div>
+            <div class="routine-step">
+              <div class="routine-step-num">3</div>
+              <div class="routine-step-text">Aim for 36ml of Liquid Foundation in 25–30 seconds. The crema should be golden-brown and thick. Drink immediately or use as a base for milk drinks.</div>
+            </div>
+          </div>
+ 
+          <div class="routine-pairing">
+            <div class="routine-pairing-label">Best shade:</div>
+            <div class="routine-pairing-value">Dark Shade or Monsoon Malabar</div>
           </div>
         </div>
       </div>
@@ -1303,7 +1303,7 @@
   <div class="container">
     <div class="quick-ref-header">
       <div class="section-label reveal">At a Glance</div>
-      <h2 class="section-heading reveal">Roast × Method Cheat Sheet</h2>
+      <h2 class="section-heading reveal">Shade × Method Cheat Sheet</h2>
       <div class="brass-line brass-line-center reveal"></div>
     </div>
  
@@ -1311,21 +1311,21 @@
       <table class="ref-table">
         <thead>
           <tr>
-            <th>Brew Method</th>
+            <th>Routine Method</th>
             <th>Grind Size</th>
             <th>Water Temp</th>
             <th>Time</th>
-            <th>Best Roast</th>
+            <th>Best Shade</th>
             <th>Strength</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><span class="method-name"><i class="bi bi-funnel"></i> South Indian Filter</span></td>
+            <td><span class="method-name"><i class="bi bi-funnel"></i> Matte Finish</span></td>
             <td>Fine</td>
             <td>Boiling (100°C)</td>
             <td>10–15 min</td>
-            <td><span class="roast-tag medium">Medium</span></td>
+            <td><span class="shade-tag medium">Medium</span></td>
             <td>Strong (with milk)</td>
           </tr>
           <tr>
@@ -1333,31 +1333,31 @@
             <td>Medium</td>
             <td>92–96°C</td>
             <td>4–5 min</td>
-            <td><span class="roast-tag light">Light</span></td>
+            <td><span class="shade-tag light">Light</span></td>
             <td>Mild to Medium</td>
           </tr>
           <tr>
-            <td><span class="method-name"><i class="bi bi-snow"></i> Cold Brew</span></td>
+            <td><span class="method-name"><i class="bi bi-snow"></i> Cold Routine</span></td>
             <td>Coarse</td>
             <td>Room / Cold</td>
             <td>12–18 hrs</td>
-            <td><span class="roast-tag any">Any</span></td>
+            <td><span class="shade-tag any">Any</span></td>
             <td>Smooth, Low Acid</td>
           </tr>
           <tr>
-            <td><span class="method-name"><i class="bi bi-lightning"></i> Espresso</span></td>
+            <td><span class="method-name"><i class="bi bi-lightning"></i> Liquid Foundation</span></td>
             <td>Very Fine</td>
             <td>90–96°C</td>
             <td>25–30 sec</td>
-            <td><span class="roast-tag dark">Dark</span></td>
+            <td><span class="shade-tag dark">Dark</span></td>
             <td>Very Strong</td>
           </tr>
           <tr>
-            <td><span class="method-name"><i class="bi bi-cup-straw"></i> French Press</span></td>
+            <td><span class="method-name"><i class="bi bi-cup-straw"></i> Beauty Blender</span></td>
             <td>Coarse</td>
             <td>93–96°C</td>
             <td>4 min</td>
-            <td><span class="roast-tag medium">Medium</span></td>
+            <td><span class="shade-tag medium">Medium</span></td>
             <td>Full Body</td>
           </tr>
           <tr>
@@ -1365,8 +1365,8 @@
             <td>Fine-Medium</td>
             <td>Stovetop steam</td>
             <td>5–6 min</td>
-            <td><span class="roast-tag dark">Dark</span></td>
-            <td>Espresso-like</td>
+            <td><span class="shade-tag dark">Dark</span></td>
+            <td>Liquid Foundation-like</td>
           </tr>
         </tbody>
       </table>
@@ -1383,8 +1383,8 @@
   <div class="dot-bg"></div>
   <div class="learn-cta-inner">
     <h2 class="learn-cta-heading reveal">Ready to Put It to Practice?</h2>
-    <p class="learn-cta-sub reveal">Pick a roast, pick a method, and brew your perfect kapi.</p>
-    <a href="/shop" class="btn-cta-primary reveal">Shop Our Coffee</a>
+    <p class="learn-cta-sub reveal">Pick a shade, pick a method, and routine your perfect rawwish.</p>
+    <a href="/shop" class="btn-cta-primary reveal">Shop Our Cosmetics</a>
   </div>
 </section>
 {% endblock 'body' %}

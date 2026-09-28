@@ -326,7 +326,7 @@
     <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column mb-1">
         <div class="flex-grow-1">
             <h4 class="fs-18 fw-semibold m-0">Add New Product</h4>
-            <p class="text-muted mb-0" style="font-size:13px;">Fill in all sections and publish your coffee product.</p>
+            <p class="text-muted mb-0" style="font-size:13px;">Fill in all sections and publish your cosmetics product.</p>
         </div>
         <div>
             <a href="/products" class="btn btn-sm btn-light">
@@ -347,7 +347,7 @@
                 <div class="pblock" id="sec-core">
                     <div class="pblock-head">
                         <div class="pblock-head-left">
-                            <div class="pblock-icon icon-brown"><i class="mdi mdi-coffee"></i></div>
+                            <div class="pblock-icon icon-brown"><i class="mdi mdi-cosmetics"></i></div>
                             <div>
                                 <h6>Core Information</h6>
                                 <p>Product name, category, description and thumbnail</p>
@@ -374,7 +374,7 @@
                             <div class="col-12">
                                 <label class="form-label">Product Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="name"
-                                    placeholder="e.g. Kapi Today Classic Filter Coffee Powder" required>
+                                    placeholder="e.g. Raw Wish Classic Filter Cosmetics Powder" required>
                             </div>
 
                             <!-- Quill Description -->
@@ -420,7 +420,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">Meta Title</label>
                                 <input type="text" class="form-control" name="meta_title"
-                                    placeholder="e.g. Buy Filter Coffee Powder Online – Kapi Today">
+                                    placeholder="e.g. Buy Filter Cosmetics Powder Online – Raw Wish">
                                 <div class="form-text">Keep under 60 characters</div>
                             </div>
                             <div class="col-md-6">
@@ -431,7 +431,7 @@
                             <div class="col-md-8">
                                 <label class="form-label">Meta Keywords</label>
                                 <input type="text" class="form-control" name="meta_keywords"
-                                    placeholder="filter coffee, Coorg coffee, South Indian filter, Kapi Today">
+                                    placeholder="hydrating serum, vitamin c, skincare routine, Raw Wish">
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label">Meta Image</label>
@@ -514,7 +514,7 @@
                             <div class="pblock-icon icon-rose"><i class="mdi mdi-image-frame"></i></div>
                             <div>
                                 <h6>A+ Content <span class="cnt" id="cnt-aplus">0</span></h6>
-                                <p>Rich visual content — roasting, brew guides, farm-to-cup</p>
+                                <p>Rich visual content — shadeing, routine guides, farm-to-cup</p>
                             </div>
                         </div>
                     </div>
@@ -549,7 +549,7 @@
                     <div class="sidebar-block-head">Jump to Section</div>
                     <div class="sidebar-block-body" style="padding:10px 12px;">
                         <div class="nav-steps">
-                            <a href="#sec-core"       class="nav-step active"><i class="mdi mdi-coffee"></i> Core Info</a>
+                            <a href="#sec-core"       class="nav-step active"><i class="mdi mdi-cosmetics"></i> Core Info</a>
                             <a href="#sec-seo"        class="nav-step"><i class="mdi mdi-magnify"></i> SEO</a>
                             <a href="#sec-images"     class="nav-step"><i class="mdi mdi-image-multiple"></i> Images <span class="step-count" id="snav-images">0</span></a>
                             <a href="#sec-variants"   class="nav-step"><i class="mdi mdi-package-variant"></i> Variants <span class="step-count" id="snav-variants">0</span></a>
@@ -584,7 +584,7 @@
 // ── Quill Editor ──
 const quill = new Quill('#quill-editor', {
     theme: 'snow',
-    placeholder: 'Describe the coffee — origin, roast profile, flavour notes, best brew method...',
+    placeholder: 'Describe the cosmetics — origin, shade profile, flavour notes, best routine method...',
     modules: {
         toolbar: [
             [{ 'header': [1, 2, 3, 4, false] }],
@@ -696,7 +696,7 @@ function addImage() {
             <div class="col-md-9">
                 <label class="form-label">Alt Text</label>
                 <input type="text" class="form-control" name="product_image_alt"
-                    placeholder="e.g. Kapi Today Filter Coffee Powder 250g front pack shot">
+                    placeholder="e.g. Raw Wish Filter Cosmetics Powder 250g front pack shot">
                 <div class="form-text">Describe the image — improves SEO and accessibility</div>
             </div>
         </div>`;
@@ -815,14 +815,14 @@ function addAplus() {
                 <div class="mini-upload" style="height:100px" onclick="this.querySelector('input').click()">
                     <input type="file" name="aplus_image" accept="image/*" onchange="previewMini(this)">
                     <i class="mdi mdi-image-frame"></i>
-                    <span>Roasting, brew guide, farm-to-cup</span>
+                    <span>Shadeing, routine guide, farm-to-cup</span>
                     <img>
                 </div>
             </div>
             <div class="col-md-8">
                 <label class="form-label">Alt Text</label>
                 <input type="text" class="form-control" name="aplus_alt"
-                    placeholder="e.g. Slow roasting process at Coorg estate">
+                    placeholder="e.g. Dermatologically tested for sensitive skin">
                 <div class="form-text">Describe the image for SEO</div>
             </div>
         </div>`;

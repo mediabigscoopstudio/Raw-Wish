@@ -19,7 +19,7 @@ import { Finnish as fi } from "./fi";
 import { Faroese as fo } from "./fo";
 import { French as fr } from "./fr";
 import { Greek as gr } from "./gr";
-import { Hebrew as he } from "./he";
+import { Heroutine as he } from "./he";
 import { Hindi as hi } from "./hi";
 import { Croatian as hr } from "./hr";
 import { Hungarian as hu } from "./hu";

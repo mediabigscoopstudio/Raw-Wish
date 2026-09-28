@@ -1,22 +1,22 @@
 {% extends "main/base.html" %}
-{% block 'title' %}My Orders | Kapi Today{% endblock 'title' %}
+{% block 'title' %}My Orders | Raw Wish{% endblock 'title' %}
 {% block 'body' %}
 <div class="container py-5" style="margin-top: 100px;">
-    <h2 class="mb-4" style="color: var(--kapi-coffee);">My Orders</h2>
+    <h2 class="mb-4" style="color: var(--rawwish-cosmetics);">My Orders</h2>
     {% if orders %}
         <div class="row">
             {% for order in orders %}
             <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0" style="background: var(--kapi-cream);">
+                <div class="card h-100 shadow-sm border-0" style="background: var(--rawwish-cream);">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5 class="card-title m-0 fw-bold">{{ order.display_order_id }}</h5>
-                            <span class="badge" style="background: var(--kapi-gold-accent);">{{ order.get_status_display }}</span>
+                            <span class="badge" style="background: var(--rawwish-gold-accent);">{{ order.get_status_display }}</span>
                         </div>
                         <p class="text-muted small mb-3">Placed: {{ order.created_at|date:"d M Y" }}</p>
                         
                         <div class="mb-3">
-                            <p class="mb-1 fw-bold small text-uppercase" style="color: var(--kapi-coffee);">Products:</p>
+                            <p class="mb-1 fw-bold small text-uppercase" style="color: var(--rawwish-cosmetics);">Products:</p>
                             <ul class="list-unstyled small mb-0">
                                 {% for item in order.order_items.all %}
                                 <li>{{ item.product_name }} - {{ item.variant_name }} (x{{ item.quantity }})</li>

@@ -1,22 +1,22 @@
 {% extends "main/base.html" %}
 {% load static %}
-{% block 'title' %}{% if category %}{{ category.title }} | Shop{% else %}Shop All Coffee{% endif %} - Kapi Today{% endblock 'title' %}
+{% block 'title' %}{% if category %}{{ category.title }}{% else %}Shop All Essentials{% endif %} - Rawwish{% endblock 'title' %}
 
-{% block 'meta_description' %}{% if category and category.description %}{{ category.description|striptags|truncatewords:20 }}{% else %}Explore our authentic collection of South Indian filter coffee. Estate-grown, artisanal roasts shipped fresh.{% endif %}{% endblock 'meta_description' %}
+{% block 'meta_description' %}{% if category and category.description %}{{ category.description|striptags|truncatewords:20 }}{% else %}Discover our collection of thoughtfully crafted beauty essentials and skincare routines.{% endif %}{% endblock 'meta_description' %}
 
-{% block 'og_title' %}{% if category %}{{ category.title }} | Shop{% else %}Shop All Coffee{% endif %} - Kapi Today{% endblock 'og_title' %}
-{% block 'og_description' %}{% if category and category.description %}{{ category.description|striptags|truncatewords:20 }}{% else %}Explore our authentic collection of South Indian filter coffee. Estate-grown, artisanal roasts shipped fresh.{% endif %}{% endblock 'og_description' %}
+{% block 'og_title' %}{% if category %}{{ category.title }}{% else %}Shop All Essentials{% endif %} - Rawwish{% endblock 'og_title' %}
+{% block 'og_description' %}{% if category and category.description %}{{ category.description|striptags|truncatewords:20 }}{% else %}Discover our collection of thoughtfully crafted beauty essentials and skincare routines.{% endif %}{% endblock 'og_description' %}
 {% block 'og_image' %}{% if category and category.category_image %}{{ request.scheme }}://{{ request.get_host }}{{ category.category_image.url }}{% else %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/seo/og-image.webp{% endif %}{% endblock 'og_image' %}
 
-{% block 'twitter_title' %}{% if category %}{{ category.title }} | Shop{% else %}Shop All Coffee{% endif %} - Kapi Today{% endblock 'twitter_title' %}
-{% block 'twitter_description' %}{% if category and category.description %}{{ category.description|striptags|truncatewords:20 }}{% else %}Explore our authentic collection of South Indian filter coffee. Estate-grown, artisanal roasts shipped fresh.{% endif %}{% endblock 'twitter_description' %}
+{% block 'twitter_title' %}{% if category %}{{ category.title }}{% else %}Shop All Essentials{% endif %} - Rawwish{% endblock 'twitter_title' %}
+{% block 'twitter_description' %}{% if category and category.description %}{{ category.description|striptags|truncatewords:20 }}{% else %}Discover our collection of thoughtfully crafted beauty essentials and skincare routines.{% endif %}{% endblock 'twitter_description' %}
 {% block 'twitter_image' %}{% if category and category.category_image %}{{ request.scheme }}://{{ request.get_host }}{{ category.category_image.url }}{% else %}{{ request.scheme }}://{{ request.get_host }}/static/main/images/seo/og-image.webp{% endif %}{% endblock 'twitter_image' %}
 
 
 {% block 'css' %}
 <style>
   .shop-hero {
-    background: var(--kapi-cream);
+    background: var(--rw-cream);
     padding: var(--space-4xl) 0 var(--space-xl) 0;
     text-align: center;
     border-bottom: 1px solid rgba(139, 90, 43, 0.1);
@@ -25,13 +25,13 @@
   .shop-hero-heading {
     font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--kapi-charcoal);
+    color: var(--rw-ink);
     margin-bottom: var(--space-md);
   }
   
   .shop-hero-sub {
     font-size: var(--text-lg);
-    color: var(--kapi-brown);
+    color: var(--rw-muted);
     max-width: 600px;
     margin: 0 auto;
   }
@@ -59,7 +59,7 @@
   }
 
   /* Premium Card Styles */
-  .kapi-card {
+  .rawwish-card {
     background: #FAFAFA;
     border-radius: 12px;
     overflow: hidden;
@@ -70,26 +70,26 @@
     border: 1px solid rgba(0,0,0,0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .kapi-card:hover {
+  .rawwish-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   }
 
-  .kapi-card-img-wrap {
+  .rawwish-card-img-wrap {
     position: relative;
     padding-top: 85%; /* Reduced from 100% to make tile shorter */
     background: #F0EBE1;
     display: block;
     overflow: hidden;
   }
-  .kapi-card-img-wrap img {
+  .rawwish-card-img-wrap img {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
   }
-  .kapi-card:hover .kapi-card-img-wrap img {
+  .rawwish-card:hover .rawwish-card-img-wrap img {
     transform: scale(1.04);
   }
 
@@ -110,7 +110,7 @@
     transition: all 0.2s ease;
   }
   .badge-top-left:hover {
-    background: var(--kapi-charcoal);
+    background: var(--rawwish-charcoal);
     color: #fff;
     transform: translateY(-2px);
   }
@@ -136,14 +136,14 @@
   }
 
   /* Card Body */
-  .kapi-card-body {
+  .rawwish-card-body {
     padding: 16px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
 
-  .kapi-title {
+  .rawwish-title {
     font-family: var(--font-heading);
     font-size: 1.15rem; /* Reduced size */
     font-weight: 700;
@@ -156,16 +156,16 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  a.kapi-title-link { text-decoration: none; }
-  a.kapi-title-link:hover .kapi-title { color: var(--kapi-brass); }
+  a.rawwish-title-link { text-decoration: none; }
+  a.rawwish-title-link:hover .rawwish-title { color: var(--rawwish-brass); }
 
   /* Reviews */
-  .kapi-reviews {
+  .rawwish-reviews {
     display: flex; align-items: center; gap: 4px; font-size: 0.75rem; margin-bottom: 12px;
     padding-bottom: 12px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
   }
-  .kapi-reviews .bi-star-fill { color: #F5A623; }
+  .rawwish-reviews .bi-star-fill { color: #F5A623; }
 
   /* Variant Selection - Horizontal Scroll */
   .variant-label {
@@ -252,91 +252,16 @@
 {% block 'body' %}
 <section class="shop-hero">
   <div class="container">
-    <h1 class="shop-hero-heading">{% if active_category %}{{ active_category.title }}{% else %}Our Coffee Collection{% endif %}</h1>
-    <p class="shop-hero-sub">{% if active_category %}Explore all our premium products in the {{ active_category.title|lower }} collection.{% else %}Ethically sourced, masterfully roasted, and delivered fresh to your door.{% endif %}</p>
+    <h1 class="shop-hero-heading">{% if active_category %}{{ active_category.title }}{% else %}Our Cosmetics Collection{% endif %}</h1>
+    <p class="shop-hero-sub">{% if active_category %}Explore all our premium products in the {{ active_category.title|lower }} collection.{% else %}Ethically sourced, masterfully shadeed, and delivered fresh to your door.{% endif %}</p>
   </div>
 </section>
 
-<section class="shop-products" style="background: var(--kapi-cream);">
+<section class="shop-products" style="background: var(--rw-cream);">
   <div class="container">
     <div class="product-grid">
       {% for p in products %}
-      <div class="kapi-card">
-        
-        <!-- Image & Badges -->
-        <div class="kapi-card-img-wrap">
-          <a href="/{{ p.category.slug }}/{{ p.sub_category.slug|default:'all' }}/{{ p.slug }}/" style="display:block; width:100%; height:100%;">
-            {% if p.thumbnail %}
-              <img src="{{ p.thumbnail.url }}" alt="{{ p.name }}">
-            {% else %}
-              <img src="{% static 'main/logos/LogoMain.webp' %}" alt="Placeholder" style="object-fit: contain; padding: 15px; background:#fff;">
-            {% endif %}
-          </a>
-          
-          {% if p.category %}
-          <a href="/shop/category/{{ p.category.slug }}/" class="badge-top-left" style="text-decoration:none; transition:transform 0.2s;">
-            <i class="bi bi-vinyl-fill" style="color:#6C4430;"></i> {{ p.category.title }}
-          </a>
-          {% endif %}
-          
-          <button type="button" class="badge-top-right" aria-label="Add to Wishlist">
-            <i class="bi bi-heart"></i>
-          </button>
-        </div>
-
-        <!-- Card Body -->
-        <div class="kapi-card-body">
-          <a href="/{{ p.category.slug }}/{{ p.sub_category.slug|default:'all' }}/{{ p.slug }}/" class="kapi-title-link">
-            <h3 class="kapi-title">{{ p.name }}</h3>
-          </a>
-          
-          <div class="kapi-reviews">
-            <i class="bi bi-star-fill"></i> <strong>4.8</strong> <span style="color:#888;">(320 reviews)</span>
-          </div>
-
-          <!-- Form / Add to Cart Section -->
-          <form action="{% url 'add_to_cart' %}" method="POST" class="add-to-cart-form" style="margin-top:auto; display:flex; flex-direction:column;">
-            {% csrf_token %}
-            <input type="hidden" name="product_id" value="{{ p.id }}">
-            
-            {% if p.product_variant.all %}
-              <div class="variant-label">Select Weight</div>
-              <div class="variant-grid">
-                {% for v in p.product_variant.all %}
-                <div class="v-box">
-                  <input type="radio" name="variant_id" id="v_{{ p.id }}_{{ v.id }}" value="{{ v.id }}" 
-                         {% if forloop.first %}checked{% endif %} 
-                         onchange="document.getElementById('price_main_{{ p.id }}').innerText = '₹{{ v.price }}';">
-                  <label class="v-label-pill" for="v_{{ p.id }}_{{ v.id }}">
-                    {{ v.name }}
-                  </label>
-                </div>
-                {% endfor %}
-              </div>
-            {% endif %}
-            
-            <div class="price-qty-row">
-              <div class="price-block">
-                <div class="price-main" id="price_main_{{ p.id }}">
-                  {% if p.product_variant.first %}₹{{ p.product_variant.first.price }}{% else %}N/A{% endif %}
-                </div>
-                <div class="price-tax">Inclusive of all taxes</div>
-              </div>
-              
-              <div class="qty-selector">
-                <button type="button" class="qty-btn" onclick="let inp=document.getElementById('qty_{{ p.id }}'); inp.value=Math.max(1, parseInt(inp.value)-1);">&minus;</button>
-                <input type="number" id="qty_{{ p.id }}" name="quantity" value="1" min="1" class="qty-input" readonly>
-                <button type="button" class="qty-btn" onclick="let inp=document.getElementById('qty_{{ p.id }}'); inp.value=parseInt(inp.value)+1;">&plus;</button>
-              </div>
-            </div>
-
-            <button type="submit" class="btn-add-cart-dark" {% if not p.product_variant.all %}disabled{% endif %}>
-              <i class="bi bi-bag"></i> Add to Cart
-            </button>
-          </form>
-
-        </div>
-      </div>
+      {% include 'main/components/product_card.html' with product=p %}
       {% endfor %}
     </div>
   </div>

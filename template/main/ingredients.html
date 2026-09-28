@@ -1,0 +1,156 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block 'title' %}Ingredients That Care — Raw Wish{% endblock 'title' %}
+{% block 'meta' %}
+<meta name="description" content="Discover the natural ingredients that power Rawwish cosmetics. Pure, potent, and ethically sourced for beautiful skin.">
+{% endblock 'meta' %}
+
+{% block 'body' %}
+<!-- HERO SECTION -->
+<section style="background-color: #1F1112; color: #FFFFFF; padding: 120px 0 80px 0; overflow: hidden; position: relative;">
+    <div class="container position-relative z-2">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center fade-up">
+                <div class="text-uppercase mb-4" style="font-size: 0.75rem; letter-spacing: 0.2em; color: #B59A98;">Our Ingredients</div>
+                <h1 style="font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 5rem); line-height: 1; letter-spacing: -0.02em; margin-bottom: 30px; color: #FFFFFF;">
+                    Powered by nature.<br>Proven by science.
+                </h1>
+                <p style="font-size: 1rem; line-height: 1.8; color: #E0D3D1; max-width: 600px; margin: 0 auto;">
+                    We believe transparency is beautiful. Every ingredient we use is carefully selected for its potency, purity, and ability to nourish your skin while delivering flawless performance.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INGREDIENTS LIST -->
+<section class="py-5" style="background-color: #FAFAFA; color: #231C18;">
+    <div class="container py-lg-5">
+        
+        <!-- Coffee -->
+        <div class="row align-items-center mb-5 pb-lg-5 fade-up">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="/static/main/images/coffee-beans-indgre.jpg" alt="Coffee Bean Extract" style="width: 100%; height: 500px; object-fit: cover; border-radius: 4px;">
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="text-uppercase mb-3" style="font-size: 0.65rem; letter-spacing: 0.15em; color: #8A7E78;">Sourced for vitality</div>
+                <h2 class="mb-4" style="font-family: var(--font-serif); font-size: 2.5rem; line-height: 1.1; color: #2F1A1B;">Coffee Seed Extract</h2>
+                <p style="font-size: 0.95rem; line-height: 1.8; color: #5A524D; margin-bottom: 20px;">
+                    Rich in antioxidants and caffeine, our cold-pressed coffee seed extract is a powerhouse for waking up tired skin. It helps to stimulate blood flow, reducing the appearance of puffiness and dark circles while defending against environmental stressors.
+                </p>
+                <ul class="list-unstyled" style="font-size: 0.85rem; color: #2F1A1B; font-weight: 600;">
+                    <li class="mb-2"><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Stimulates microcirculation</li>
+                    <li class="mb-2"><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Potent antioxidant protection</li>
+                    <li><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Depuffs and brightens</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Shea Butter -->
+        <div class="row align-items-center mb-5 pb-lg-5 fade-up flex-lg-row-reverse">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="/static/main/images/shea-butter.jpg" alt="Raw Shea Butter" style="width: 100%; height: 500px; object-fit: cover; border-radius: 4px;">
+            </div>
+            <div class="col-lg-5 me-lg-auto">
+                <div class="text-uppercase mb-3" style="font-size: 0.65rem; letter-spacing: 0.15em; color: #8A7E78;">Sourced for moisture</div>
+                <h2 class="mb-4" style="font-family: var(--font-serif); font-size: 2.5rem; line-height: 1.1; color: #2F1A1B;">Raw Shea Butter</h2>
+                <p style="font-size: 0.95rem; line-height: 1.8; color: #5A524D; margin-bottom: 20px;">
+                    The ultimate skin superfood. We use unrefined, ethical Shea Butter packed with vitamins A, E, and F. It deeply moisturizes and provides the creamy, blendable texture found in our lip colors and blushes without clogging pores.
+                </p>
+                <ul class="list-unstyled" style="font-size: 0.85rem; color: #2F1A1B; font-weight: 600;">
+                    <li class="mb-2"><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Deeply hydrating and restorative</li>
+                    <li class="mb-2"><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Rich in essential fatty acids</li>
+                    <li><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Creates a smooth, buttery texture</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Aloe Vera -->
+        <div class="row align-items-center mb-5 pb-lg-5 fade-up">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="/static/main/images/alovera.jpg" alt="Fresh Aloe Vera" style="width: 100%; height: 500px; object-fit: cover; border-radius: 4px;">
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="text-uppercase mb-3" style="font-size: 0.65rem; letter-spacing: 0.15em; color: #8A7E78;">Sourced for soothing</div>
+                <h2 class="mb-4" style="font-family: var(--font-serif); font-size: 2.5rem; line-height: 1.1; color: #2F1A1B;">Aloe Vera Leaf Juice</h2>
+                <p style="font-size: 0.95rem; line-height: 1.8; color: #5A524D; margin-bottom: 20px;">
+                    Revered for centuries for its healing properties, our organic Aloe Vera acts as a cooling, hydrating base for our liquid formulations. It binds moisture to the skin and immediately calms redness and irritation.
+                </p>
+                <ul class="list-unstyled" style="font-size: 0.85rem; color: #2F1A1B; font-weight: 600;">
+                    <li class="mb-2"><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Calms and soothes sensitive skin</li>
+                    <li class="mb-2"><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Weightless, non-greasy hydration</li>
+                    <li><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Promotes natural skin healing</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Turmeric -->
+        <div class="row align-items-center fade-up flex-lg-row-reverse">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="/static/main/images/turmeric.jpg" alt="Turmeric Root" style="width: 100%; height: 500px; object-fit: cover; border-radius: 4px;">
+            </div>
+            <div class="col-lg-5 me-lg-auto">
+                <div class="text-uppercase mb-3" style="font-size: 0.65rem; letter-spacing: 0.15em; color: #8A7E78;">Sourced for radiance</div>
+                <h2 class="mb-4" style="font-family: var(--font-serif); font-size: 2.5rem; line-height: 1.1; color: #2F1A1B;">Turmeric Root Extract</h2>
+                <p style="font-size: 0.95rem; line-height: 1.8; color: #5A524D; margin-bottom: 20px;">
+                    A golden miracle worker. We harness the active compound Curcumin to dramatically brighten uneven skin tones and impart a natural, lit-from-within glow while fighting inflammation at the cellular level.
+                </p>
+                <ul class="list-unstyled" style="font-size: 0.85rem; color: #2F1A1B; font-weight: 600;">
+                    <li class="mb-2"><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Brightens and evens skin tone</li>
+                    <li class="mb-2"><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Powerful anti-inflammatory</li>
+                    <li><i class="bi bi-check2 me-2" style="color: #4A2B2D;"></i> Natural glow-booster</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROMISE BANNER -->
+<section class="py-5 text-center" style="background-color: #2F1A1B; color: #FFFFFF;">
+    <div class="container py-4 fade-up">
+        <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 20px; color: #FFFFFF;">The Rawwish Standard</h3>
+        <div class="d-flex flex-wrap justify-content-center gap-4 mt-4">
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle" style="color: #B59A98;"></i>
+                <span style="font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Cruelty Free</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle" style="color: #B59A98;"></i>
+                <span style="font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">100% Vegan</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle" style="color: #B59A98;"></i>
+                <span style="font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">No Parabens</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle" style="color: #B59A98;"></i>
+                <span style="font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Sustainably Sourced</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock 'body' %}
+
+{% block 'script' %}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+    });
+</script>
+{% endblock 'script' %}

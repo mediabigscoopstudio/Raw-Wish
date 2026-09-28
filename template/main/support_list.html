@@ -1,18 +1,18 @@
 {% extends "main/base.html" %}
-{% block 'title' %}My Support | Kapi Today{% endblock 'title' %}
+{% block 'title' %}My Support | Raw Wish{% endblock 'title' %}
 {% block 'body' %}
 <div class="container py-5" style="margin-top: 100px;">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 style="color: var(--kapi-coffee);">My Support</h2>
+        <h2 style="color: var(--rawwish-cosmetics);">My Support</h2>
         <a href="{% url 'support_create' %}" class="btn btn-dark">+ Create New Query</a>
     </div>
 
     {% if queries %}
         <div class="list-group">
             {% for q in queries %}
-            <a href="{% url 'support_chat' q.support_id %}" class="list-group-item list-group-item-action p-4 mb-3 border-0 shadow-sm rounded" style="background: var(--kapi-cream);">
+            <a href="{% url 'support_chat' q.support_id %}" class="list-group-item list-group-item-action p-4 mb-3 border-0 shadow-sm rounded" style="background: var(--rawwish-cream);">
                 <div class="d-flex w-100 justify-content-between align-items-center mb-2">
-                    <h5 class="mb-1 fw-bold" style="color: var(--kapi-coffee);">{{ q.support_id }} - {{ q.category }}</h5>
+                    <h5 class="mb-1 fw-bold" style="color: var(--rawwish-cosmetics);">{{ q.support_id }} - {{ q.category }}</h5>
                     <small class="text-muted">{{ q.created_at|timesince }} ago</small>
                 </div>
                 {% if q.order %}

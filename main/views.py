@@ -22,22 +22,19 @@ def index(request):
     # 1. Categories for Category Strip
     categories = Category.objects.filter(status='Enabled')[:8]
     
-    # 2. Bestseller Products (Eagerly fetch variants to prevent N+1 queries)
-    bestseller_names = [
-        'Kapi Today Araku Valley Medium Roast',
-        'Kapi Today Chikmagalur Medium Roast',
-        'Kapi Today South Indian Coffee Filter',
-        'Kapi Today Wayanad Dark Roast'
+    # 2. Featured Products
+    target_product_names = [
+        'Hydrating Lip Tint',
+        'Velvet Matte Lip Colour',
+        'Shea Butter Body Lotion',
+        'Niacinamide + Zinc Balancing Serum'
     ]
-    bestseller_products = []
-    for name in bestseller_names:
-        prod = Product.objects.prefetch_related('product_variant').filter(name__icontains=name.replace('Kapi Today ', '')).first()
-        if prod:
-            bestseller_products.append(prod)
+    featured_products = list(Product.objects.prefetch_related('product_variant', 'product_images').filter(name__in=target_product_names))
+    # Order them to match the requested sequence if needed, but simple list is fine.
     
     context = {
         'categories': categories,
-        'bestseller_products': bestseller_products,
+        'featured_products': featured_products,
     }
     return render(request, 'main/index.html', context)
 
@@ -292,10 +289,10 @@ def google_login(request):
                         'first_name': first_name,
                         'base_url': base_url
                     })
-                    text_content = f'Hi {first_name},\n\nThank you for joining Kapi Today. Explore our premium South Indian filter coffees and estate single origins!\n\nCheers,\nThe Kapi Today Team'
+                    text_content = f'Hi {first_name},\n\nThank you for joining Raw Wish. Explore our premium South Indian filter cosmeticss and estate single origins!\n\nCheers,\nThe Raw Wish Team'
                     
                     msg = EmailMultiAlternatives(
-                        'Welcome to Kapi Today!',
+                        'Welcome to Raw Wish!',
                         text_content,
                         settings.DEFAULT_FROM_EMAIL,
                         [email]
@@ -346,10 +343,10 @@ def subscribe_newsletter(request):
                 from django.template.loader import render_to_string
                 base_url = request.build_absolute_uri('/')[:-1]
                 html_content = render_to_string('emails/newsletter.html', {'base_url': base_url})
-                text_content = "Thank you for subscribing to our newsletter! You're now officially part of the Kapi Culture.\n\nGet ready for early access to our exclusive product releases, seasonal estate blends, expert brewing tips, and stories straight from the coffee hills of South India."
+                text_content = "Thank you for subscribing to our newsletter! You're now officially part of the Rawwish Culture.\n\nGet ready for early access to our exclusive product releases, seasonal estate blends, expert brewing tips, and stories straight from the cosmetics hills of South India."
                 
                 msg = EmailMultiAlternatives(
-                    'Welcome to the Kapi Culture!',
+                    'Welcome to the Rawwish Culture!',
                     text_content,
                     settings.DEFAULT_FROM_EMAIL,
                     [email]
@@ -407,7 +404,7 @@ def verify_payment(request):
                 now_date = timezone.now()
                 date_str = now_date.strftime("%y%m%d")
                 seq_val = SequenceCounter.get_next_value(f"order_seq_{date_str}")
-                display_id = f"#KT{date_str}{seq_val:05d}"
+                display_id = f"#RW{date_str}{seq_val:05d}"
                 
                 order = Order.objects.create(
                     display_order_id=display_id,
@@ -444,12 +441,12 @@ def verify_payment(request):
                     from django.template.loader import render_to_string
                     base_url = request.build_absolute_uri('/')[:-1]
                     html_content = render_to_string('emails/order_confirmation.html', {'order': order, 'base_url': base_url})
-                    msg = EmailMultiAlternatives('Order Confirmation - Kapi Today', 'Your order is confirmed!', settings.DEFAULT_FROM_EMAIL, [order.email])
+                    msg = EmailMultiAlternatives('Order Confirmation - Raw Wish', 'Your order is confirmed!', settings.DEFAULT_FROM_EMAIL, [order.email])
                     msg.attach_alternative(html_content, "text/html")
                     msg.send(fail_silently=False)
                     # Send tracking email immediately as requested
                     track_html = render_to_string('emails/track_order.html', {'order': order, 'base_url': base_url})
-                    msg2 = EmailMultiAlternatives('Track Your Kapi Today Order', 'Track your coffee order!', settings.DEFAULT_FROM_EMAIL, [order.email])
+                    msg2 = EmailMultiAlternatives('Track Your Raw Wish Order', 'Track your cosmetics order!', settings.DEFAULT_FROM_EMAIL, [order.email])
                     msg2.attach_alternative(track_html, "text/html")
                     msg2.send(fail_silently=False)
 
@@ -671,7 +668,7 @@ def fc_verify_payment(request):
                 now_date = timezone.now()
                 date_str = now_date.strftime("%y%m%d")
                 seq_val = SequenceCounter.get_next_value(f"order_seq_{date_str}")
-                display_id = f"#KT{date_str}{seq_val:05d}"
+                display_id = f"#RW{date_str}{seq_val:05d}"
                 
                 order = Order.objects.create(
                     display_order_id=display_id,
@@ -724,13 +721,13 @@ def fc_verify_payment(request):
                     from django.conf import settings
                     base_url = request.build_absolute_uri('/')[:-1]
                     html_content = render_to_string('emails/order_confirmation.html', {'order': order, 'base_url': base_url})
-                    msg = EmailMultiAlternatives('Order Confirmation - Kapi Today', 'Your order is confirmed!', settings.DEFAULT_FROM_EMAIL, [order.email])
+                    msg = EmailMultiAlternatives('Order Confirmation - Raw Wish', 'Your order is confirmed!', settings.DEFAULT_FROM_EMAIL, [order.email])
                     msg.attach_alternative(html_content, "text/html")
                     msg.send(fail_silently=False)
                     
                     # Send tracking email immediately as requested
                     track_html = render_to_string('emails/track_order.html', {'order': order, 'base_url': base_url})
-                    msg2 = EmailMultiAlternatives('Track Your Kapi Today Order', 'Track your coffee order!', settings.DEFAULT_FROM_EMAIL, [order.email])
+                    msg2 = EmailMultiAlternatives('Track Your Raw Wish Order', 'Track your cosmetics order!', settings.DEFAULT_FROM_EMAIL, [order.email])
                     msg2.attach_alternative(track_html, "text/html")
                     msg2.send(fail_silently=False)
                 except Exception as e:
@@ -848,7 +845,7 @@ def process_chatbot_intent(query, message):
         return "I understand this is a serious issue. I have escalated this directly to our Human Support Team. A specialist will review this and get back to you shortly."
         
     # 3. Fallback / General FAQ
-    return "Thank you for reaching out. I am your Kapi Today virtual assistant. If this requires a human touch, please reply 'escalate' or explain your issue in more detail and I will transfer you!"
+    return "Thank you for reaching out. I am your Raw Wish virtual assistant. If this requires a human touch, please reply 'escalate' or explain your issue in more detail and I will transfer you!"
 
 @login_required(login_url='/login/')
 def support_chat(request, support_id):
@@ -922,7 +919,7 @@ def search_products_api(request):
     results = []
     for p in products:
         price = p.product_variant.first().price if p.product_variant.exists() else "N/A"
-        img = p.thumbnail.url if p.thumbnail else "/static/main/images/placeholder_coffee.webp"
+        img = p.thumbnail.url if p.thumbnail else "/static/main/images/placeholder_cosmetics.webp"
         
         # Need category and subcategory slug to build URL
         cat_slug = p.category.slug if p.category else "all"
@@ -936,3 +933,64 @@ def search_products_api(request):
         })
         
     return JsonResponse({'products': results})
+
+from django.http import JsonResponse
+from dash.models import Wishlist, WishlistItem, Product
+import json
+
+def get_or_create_wishlist(request):
+    if not request.session.session_key:
+        request.session.create()
+    
+    if request.user.is_authenticated:
+        try:
+            customer = Customers.objects.get(user=request.user)
+            wishlist, _ = Wishlist.objects.get_or_create(customer=customer)
+            return wishlist
+        except Customers.DoesNotExist:
+            pass
+            
+    wishlist, _ = Wishlist.objects.get_or_create(session_key=request.session.session_key)
+    return wishlist
+
+def toggle_wishlist(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            product_id = data.get('product_id')
+            product = Product.objects.get(id=product_id)
+            
+            wishlist = get_or_create_wishlist(request)
+            
+            item, created = WishlistItem.objects.get_or_create(
+                wishlist=wishlist,
+                product=product
+            )
+            
+            if not created:
+                item.delete()
+                status = 'removed'
+            else:
+                status = 'added'
+                
+            return JsonResponse({'success': True, 'status': status, 'count': wishlist.wishlist_items.count()})
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)}, status=400)
+    return JsonResponse({'success': False}, status=405)
+
+def remove_wishlist(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            item_id = data.get('item_id')
+            
+            wishlist = get_or_create_wishlist(request)
+            WishlistItem.objects.filter(wishlist=wishlist, id=item_id).delete()
+                
+            return JsonResponse({'success': True, 'count': wishlist.wishlist_items.count()})
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)}, status=400)
+    return JsonResponse({'success': False}, status=405)
+
+def ingredients(request):
+    return render(request, 'main/ingredients.html')

@@ -5523,20 +5523,20 @@
       "dash_migrations_0005_order_total_breadth_order_total_height_and_more_migration"
     ],
     "223": [
-      "kapitoday_asgi",
-      "kapitoday_asgi_rationale_1"
+      "rawwish_asgi",
+      "rawwish_asgi_rationale_1"
     ],
     "224": [
-      "kapitoday_settings",
-      "kapitoday_settings_rationale_1"
+      "rawwish_settings",
+      "rawwish_settings_rationale_1"
     ],
     "225": [
-      "kapitoday_urls",
-      "kapitoday_urls_rationale_1"
+      "rawwish_urls",
+      "rawwish_urls_rationale_1"
     ],
     "226": [
-      "kapitoday_wsgi",
-      "kapitoday_wsgi_rationale_1"
+      "rawwish_wsgi",
+      "rawwish_wsgi_rationale_1"
     ],
     "227": [
       "static_dash_assets_js_pages_apexcharts_bubble_init",
@@ -5736,10 +5736,10 @@
       "dash_tests"
     ],
     "277": [
-      "kapitoday_hosts"
+      "rawwish_hosts"
     ],
     "278": [
-      "kapitoday_init"
+      "rawwish_init"
     ],
     "279": [
       "main_admin"

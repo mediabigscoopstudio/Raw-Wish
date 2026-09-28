@@ -586,32 +586,49 @@
       }
 
       window.addEventListener('load', function () {
-        // Only initialize if GOOGLE_CLIENT_ID is available (i.e., not logged in and configured)
         const clientId = '{{ GOOGLE_CLIENT_ID }}';
-        if (clientId) {
+        const triggers = document.querySelectorAll('.google-login-trigger');
+        
+        triggers.forEach(trigger => {
+          trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (!clientId) {
+              alert("Google Login is not configured (missing GOOGLE_CLIENT_ID in .env).");
+              return;
+            }
+            
+            if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+              alert("Google Login requires a secure HTTPS connection in production.");
+              return;
+            }
+            
+            if (typeof google === 'undefined' || !google.accounts) {
+              alert("Google script failed to load. Please disable your adblocker or check your internet connection.");
+              return;
+            }
+
+            // Always explicitly render or prompt
+            google.accounts.id.prompt((notification) => {
+                if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                    console.log("One Tap not displayed:", notification.getNotDisplayedReason());
+                    // If One Tap is blocked/cooldown, let the user know
+                    if (notification.getNotDisplayedReason() === 'opt_out_or_no_session') {
+                        alert("Google login popup blocked. Please ensure you are logged into Google and allow third-party cookies, or open in an incognito window.");
+                    }
+                }
+            });
+          });
+        });
+
+        if (clientId && typeof google !== 'undefined') {
           google.accounts.id.initialize({
             client_id: clientId,
             callback: handleCredentialResponse
           });
-          
-          // Attach to all elements with class 'google-login-trigger'
-          const triggers = document.querySelectorAll('.google-login-trigger');
-          triggers.forEach(trigger => {
-            trigger.addEventListener('click', function(e) {
-              e.preventDefault();
-              google.accounts.id.prompt(); // Shows the One Tap popup
-            });
-          });          
-          // Auto-trigger if URL has ?trigger_login=true
-          const urlParams = new URLSearchParams(window.location.search);
-          if (urlParams.get('trigger_login') === 'true') {
-              setTimeout(() => {
-                  google.accounts.id.prompt();
-              }, 500);
-          }
         }
       });
-    </script>
+  </script>
 <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
